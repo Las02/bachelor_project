@@ -1,0 +1,131 @@
+---
+title: "Reading in data of number of 16s genes versus Bacdive data/ growthrate"
+output:
+  pdf_document: default
+  html_document: default
+date: "2023-03-27"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, results = "hide")
+library(RSQLite)
+library(tidyverse)
+library(magrittr)
+library(cowplot)
+library(modelr)
+```
+
+## Purpose
+The purpose of this part is only to read in the data for ribdif/bacdive/growth rate dataset. The data exploration/visualization/analysis will be done in a separate document.
+The final data is formatted and saved as a Rdata file for easy use in the further analysis.
+
+
+## Read in the data
+
+Read in all the relevant data originally from bacdive, ribdif and about growth conditions
+
+### Read data from ribdif and bacdive from the db
+
+
+```{r}
+# Connect to the DB
+conn <- dbConnect(SQLite(),"../../s16.sqlite")
+
+# Read in the data from the database
+# This data has allready been joined at a species level
+D_tmp <- dbGetQuery(conn, "SELECT * FROM ribdif_bacdive_joined")
+D_tmp <- tibble(D_tmp, .name_repair ="universal")
+
+# set the AR data types to the correct types
+D_tmp <- mutate(D_tmp, across(antibiotics:PH.range, factor))
+# Drop index number originally from the pandas dataframe and drop the NCBI.tax.ID
+D_tmp <- select(D_tmp, !c(NCBI.tax.ID,strain.designation))
+```
+### Read data about growth rates and select the maximum for each
+
+```{r}
+growthD_tmp <- read_csv("./data/biokinetic.csv")
+# Rename it to match the other dataframes
+growthD_tmp <- rename(growthD_tmp, species = binomial.name)
+
+# Pick out max value for each species (The data does also contain Eukarya and Archaea)
+growthD <- growthD_tmp %>% 
+  group_by(species) %>% 
+  summarise(max_growth_min = max(rate.per.minute), 
+            aero = last(aero),
+            trophy = last(trophy))
+  
+```
+
+### Read data from bacdive gotten directly from it's search function
+
+```{r}
+
+sporeD_tmp <- read.csv2("./data/spore.csv", sep=",", header = T,skip = 2)
+pathoD_tmp <- read.csv2("./data/pathogenicity.csv", sep=",", header = T,skip = 2)
+animal_pathoD_tmp <- read.csv2("./data/path_animals.csv", sep=",", header = T,skip = 2)
+multicelD_tmp <- read.csv2("./data/multicellular.csv", sep=",", header = T,skip = 2)
+
+## Group them at species level
+# Define function to calculate mode
+Mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+# group them
+sporeD <-  sporeD_tmp %>% 
+  group_by(species) %>% 
+  summarise(sporeforming = Mode(Ability.of.spore.formation)) %>% 
+  ungroup()
+
+pathoD <-  pathoD_tmp %>% 
+  group_by(species) %>% 
+  summarise(pathogen_human = Mode(Pathogenicity..human.)) %>% 
+  ungroup()
+
+animal_pathoD <-  animal_pathoD_tmp %>% 
+  group_by(species) %>% 
+  summarise(pathogen_animal = Mode(Pathogenicity..animal.)) %>% 
+  ungroup()
+
+multicelD <-  multicelD_tmp %>% 
+  group_by(species) %>% 
+  summarise(multicellular_ability = Mode(Multicellular.complex.forming.ability)) %>% 
+  ungroup()
+
+```
+
+### Join them all together and save as Rdata
+```{r}
+D <- D_tmp %>% 
+  left_join(sporeD, by="species") %>% 
+  left_join(pathoD, by="species") %>% 
+  left_join(animal_pathoD, by="species") %>% 
+  left_join(growthD, by="species") %>% 
+  left_join(multicelD, by="species") 
+
+# Set the relevant datatypes for all
+D <- D %>% 
+  mutate(
+    species = factor(species),
+    growth_temp = as.numeric(growth),
+    GC.content = as.numeric(GC.content),
+    sporeforming = factor(sporeforming),
+    pathogen_human = factor(pathogen_human),
+    pathogen_animal = factor(pathogen_animal),
+    multicellular_ability = factor(multicellular_ability)
+  )
+
+# Read to R.data
+saveRDS(D, file = "./data/bacdive_growth_ribdif.rds")
+```
+
+
+
+
+
+
+
+
+

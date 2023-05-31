@@ -1,0 +1,26 @@
+---
+title: "Statistical analysis"
+output: html_document
+date: "2023-03-29"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(magrittr)
+library(tidymodels)
+library(cowplot)
+library(modelr)
+```
+## Purpose
+
+The goal of this section is the run the different statistical tests
+
+## Reading in the data
+The data is read from the R data file create from 01_ReadInData.Rmd
+
+```{r}
+D <- readRDS("./data/bacdive_growth_ribdif.rds")
+D
+```

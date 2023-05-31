@@ -1,0 +1,19 @@
+"0","growthD_tmp <- read_csv(""./data/biokinetic.csv"")"
+"2","[1mRows: [22m[34m10956[39m [1mColumns: [22m[34m9[39m"
+"2","[36m──[39m [1mColumn specification[22m [36m─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (6): domain, kingdom, phylum, binomial.name, aero, trophy
+[32mdbl[39m (3): strain.code, T.C, rate.per.minute"
+"2","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."
+"0","# Rename it to match the other dataframes"
+"0","growthD_tmp <- rename(growthD_tmp, species = binomial.name)"
+"0",""
+"0","# Pick out max value for each species (The data does also contain Eukarya and Archaea)"
+"0","growthD <- growthD_tmp %>% "
+"0","  group_by(species) %>% "
+"0","  summarise(max_growth_min = max(rate.per.minute), "
+"0","            aero = last(aero),"
+"0","            trophy = last(trophy))"
+"0","  "

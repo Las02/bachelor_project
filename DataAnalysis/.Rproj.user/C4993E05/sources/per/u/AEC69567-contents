@@ -1,0 +1,6 @@
+
+f <- function(x){(1-x)/x}
+plot(f)
+
+f <- function(x){exp(-log((1-x)/x)/2)}
+plot(f)

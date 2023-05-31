@@ -1,0 +1,1521 @@
+"The number of entries per field is limited to 10 for this overview. If you want the whole information you can use the API or the ""Download selection"" menu on the Webpage."
+
+ID,designation_header,strain_number_header,is_type_strain_header,species,"Pathogenicity (human)"
+98,VR4,"CCUG 9996, CIP 106432, DSM 20731, ATCC 25085",1,"Acidaminococcus fermentans",1
+158826,WCA-389-WT-5B,"DSM 105754",0,"Acidaminococcus fermentans",1
+8141,58a,"DSM 22901, CCM 7266, CCUG 51249, JCM 18990, NIPH 838, LUH 4759, CIP 110307, GTC 14628, LMG 25324, NBRC 112579",1,"Acinetobacter beijerinckii",1
+8145,69,"DSM 25435, ATCC 17924, CIP 70.12, LMG 1003, NIPH 521, CCUG 26493, ATCC 13702",1,"Acinetobacter bereziniae",1
+8097,O1,"DSM 590, ATCC 11171, CCUG 2491, CIP 63.46, LMG 988, NCIB 8250",1,"Acinetobacter guillouiae",1
+11689,"PM 30/53","ATCC 19392, MCCM 00142, DSM 19655, CCUG 2041, CIP 103284, JCM 2432, NCTC 8529, LMG 3736",1,"Actinobacillus equuli subsp. equuli",1
+159521,"15746, 108465","DSM 108465",0,"Actinobacillus equuli subsp. haemolyticus",1
+11679,,"CIP 107665, DSM 22256, ATCC 49236, CCUG 41384, CIP 53.130, NCTC 4189",1,"Actinobacillus lignieresii",1
+11678,"CM 2","DSM 19770, ATCC 19363, JCM 2431, NCTC 4976, CCUG 23133, ATCC 19393",0,"Actinobacillus lignieresii",1
+11682,,"DSM 22433, ATCC 33415, CCM 5586, CCUG 11624, CIP 103354, NCTC 12996",1,"Actinobacillus suis",1
+11681,1208,"DSM 19774, ATCC 15557, JCM 2433, GTC 00492",0,"Actinobacillus suis",1
+16933,,"DSM 43067, ATCC 19425, CCM 136, IAM 14277, IFO 14623, IMRU 1190, JCM 7436, NBRC 14623, NCTC 5654, CCUG 32944, CCTCC AB 2010169, CECT 3043, CGMCC 4.1224, CIP 105487, HAMBI 1926, IFM 0585, IMET 9585, KCTC 9192, MTCC 1120, NCIMB 13469, NRRL B-3843, VKM Ac-809, IFO 13909, NBRC 13909",1,"Actinomadura madurae",1
+16934,"IHM 1390","DSM 43121, IMRU 754",0,"Actinomadura madurae",1
+16935,A.292(9972),"DSM 43122, IMRU 780",0,"Actinomadura madurae",1
+16936,812,"DSM 43123, IMRU 1260",0,"Actinomadura madurae",1
+16937,Pirie,"DSM 43236, NCTC 1070",0,"Actinomadura madurae",1
+16938,"A 32","DSM 43380, IP 364",0,"Actinomadura madurae",1
+16939,"A 124, B-2","DSM 43381, IMET 7144, IMRU 1136",0,"Actinomadura madurae",1
+16940,"492-10, A 196","DSM 44005, IMET 492-10, IMET 9562",0,"Actinomadura madurae",1
+16941,"Sal 1","DSM 46006, IMET 7145",0,"Actinomadura madurae",1
+16942,"A 126, RG 1091","DSM 46007, IMET 7146",0,"Actinomadura madurae",1
+16943,906-28,"DSM 46181, IMET 9595",0,"Actinomadura madurae",1
+16944,905-223,"DSM 46182, IMET 9597",0,"Actinomadura madurae",1
+154,,"DSM 43013, ATCC 12104, CCUG 2238, NCTC 10301, CDC W826, JCM 8349, NIH 279, WVU 45, CCUG 18310, CIP 103128",1,"Actinomyces naeslundii",1
+153,"Bowden X600S-96, CS 1752, X-600","DSM 17233, ATCC 19039, CCUG 35337, DSM 43325, WVU 447, CDC X-600, JCM 8350, CIP 104837, CIP 82.9",0,"Actinomyces naeslundii",1
+191,W1053,"DSM 23056, ATCC 27044, CCUG 34288, WVU 474, JCM 16131",1,"Actinomyces oris",1
+221,M1,"DSM 20340, ATCC 11563, CCM 1914, IAM 13649, JCM 20461, NCDO 1225, NCTC 8251, WDCM 00061, CCUG 4311, CIP 54.145, IAM 12302, IFO 12219, LMG 17931, NBRC 12219, NISL 7400",1,"Aerococcus viridans",1
+220,,"DSM 20311, ATCC 10400",0,"Aerococcus viridans",1
+253,,"DSM 7323, ATCC 15468, NRRL B-968, WDCM 00062, NCTC 12244, JCM 1060, BCRC 16001, CCM 4491, CCUG 25939, CECT 838, CGMCC 1.1960, CIP 76.16, GTC 00465, LMG 12160, LMG 3775, NCAIM B.01931, NCIMB 13016",1,"Aeromonas caviae",1
+237,256,"DSM 30188, ATCC 15467, IFO 13282, NBRC 13282, CCUG 25938, LMG 3755, CIP 76.15, JCM 1043, BCRC 11554, CCM 7231, CECT 4221, IAM 12334, KCTC 12487, NCIMB 13740",0,"Aeromonas caviae",1
+23539,"WS 41333","DSM 30025",0,"Aeromonas caviae",1
+130141,"AecaKS148, KS148","DSM 29415",0,"Aeromonas caviae",1
+240,"WS 41125, WS41125 (Aeromonas hydrophila)","DSM 30016",0,"Aeromonas hydrophila",1
+169149,"LUHS TK-19-2","DSM 112649",0,"Aeromonas hydrophila",1
+241,,"DSM 30187, ATCC 7966, LMG 2844, NCDC 359-60, NCMB 86, NCTC 8049, WDCM 00063, CCUG 14551, CIP 76.14, JCM 1027, BCRC 13018, CCM 7232, CDC 359-60, CECT 839, HAMBI 1847, IAM 12337, IAM 12460, KCTC 2358, LMG 12156, LMG 13439, NCAIM B.01923, NCIMB 9240",1,"Aeromonas hydrophila subsp. hydrophila",1
+238,"LRA 3300776","CCUG 30208, LMG 18245, CIP 103697, DSM 6173, ATCC 35654, API SA",0,"Aeromonas hydrophila subsp. hydrophila",1
+139681,,"DSM 30190",0,"Aeromonas hydrophila subsp. hydrophila",1
+254,,"DSM 7311, ATCC 49568, CDC 0787-80, JCM 8316, BCRC 15862, CCM 4355, CCUG 29543, CCUG 30349, CCUG 30353, CECT 4228, CIP 104171, CNCTC 5357, LMG 12221, LMG 13704",1,"Aeromonas jandaei",1
+276,,"DSM 19176, ATCC 43979, CCM 2807, CCUG 14830, CECT 4245, CIP 74.33, JCM 2139, LMG 3783, NCIMB 12065, NCTC 12979, CIP 74-33, BCRC 13066, CECT 837, HAMBI 1974, LMG 12159, VTT E-032002",1,"Aeromonas sobria",1
+239,"WS 41026","DSM 30014",0,"Aeromonas sp.",1
+255,,"DSM 7386, ATCC 35624, CDC 1169-83, CECT 4275, CCUG 27821, JCM 7375, LMG 9075, CCM 4359, CECT 4257, CIP 103438, GIFU 13580, GTC 00706, LMG 18296, NCIMB 13015",1,"Aeromonas veronii",1
+256,,"CCUG 56447, CIP 107763, NCIM 5147, CCM 7323, CECT 5761, DSM 17676, MTCC 3249, NCIMB 5147",0,"Aeromonas veronii",1
+1778,"B-91-007352, CSD1","DSM 7326, ATCC 53690, CCUG 30456",1,"Afipia felis",1
+1779,25E-1,"DSM 16694",0,"Afipia felis",1
+11752,,"DSM 8324, ATCC 33384, CCUG 13227, CIP 52.106, NCTC 9710",1,"Aggregatibacter actinomycetemcomitans",1
+11753,,"DSM 11122, ATCC 29524, NCTC 10982, CDC B5386, JCM 2435",0,"Aggregatibacter actinomycetemcomitans",1
+11754,Y4,"DSM 11123, ATCC 43718, JCM 8578",0,"Aggregatibacter actinomycetemcomitans",1
+326,MT1,"DSM 16964",0,"Alcaligenes faecalis",1
+328,,"CCUG 710, LMG 1230, DSM 30033, ATCC 15554, CCEB 554, CIP 71.8, NCTC 10416, JCM 5485, CECT 448, CGMCC 1.1799, IAM 12371",0,"Alcaligenes faecalis",1
+327,"16 (R. Hugh 135)","DSM 30030, ATCC 8750, CCM 1052, CIP 60.80, IFO 13111, NBRC 13111, NCDO 868, NCIB 8156, CCUG 1814, NCTC 11953, LMG 1229, JCM 20522, BCRC 10828, CCUG 1325, CECT 928, CGMCC 1.1786, HAMBI 1907, IAM 12369, IAM 12586, JCM 1474, JCM 20663, KCTC 2678, LMG 2100, LMG 3366, LMG 3369, LMG 3371, NCAIM B.01104, NCAIM B.02076, NCIMB 8156, VKM B-1518, VTT E-97056",1,"Alcaligenes faecalis subsp. faecalis",1
+324,799,"DSM 2576",0,"Alcaligenes faecalis subsp. faecalis",1
+325,"LRA 410282","DSM 6174, ATCC 35655",0,"Alcaligenes faecalis subsp. faecalis",1
+14029,"Carlier 10203, strain 1 Ando","DSM 17216, CCUG 45780, CIP 104286, ATCC 29800, VPI 3293, JCM 16772",1,"Alistipes putredinis",1
+16633,S411,"DSM 6400, ATCC 29305",1,"Anaerobiospirillum succiniciproducens",1
+16634,"A 273/88","DSM 11806, NCTC 12467, CCUG 46380, ATCC 700432",1,"Anaerobiospirillum thomasii",1
+197,11018,"DSM 20595, ATCC 9345, CCM 5947, NCTC 8452",1,"Arcanobacterium haemolyticum",1
+198,1656,"DSM 22856, ATCC BAA 1784",0,"Arcanobacterium haemolyticum",1
+2094,,"DSM 8739, ATCC 49616, CDC D2686, LMG 10828, WDCM 00065, CCUG 30485, NCTC 12481, RM 4018, JCM 31724, CECT 8221, CIP 103493",1,"Arcobacter butzleri",1
+2093,,"DSM 7301, CCUG 10373, LMG 6620, WRI 996/79",0,"Arcobacter butzleri",1
+157920,FLI:17-1168,"DSM 107942",0,"Arcobacter butzleri",1
+2091,"A169/B, 02766","DSM 7289, ATCC 43158, CCUG 17801, LMG 7536, NCTC 11885, WDCM 00066, MCCM 00660",1,"Arcobacter cryaerophilus",1
+11692,,"DSM 17481, ATCC 13361, NCTC 11188, CCUG 12391, CIP 102676",1,"Avibacterium gallinarum",1
+970,"natto 3335 UM4, 3335 UM4, pLS20","DSM 4449",0,"Bacillus subtilis",1
+971,"natto 3335 UM8, pLS20, 3335 UM8","DSM 4450, PBC pBC16",0,"Bacillus subtilis",1
+973,"DB163, pGR71","DSM 4515",0,"Bacillus subtilis",1
+974,pMW1,"DSM 4608, BR 157",0,"Bacillus subtilis",1
+1161,"pC194, SB202","DSM 4393",0,"Bacillus subtilis subsp. subtilis",1
+1162,"BD170, pUB110","DSM 4514, ATCC 37015, NCIB 11624",0,"Bacillus subtilis subsp. subtilis",1
+1163,pE194,"DSM 4554, ATCC 37128, BGSC 1E18",0,"Bacillus subtilis subsp. subtilis",1
+1165,"1E34, pAM77","DSM 4751, BGSC 1E34",0,"Bacillus subtilis subsp. subtilis",1
+1166,"BD426, pBD8","DSM 4871, BGSC 1E21",0,"Bacillus subtilis subsp. subtilis",1
+1167,"BD466, pBD10","DSM 4872, BGSC 1E24",0,"Bacillus subtilis subsp. subtilis",1
+1168,pPL608,"DSM 4873, ATCC 37108, BGSC 1E32, BR 151",0,"Bacillus subtilis subsp. subtilis",1
+1169,"pMK3, YB886","DSM 4874, BGSC 1E38",0,"Bacillus subtilis subsp. subtilis",1
+1178,BD170,"DSM 6224, ATCC 37014, PSA pSA2100",0,"Bacillus subtilis subsp. subtilis",1
+1181,pTP-4,"DSM 6923, BGSC 1E12, KBS 1",0,"Bacillus subtilis subsp. subtilis",1
+1182,pTP-5,"DSM 6924, BGSC 1E13, KBS 2",0,"Bacillus subtilis subsp. subtilis",1
+1183,"BD403, pSAO501","DSM 6926, BGSC 1E29",0,"Bacillus subtilis subsp. subtilis",1
+1184,"BD490, pBD20","DSM 6927, BGSC 1E26",0,"Bacillus subtilis subsp. subtilis",1
+1185,"1012 (pHP13), pHP13, 1012","DSM 8773, BGSC 1E50",0,"Bacillus subtilis subsp. subtilis",1
+1585,EN-2,"DSM 2151, ATCC 25285, JCM 11019, NCTC 9343, CCUG 4856, CCM 4712, VPI 2553, CIP 77.16, KCTC 3688, KCTC 5013, LMG 10263, LMG 11261, NCDO 2217",1,"Bacteroides fragilis",1
+1584,,"CCUG 25931, DSM 1396, ATCC 23745, NCTC 10581",0,"Bacteroides fragilis",1
+1586,"mprl 1839, MPRL 1839/MH3","DSM 9668",0,"Bacteroides fragilis",1
+1587,"mprl 1842","DSM 9669",0,"Bacteroides fragilis",1
+1589,"mprl 1843","DSM 9671",0,"Bacteroides fragilis",1
+158881,COR2-248-WT-1,"DSM 103087",0,"Bacteroides fragilis",1
+1634,,"DSM 21432, CCUG 45774, CIP 105477, IBS 382",1,"Bartonella alsatica",1
+4068,RZATAU,"DSM 11045",0,"Bilophila wadsworthia",1
+160478,Cla-CZ-104,"DSM 109342",0,"Bilophila wadsworthia",1
+376,,"DSM 13414, ATCC 19395, CCUG 219, CIP 55.110, LMG 1232, NCTC 452, CCM 6082",1,"Bordetella bronchiseptica",1
+375,B-140,"CCUG 2514, NRRL B-140, DSM 10303, ATCC 4617, NCIB 9935, NCTC 8344, PCI 1701, WHO 11",0,"Bordetella bronchiseptica",1
+378,,"DSM 11333, ATCC 51783, CIP 104527, LMG 13501, CCUG 33847, CCM 4584, TC 58, JCM 15550",1,"Bordetella hinzii",1
+368,522,"DSM 13415, ATCC 15311, CCUG 413, LMG 14449, NCTC 5952",1,"Bordetella parapertussis",1
+367,,"DSM 4922",0,"Bordetella parapertussis",1
+169100,513A,"ATCC 43994, NCTC 11492, CIP 104603",1,"Brachyspira aalborgi",1
+167613,P43/6/78,"ATCC 51139",1,"Brachyspira pilosicoli",1
+159519,"1926, 2492/17","DSM 110984",0,"Brachyspira pilosicoli",1
+1889,,"CCUG 54647, DSM 16930, LMG 22726, NBRC 102587, Lup LUP21, Lup 21",0,"Brucella lupini",1
+1906,717,"DSM 7288, ATCC 25416, DSM 9897, ICPB PC25, NCTC 10743, JCM 5964, BCRC 13208, CCUG 12691, CCUG 13226, CECT 4137, CGMCC 1.1813, CGMCC 1.3393, CIP 80.24, IFO 14074, KCTC 2966, LMG 1222, NBRC 14074, NRRL B-14810, VTT E-94512",1,"Burkholderia cepacia",1
+1907,,"DSM 9241, IPT 16",0,"Burkholderia cepacia",1
+1908,PB4,"DSM 12775",0,"Burkholderia cepacia",1
+1909,B-175,"DSM 50180, ATCC 17770, NCIB 9089, CCUG 2858, LMG 6993",0,"Burkholderia cepacia",1
+1910,8,"DSM 50181, ATCC 17759, ICPB 2745-382, NCIB 9085, JCM 2799, AJ 2404, CCUG 18838, CCUG 2855, CECT 322, KCTC 2504, LMG 1275, LMG 2161, NCIMB 9085, NCTC 10661",0,"Burkholderia cepacia",1
+1989,J2956,"DSM 22706, CCUG 55526, LMG 23361",1,"Burkholderia contaminans",1
+2102,EDMH-1,"DSM 20703, ATCC 33387, CCUG 7319, LMG 6451, NCTC 10941",1,"Campylobacter ureolyticus",1
+5493,2340-2-61,"DSM 19204, ATCC 35979, CCTM La 3498, CCUG 53895, CDC 7120, CIP 103936, NCTC 12242",1,"Capnocytophaga canimorsus",1
+5494,"79120329, E6447","MCCM 00247, LMG 11513, MCCM 00265, LMG 11540, DSM 19736, ATCC 49044, CCUG 24742, CIP 103937, NCTC 12243",1,"Capnocytophaga cynodegmi",1
+2394,TWAR-183,"DSM 19748, ATCC VR-2282",1,"Chlamydia pneumoniae",1
+10449,MK,"DSM 30191, ATCC 12472, IFO 12614, NBRC 12614, NCIB 9131, NCTC 9757, CCUG 213, JCM 1249, BCRC 10636, CECT 494, CIP 103350, IAM 12470, ICMP 8644, KCTC 2897, LMG 1267, NCIMB 9131, VTT E-082793",1,"Chromobacterium violaceum",1
+10455,"strain Lewitus","DSM 23279, CCM 2076, LMG 3953, NCTC 8182",0,"Chromobacterium violaceum",1
+5671,,"DSM 16777, ATCC 29897, CCUG 14483, CDC 3716, CIP 101026, GIFU 1347, LMG 8337, NCTC 10796",1,"Chryseobacterium indologenes",1
+2582,"1780, McClung 1780","DSM 1296, ATCC 9689, NCIB 10666, NCTC 11209, CCUG 4938, USDA 90556-M6S, JCM 1296, BCRC 10642, CECT 531, CIP 104282, LMG 15861, LMG 21717, NCIMB 10666",1,"Clostridioides difficile",1
+2583,AA1,"DSM 12056",0,"Clostridioides difficile",1
+2584,A90,"DSM 12057",0,"Clostridioides difficile",1
+22963,R20291,"DSM 27147, NCTC 13366",0,"Clostridioides difficile",1
+23853,630,"DSM 27543, ATCC BAA 1382, NCTC 13307",0,"Clostridioides difficile",1
+23854,1470,"DSM 27544, ATCC 43598, NCTC 13569, CCUG 37782",0,"Clostridioides difficile",1
+23855,"630 Delta erm","DSM 28645",0,"Clostridioides difficile",1
+157662,"4167/2013 1","DSM 27638",0,"Clostridioides difficile",1
+157663,"4167/2013 2","DSM 27639",0,"Clostridioides difficile",1
+157664,"4167/2013 3","DSM 27640",0,"Clostridioides difficile",1
+157665,"SC037-01-01, 6551/2013","DSM 28196",0,"Clostridioides difficile",1
+157666,SC052-01-01,"DSM 29688",0,"Clostridioides difficile",1
+157667,SC009-01-01,"DSM 29745",0,"Clostridioides difficile",1
+157668,SC052-02-01,"DSM 29747",0,"Clostridioides difficile",1
+157669,"CD-16-113, D/6474/2015","DSM 102978",0,"Clostridioides difficile",1
+157670,"3525/15, Goe-91","DSM 105001",0,"Clostridioides difficile",1
+158911,"3022, CD3022","DSM 101085",0,"Clostridioides difficile",1
+2769,2585,"DSM 7528, ATCC 10092, NCIMB 10665",1,"Clostridium chauvoei",1
+2585,Tracol,"DSM 2631, ATCC 19400, NCTC 8380, VPI 5729, CCUG 4853, JCM 1398, BCRC 14512, NCIMB 10634",1,"Clostridium fallax",1
+2745,"Mc Clung 2027, 2027, McClung, 29866 (Folsum), 2027, McClung","DSM 5565, ATCC 9650, NCIB 10664, JCM 1402, BCRC 10643, NCIMB 10664, NCTC 13022",1,"Clostridium haemolyticum",1
+2747,151,"DSM 14992, ATCC 17861, JCM 1406, CCUG 57219, NCTC 13029, NCIMB 10661",1,"Clostridium novyi",1
+2746,,"DSM 5566, ATCC 27606, VPI 8099",0,"Clostridium novyi",1
+2631,S107,"DSM 756, ATCC 13124, ATCC 19408, NCIB 6125, NCTC 6125, NCTC 8237, WDCM 00007, CCUG 1795, CIP 103409, JCM 1290, BCRC 10913, CCM 4435, CECT 376, KCTC 3269, LMG 11264, NCIMB 6125",1,"Clostridium perfringens",1
+2630,SM19b,"DSM 628",0,"Clostridium perfringens",1
+2632,"McClung 1988, BP6K","CCUG 35750, CIP 104612, BCRC 10648, NCIMB 8875, CECT 4647, DSM 798, ATCC 10543, NCIB 8875, WDCM 00174",0,"Clostridium perfringens",1
+2633,,"DSM 2943, ATCC 25768, NCIB 10620",0,"Clostridium perfringens",1
+2634,C5,"DSM 11778",0,"Clostridium perfringens",1
+2635,C8,"DSM 11779",0,"Clostridium perfringens",1
+2636,C12,"DSM 11780",0,"Clostridium perfringens",1
+2637,C33,"DSM 11781",0,"Clostridium perfringens",1
+2638,C36,"DSM 11782",0,"Clostridium perfringens",1
+2639,C42,"DSM 11783",0,"Clostridium perfringens",1
+2640,"8239, C103","DSM 11784",0,"Clostridium perfringens",1
+2641,C186,"DSM 11785",0,"Clostridium perfringens",1
+2642,C192,"DSM 11786",0,"Clostridium perfringens",1
+2643,"ES-MS 22","DSM 30770",0,"Clostridium perfringens",1
+2644,,"DSM 25589, VPI No.5",0,"Clostridium perfringens",1
+130924,MJJ0609-4-1,"DSM 29991",0,"Clostridium perfringens",1
+130925,D10,"DSM 100947, NCTC 13170, WDCM 00201",0,"Clostridium perfringens",1
+158915,WCA-h-251-APC-2,"DSM 106278",0,"Clostridium perfringens",1
+2724,795,"DSM 2485, ATCC 14573, IAM 14196, NCIB 10697, JCM 6289, CCUG 4219, NBRC 103192, NCIMB 10697, NCIMB 541",1,"Clostridium tertium",1
+2722,,"DSM 662",0,"Clostridium tertium",1
+2723,P.II.Col.54,"DSM 748, ATCC 19405, NCTC 541, CCUG 4219, JCM 3813, BCRC 10650, IAM 14195, NCIMB 541",0,"Clostridium tertium",1
+160015,Cla-CZ-234,"DSM 109055",0,"Clostridium tertium",1
+2790,34946A,"DSM 11744",0,"Clostridium tetani",1
+2791,E4222,"DSM 11745",0,"Clostridium tetani",1
+3134,S160,"DSM 6922, ATCC 49368, NCFB 2768, CCUG 35685, LMG 19043, JCM 7447, CCM 4123, CECT 4163, CGMCC 1.1939, CIP 103452, IFO 15207, KCTC 3432, NBRC 15207, NCIMB 13130",1,"Corynebacterium amycolatum",1
+3135,"PAP 291, Co 291","DSM 44375",0,"Corynebacterium amycolatum",1
+3136,"PAP 197, Co 197","DSM 44371",0,"Corynebacterium amycolatum",1
+3137,"PAP 232, Co 232","DSM 44372",0,"Corynebacterium amycolatum",1
+3138,"PAP 272, Co272","DSM 44373",0,"Corynebacterium amycolatum",1
+3139,"PAP 290, Co 290","DSM 44374",0,"Corynebacterium amycolatum",1
+3082,,"DSM 20582, ATCC 7715, NCTC 3224, CCUG 2705, JCM 11947, BCRC 12363, CIP 54.80, IMET 10632, JCM 1482, NCDO 1689, NCIMB 701689, PCM 2047",1,"Corynebacterium bovis",1
+10842,,"DSM 20295, ATCC 7005, CCUG 20991, CIP 81.17, JCM 1319, NBRC 103062, NCTC 10673, BCRC 12158, CGMCC 1.1887, IAM 12428",1,"Rhodococcus hoagii",1
+10841,,"DSM 1990, SC 372-837",0,"Rhodococcus hoagii",1
+10843,C7,"DSM 20307, ATCC 25729, ATCC 6939, CCUG 892, CIP 54.72, DSM 43349, HAMBI 2061, JCM 1311, JCM 3209, LMG 18452, NBRC 101255, NBRC 14956, NCTC 1621, NRRL B-16538, VKM Ac-953, WDCM 00028, ACM 4987, BCRC 12859, CCM 3429, CCUG 20987, CCUG 23606, CECT 555, CGMCC 4.1824, IAM 12426, IFM 0162, IFO 14956, IMET 7467, IMSNU 22213, KACC 20051, KCTC 9082, LMG 5358, NBIMCC 1230, NCAIM B.02034, NCIMB 12828, PCM 559",0,"Rhodococcus hoagii",1
+10845,,"DSM 43950, ATCC 25694, ATCC 25734, IMET 7466, NCTC 4219",0,"Rhodococcus hoagii",1
+10846,VII,"DSM 44426",0,"Rhodococcus hoagii",1
+10847,"Gdf C58, Gdf R76, Gordon N4219, R76","DSM 46064, IMET 7468, Tsukamura PO11",0,"Rhodococcus hoagii",1
+10848,,"DSM 46101, IAM 12443, IMET 7755, JCM 1315, AJ 1378, CNF 001",0,"Rhodococcus hoagii",1
+157816,"PAM1126, 103S","DSM 104936",0,"Rhodococcus hoagii",1
+3147,20184,"ATCC 51799, LMG 19058, DSM 46325, CCUG 2708, IMET 11148, NCTC 7910, PCM 554, JCM 10387, CIP 106504",1,"Corynebacterium ulcerans",1
+3148,"Armendariz, 1","DSM 7109, ATCC 43042, NCTC 12011, CCUG 18158, JCM 10395, CCM 3975, CECT 4142, CIP 103524, LMG 19041",1,"Corynebacterium urealyticum",1
+3149,Bajo,"DSM 7110, ATCC 43043",0,"Corynebacterium urealyticum",1
+3150,Garcia,"DSM 7111, ATCC 43044, CCUG 18159",0,"Corynebacterium urealyticum",1
+12645,,"DSM 20700, ATCC 25564, CIP 110009, JCM 6498, LMG 16726, NCTC 11865, CCUG 32987, VPI 0507, BCRC 17368, CIP 103262, GIFU 7612, IFO 15672, NBRC 15672, NCFB 2586, NCIMB 702586",1,"Cutibacterium granulosum",1
+12646,,"DSM 20458, ATCC 11829, NCTC 10387",0,"Cutibacterium granulosum",1
+131380,ET080813,"DSM 27202, CCTCC AB 2013118, CCUG 64215, MCCC 1K00238",1,"Edwardsiella anguillarum",1
+4356,"GA 77-52","CCUG 18764, CECT 885, DSM 13697, ATCC 33202, CDC 1976-78, JCM 16934, JCM 1680, CGMCC 1.1873, CIP 81.96, KCTC 12264, LMG 7860, NBRC 105724, NCIMB 13272, NCTC 12122",1,"Edwardsiella ictaluri",1
+4355,"K 349","DSM 30052, NBRC 105688, ATCC 15947, ATCC 23656, CCM 2238, NCTC 10396, CCUG 1638, LMG 2793, CIP 78.61, JCM 1656, NCDC 1483-59, BCRC 10670, CDC 1483-59, CECT 849",1,"Edwardsiella tarda",1
+3054,"1899 B","CCUG 17323 A, DSM 2243, ATCC 25559, VPI 0255, JCM 9979, CCUG 17323, CIP 106637, KCTC 3265, NCTC 11813, VTT E-001735",1,"Eggerthella lenta",1
+3055,"MSMC 77-67","DSM 15644, ATCC 43055, CCUG 34779, CIP 104211, CCM 4714",0,"Eggerthella lenta",1
+158962,"FAA 1-1-60A, FAA 1-1-60AUCSF","DSM 110904",0,"Eggerthella lenta",1
+158963,11C,"DSM 110905",0,"Eggerthella lenta",1
+158964,"FAA 1-3-56","DSM 110906",0,"Eggerthella lenta",1
+158965,14A,"DSM 110907",0,"Eggerthella lenta",1
+158966,22C,"DSM 110908",0,"Eggerthella lenta",1
+158967,28B,"DSM 110909",0,"Eggerthella lenta",1
+158968,"32-6-I-6 NA","DSM 110910",0,"Eggerthella lenta",1
+158969,A2,"DSM 110911",0,"Eggerthella lenta",1
+158970,"AB12 #2","DSM 110912",0,"Eggerthella lenta",1
+158971,"AB8 #2","DSM 110913",0,"Eggerthella lenta",1
+158972,AN51LG,"DSM 110914",0,"Eggerthella lenta",1
+158973,"CC7/5 D5 2","DSM 110915",0,"Eggerthella lenta",1
+158974,"CC8/2 BHI2","DSM 110916",0,"Eggerthella lenta",1
+158975,"CC8/6 D5 4","DSM 110917",0,"Eggerthella lenta",1
+158976,RJX1626,"DSM 110918",0,"Eggerthella lenta",1
+158977,ElUC2,"DSM 110919",0,"Eggerthella lenta",1
+158978,ElUC5,"DSM 110920",0,"Eggerthella lenta",1
+158979,"MR1 #12","DSM 110921",0,"Eggerthella lenta",1
+158980,RC4/6F,"DSM 110922",0,"Eggerthella lenta",1
+158981,"W1 BHI 6","DSM 110923",0,"Eggerthella lenta",1
+5506,"14 (serotype A)","DSM 2800, ATCC 13253, IAM 14198, IFO 12535, NBRC 12535, NCTC 10016, CCUG 214, CIP 60.57, LMG 12279, JCM 21065, AJ 2517, CCM 2719, CCTM La 3011, CDC 14, CECT 447, GIFU 506, LMG 4027, PCM 2225, RIMD 0614002",1,"Elizabethkingia meningoseptica",1
+5507,W3-B1,"CCUG 58416, JCM 11413, DSM 14571, CIP 108250, GTC 862, KCTC 12492, BCRC 17371",1,"Elizabethkingia miricola",1
+4373,,"DSM 30054, ATCC 13047, CIP 60.85, IFO 13535, NBRC 13535, NCTC 10005, WDCM 00083, NCDC 279-56, JCM 1232, ACM 1975, BCRC 10401, CCUG 28448, CCUG 29301, CCUG 6323, CDC 442-68, CECT 194, HAMBI 1295, HAMBI 96, HUT 8108, IAM 12349, KCTC 2361, LMG 2783, NCIMB 10101, VTT E-84198",1,"Enterobacter cloacae subsp. cloacae",1
+4368,,"DSM 12409, ATCC 49162, CCUG 26642, CCUG 27126, CIP 103441",1,"Enterobacter hormaechei subsp. hormaechei",1
+5278,"98 D","DSM 20633, ATCC 19432, CCM 5612, NCDO 596, NCTC 8307, JCM 8725, BCRC 10790, CCUG 7972, CECT 411, CGMCC 1.2284, CIP 55.125, LMG 10746, LMG 12691, NBRC 100479, NCAIM B.02010, NCIMB 700596, VTT E-97805",1,"Enterococcus durans",1
+160028,Cla-CZ-122,"DSM 109133",0,"Enterococcus durans",1
+158934,BSM-130-P53-22D,"DSM 100907",0,"Enterococcus faecium",1
+5314,"F87/276, PB21","DSM 24841, ATCC 49573, JCM 8728, CCUG 18658, NCTC 12359, NCDO 2313, BCRC 15477, CCM 4054, CECT 970, CGMCC 1.2517, CGMCC 1.9125, CIP 103013, DSM 20628, LMG 13129, NBRC 100675, NCIMB 702313, NCTC 11428, VTT E-97776",1,"Enterococcus gallinarum",1
+5310,"F87/268, PB21","DSM 20628, ATCC 35038, NCTC 11428",0,"Enterococcus gallinarum",1
+5311,"F87/277, PB24 (oder PB22), PB24 (oder PB22?)","DSM 20717, NCDO 2314",0,"Enterococcus gallinarum",1
+5312,"F87/279, PB24","DSM 20718, NCDO 2315",0,"Enterococcus gallinarum",1
+5313,,"DSM 25780, NCCP 11518",0,"Enterococcus gallinarum",1
+130944,JM-20,"DSM 28564",0,"Enterococcus gallinarum",1
+130945,"30-31, A-C2-Ob","DSM 28565",0,"Enterococcus gallinarum",1
+130946,JJM0609-2-2,"DSM 100110",0,"Enterococcus gallinarum",1
+160037,Cla-CZ-15,"DSM 109011",0,"Enterococcus gallinarum",1
+169222,"0090-6-DD-A, S500","DSM 106191",0,"Enterococcus gallinarum",1
+5316,,"DSM 20160, ATCC 8043, CCM 2423, CCUG 18659, CIP 53.48, CIP 82.112, JCM 8729, LMG 6399, NCDO 1258, NCIMB 6459, WDCM 00089, ATCC 9790, BCRC 11054, BCRC 12496, BCRC 80016, CCUG 1332, CCUG 19917, CECT 279, CECT 294, CECT 302, CFBP 4250, CGMCC 1.2140, HAMBI 1709, HAMBI 644, IAM 1262, IFO 3181, KCTC 2022, KCTC 3616, NBRC 3181, NCCB 46070, NCCB 58005, NCIMB 8123, NCIMB 8191, NCTC 12367, VKM B-2107, VTT E-97046",1,"Enterococcus hirae",1
+5315,"M 19","CCUG 32258, NCIMB 8192, CCM 4533, DSM 3320, ATCC 10541, CIP 58.55, NCIB 8192, WDCM 00011, NBRC 113010",0,"Enterococcus hirae",1
+24003,Eh61,"DSM 27815",0,"Enterococcus hirae",1
+130947,SB,"DSM 28619",0,"Enterococcus hirae",1
+158938,WCA-386-APC-3D,"DSM 100949",0,"Enterococcus hirae",1
+160038,Cla-CZ-137,"DSM 109134",0,"Enterococcus hirae",1
+4932,19982,"DSM 17582, CCUG 46494, CIP 107988, LMG 20976, CCM 7160, JCM 17328, CIP 107-988, NBRC 107761",1,"Escherichia albertii",1
+4907,U5/41,"DSM 30083, ATCC 11775, CCM 5172, CIP 54.8, IAM 12119, JCM 1649, NCDO 1989, NCTC 9001, WDCM 00090, BCRC 10675, CCUG 24, CCUG 29300, CECT 515, CGMCC 1.2993, KCTC 2441, LMG 2092, NBRC 102203, NCIMB 11943, VTT E-94564, UCCCB113",1,"Escherichia coli",1
+4409,,"DSM 301, ATCC 4157, CIP 61.11, NCIB 86, NCTC 86",0,"Escherichia coli",1
+4410,B3,"DSM 308, IMG 1728",0,"Escherichia coli",1
+4420,,"CCUG 3274, DSM 682, ATCC 10536, NCIB 8879, NCTC 10418",0,"Escherichia coli",1
+4422,,"DSM 787, ATCC 11229, CCUG 17931, AMC 198",0,"Escherichia coli",1
+4423,"ML 30, ML30","DSM 1328",0,"Escherichia coli",1
+4427,"Seattle 1946","DSM 1103, ATCC 25922, NCIB 12210, WDCM 00013, CCUG 17620, CCUG 7736, CCUG 21456, JCM 5491, CCM 3954, CIP 76.24, IFO 15034, KCTC 1682, LMG 8223, NBRC 15034, NCIMB 12110",0,"Escherichia coli",1
+4433,Crooks,"DSM 1576, ATCC 8739, NCIB 8545, WDCM 00012, CCUG 10979, CIP 53.126, NCTC 12923, CCM 4517",0,"Escherichia coli",1
+4468,MRE-600,"DSM 3901, ATCC 29417, CGSC 5260, NCIB 10115, NCTC 8164",0,"Escherichia coli",1
+4516,O55:K59(B5):H,"DSM 4779, ATCC 12014, NCTC 9701, CCUG 32986, DSM 5921, CDC 5624-50",0,"Escherichia coli",1
+4547,O78:K80:H-,"DSM 5212, NCTC 9078, CCUG 11380",0,"Escherichia coli",1
+4576,"QST 40139","DSM 5802",0,"Escherichia coli",1
+4586,"F.S. Barr 1532","DSM 5923, ATCC 35218, DSM 5564, CCUG 30600",0,"Escherichia coli",1
+4603,DP50,"DSM 6188, CCRC 51494",0,"Escherichia coli",1
+4618,"C (P1 Cm ts)","DSM 6257",0,"Escherichia coli",1
+4619,DP50supF58,"DSM 6277, ATCC 39061",0,"Escherichia coli",1
+4644,"BM2001, BM2001, pIP173","DSM 6969, CIP 79.43, PIP pIP173, PIP 173",0,"Escherichia coli",1
+4678,F41,"DSM 8695",0,"Escherichia coli",1
+4679,"Aberdeen 1064","DSM 8696",0,"Escherichia coli",1
+4680,"Stoke W","DSM 8698",0,"Escherichia coli",1
+4681,C881-62,"DSM 8699",0,"Escherichia coli",1
+4682,Canioni,"DSM 8700",0,"Escherichia coli",1
+4683,E611,"DSM 8701",0,"Escherichia coli",1
+4684,4932-53,"DSM 8702",0,"Escherichia coli",1
+4685,Cigleris,"DSM 8703",0,"Escherichia coli",1
+4686,E2808,"DSM 8710",0,"Escherichia coli",1
+4687,EW2129-54,"DSM 8711",0,"Escherichia coli",1
+4691,C771,"DSM 9024",0,"Escherichia coli",1
+4692,Kattwijk,"DSM 9025",0,"Escherichia coli",1
+4693,SU4338-41,"DSM 9026",0,"Escherichia coli",1
+4694,Guanabara,"DSM 9027",0,"Escherichia coli",1
+4695,4608-58,"DSM 9028",0,"Escherichia coli",1
+4696,1624-56,"DSM 9029",0,"Escherichia coli",1
+4697,1184-68,"DSM 9030",0,"Escherichia coli",1
+4698,EW227,"DSM 9031",0,"Escherichia coli",1
+4699,1111-55,"DSM 9032",0,"Escherichia coli",1
+4700,E10702,"DSM 9033",0,"Escherichia coli",1
+4701,DRL145-46,"DSM 9034",0,"Escherichia coli",1
+4711,"pVA517A through H, pVA517A, V517","DSM 8872, ATCC 37514, CCUG 21646, NCTC 50193",0,"Escherichia coli",1
+4735,,"DSM 10232, ATCC 128, NCIMB 8020, PCI 1635, WHO 16",0,"Escherichia coli",1
+4737,"Bacdive 4737","DSM 10234, NCIMB 13058, NCTC 9111, CCUG 11412, ATCC 33780",0,"Escherichia coli",1
+4740,,"DSM 10498",0,"Escherichia coli",1
+4749,Bay14),"DSM 10650, ICB 4004 (""Neumann"", ICB 4004 (""Neumann"", Bay14)",0,"Escherichia coli",1
+4750,A297,"DSM 10802",0,"Escherichia coli",1
+4751,A299,"DSM 10803",0,"Escherichia coli",1
+4752,A293,"DSM 10804",0,"Escherichia coli",1
+4753,IHE3109,"DSM 10805",0,"Escherichia coli",1
+4754,IHE3036,"DSM 10806",0,"Escherichia coli",1
+4755,Z36,"DSM 10807",0,"Escherichia coli",1
+4756,T111,"DSM 10808",0,"Escherichia coli",1
+4757,780141M,"DSM 10809",0,"Escherichia coli",1
+4758,T100,"DSM 10810",0,"Escherichia coli",1
+4759,C88,"DSM 10811",0,"Escherichia coli",1
+4760,M128/1-2,"DSM 10812",0,"Escherichia coli",1
+4761,A298,"DSM 10813",0,"Escherichia coli",1
+4762,A296,"DSM 10814",0,"Escherichia coli",1
+4763,A295,"DSM 10815",0,"Escherichia coli",1
+4764,E8112/77,"DSM 10816",0,"Escherichia coli",1
+4765,E8111/77,"DSM 10817",0,"Escherichia coli",1
+4766,E7507/77,"DSM 10818",0,"Escherichia coli",1
+4767,E4199/76,"DSM 10819",0,"Escherichia coli",1
+4768,E81/74,"DSM 10820",0,"Escherichia coli",1
+4769,E9854/78,"DSM 10821",0,"Escherichia coli",1
+4770,GXIV,"DSM 10822",0,"Escherichia coli",1
+4771,M170/1-3,"DSM 10823",0,"Escherichia coli",1
+4772,U16,"DSM 10824",0,"Escherichia coli",1
+4773,IHE3058,"DSM 10825",0,"Escherichia coli",1
+4774,IHE3059,"DSM 10826",0,"Escherichia coli",1
+4775,IHE3107,"DSM 10827",0,"Escherichia coli",1
+4776,IHE3108,"DSM 10828",0,"Escherichia coli",1
+4777,IHE3057,"DSM 10829",0,"Escherichia coli",1
+4778,S13,"DSM 10719",0,"Escherichia coli",1
+4779,IHE3035,"DSM 10720",0,"Escherichia coli",1
+4780,IHE3120,"DSM 10722",0,"Escherichia coli",1
+4781,IHE3033,"DSM 10723",0,"Escherichia coli",1
+4782,A302a,"DSM 10724",0,"Escherichia coli",1
+4783,M185/1-1,"DSM 10725",0,"Escherichia coli",1
+4784,B185/29-10,"DSM 10726",0,"Escherichia coli",1
+4785,C352-78,"DSM 10727",0,"Escherichia coli",1
+4786,M70/1-1,"DSM 10728",0,"Escherichia coli",1
+4787,A270,"DSM 10729",0,"Escherichia coli",1
+4788,A262,"DSM 10730",0,"Escherichia coli",1
+4789,F5,"DSM 10731",0,"Escherichia coli",1
+4790,DI,"DSM 10732",0,"Escherichia coli",1
+4791,M95/2-1,"DSM 10733",0,"Escherichia coli",1
+4792,M152/1-1,"DSM 10734",0,"Escherichia coli",1
+4793,B120/20-1,"DSM 10735",0,"Escherichia coli",1
+4794,M12/1-4,"DSM 10736",0,"Escherichia coli",1
+4795,7R/1-1,"DSM 10737",0,"Escherichia coli",1
+4796,B70/3-2,"DSM 10738",0,"Escherichia coli",1
+4797,M120/1-2,"DSM 10739",0,"Escherichia coli",1
+4798,M115/1-1,"DSM 10740",0,"Escherichia coli",1
+4799,IHE3119,"DSM 10741",0,"Escherichia coli",1
+4800,IHE3055,"DSM 10742",0,"Escherichia coli",1
+4801,IHE3113,"DSM 10743",0,"Escherichia coli",1
+4802,IHE3101,"DSM 10744",0,"Escherichia coli",1
+4803,IHE3103,"DSM 10745",0,"Escherichia coli",1
+4804,A264,"DSM 10746",0,"Escherichia coli",1
+4805,A269,"DSM 10747",0,"Escherichia coli",1
+4806,A261,"DSM 10748",0,"Escherichia coli",1
+4807,21R/1-2,"DSM 10749",0,"Escherichia coli",1
+4808,M62/1-2,"DSM 10750",0,"Escherichia coli",1
+4809,IHE3104,"DSM 10751",0,"Escherichia coli",1
+4810,"D699(U5/41 Oac-), D699(U5/41 Oac<SUP>-</SUP>)","DSM 10752",0,"Escherichia coli",1
+4811,E7163/77,"DSM 10753",0,"Escherichia coli",1
+4812,M188/1-10,"DSM 10754",0,"Escherichia coli",1
+4813,15R/1-4,"DSM 10755",0,"Escherichia coli",1
+4814,M123/1-10,"DSM 10756",0,"Escherichia coli",1
+4815,M20/3-2,"DSM 10757",0,"Escherichia coli",1
+4816,B105/22-10,"DSM 10758",0,"Escherichia coli",1
+4817,M210/1-6,"DSM 10759",0,"Escherichia coli",1
+4818,M182/1-1,"DSM 10760",0,"Escherichia coli",1
+4819,M6/1-1,"DSM 10761",0,"Escherichia coli",1
+4820,19R/2-4,"DSM 10762",0,"Escherichia coli",1
+4821,M148/1-2,"DSM 10763",0,"Escherichia coli",1
+4822,M2/1-2,"DSM 10764",0,"Escherichia coli",1
+4823,IHE3114,"DSM 10765",0,"Escherichia coli",1
+4824,IHE3118,"DSM 10766",0,"Escherichia coli",1
+4825,IHE3116,"DSM 10767",0,"Escherichia coli",1
+4826,IHE3112,"DSM 10768",0,"Escherichia coli",1
+4827,K235,"DSM 10770",0,"Escherichia coli",1
+4828,"NB-12-15 (M. Green)","DSM 10771",0,"Escherichia coli",1
+4829,17R/1-3,"DSM 10772",0,"Escherichia coli",1
+4830,"IHE 3125","DSM 10773",0,"Escherichia coli",1
+4831,F86,"DSM 10774",0,"Escherichia coli",1
+4832,"F41, A1066","DSM 10775",0,"Escherichia coli",1
+4833,E2971/76,"DSM 10776",0,"Escherichia coli",1
+4834,"671*1115/80, 671<SUP>*</SUP>1115/80","DSM 10777",0,"Escherichia coli",1
+4835,F34,"DSM 10778",0,"Escherichia coli",1
+4836,F83,"DSM 10779",0,"Escherichia coli",1
+4837,Z40,"DSM 10780",0,"Escherichia coli",1
+4838,Z11,"DSM 10781",0,"Escherichia coli",1
+4839,J206,"DSM 10782",0,"Escherichia coli",1
+4840,GXVII,"DSM 10783",0,"Escherichia coli",1
+4841,B169/16-10,"DSM 10784",0,"Escherichia coli",1
+4842,B149/2-2,"DSM 10785",0,"Escherichia coli",1
+4843,M163/1-3,"DSM 10786",0,"Escherichia coli",1
+4844,M158/1-3,"DSM 10787",0,"Escherichia coli",1
+4845,M79/2-14,"DSM 10788",0,"Escherichia coli",1
+4846,M162/1-5,"DSM 10789",0,"Escherichia coli",1
+4847,2954,"DSM 10790",0,"Escherichia coli",1
+4848,2980,"DSM 10791",0,"Escherichia coli",1
+4849,AXLIII,"DSM 10792",0,"Escherichia coli",1
+4850,AI,"DSM 10793",0,"Escherichia coli",1
+4851,IHE3134,"DSM 10794",0,"Escherichia coli",1
+4852,IHE3132,"DSM 10795",0,"Escherichia coli",1
+4853,20383,"DSM 10796",0,"Escherichia coli",1
+4854,IHE3129,"DSM 10797",0,"Escherichia coli",1
+4855,IHE3130,"DSM 10798",0,"Escherichia coli",1
+4856,IHE3043,"DSM 10799",0,"Escherichia coli",1
+4857,BE1-2928,"DSM 10800",0,"Escherichia coli",1
+4858,A291,"DSM 10801",0,"Escherichia coli",1
+4859,A267,"DSM 10830",0,"Escherichia coli",1
+4860,N78,"DSM 10831",0,"Escherichia coli",1
+4861,IHE3131,"DSM 10832",0,"Escherichia coli",1
+4862,20380,"DSM 10833",0,"Escherichia coli",1
+4863,IHE3135,"DSM 10834",0,"Escherichia coli",1
+4864,A131a,"DSM 10835",0,"Escherichia coli",1
+4865,"CM Pettis","DSM 10836",0,"Escherichia coli",1
+4866,M66/1-10,"DSM 10837",0,"Escherichia coli",1
+4867,IHE3106,"DSM 10838",0,"Escherichia coli",1
+4868,M21/1-3,"DSM 10839",0,"Escherichia coli",1
+4869,B145/7-1,"DSM 10840",0,"Escherichia coli",1
+4870,AXLIV,"DSM 10841",0,"Escherichia coli",1
+4871,A276,"DSM 10851",0,"Escherichia coli",1
+4872,A278,"DSM 10852",0,"Escherichia coli",1
+4873,A279,"DSM 10853",0,"Escherichia coli",1
+4874,A280,"DSM 10854",0,"Escherichia coli",1
+4875,A271,"DSM 10855",0,"Escherichia coli",1
+4876,A274,"DSM 10856",0,"Escherichia coli",1
+4877,C69,"DSM 10857",0,"Escherichia coli",1
+4878,79/311,"DSM 10858",0,"Escherichia coli",1
+4879,C183/77,"DSM 10859",0,"Escherichia coli",1
+4880,delta6671,"DSM 10973",0,"Escherichia coli",1
+4884,,"DSM 11727, ICB 4524",0,"Escherichia coli",1
+4885,Bi623-42,"DSM 11751",0,"Escherichia coli",1
+4886,F8188-41,"DSM 11752",0,"Escherichia coli",1
+4887,F10018-41,"DSM 11753",0,"Escherichia coli",1
+4888,ML309,"DSM 12241, NCIMB 11032",0,"Escherichia coli",1
+4889,13706/60,"DSM 12242, NZRM 3262",0,"Escherichia coli",1
+4890,"15 his-","DSM 12488",0,"Escherichia coli",1
+4894,,"DSM 13631, ATCC 9723, NCIMB 8114",0,"Escherichia coli",1
+4896,C2,"DSM 14166",0,"Escherichia coli",1
+4899,"MHI 813","DSM 15856",0,"Escherichia coli",1
+4900,,"DSM 17076, NCTC 12900, JCM 18426, ATCC 700728, CCM 4787, CECT 4972, CIP 110281, LMG 21756, LMG 21763, NCIMB 14487, NCIMB 50139, VTT E-011782",0,"Escherichia coli",1
+4905,,"DSM 19206, CB 4270",0,"Escherichia coli",1
+4906,T6,"DSM 30082, ATCC 12814",0,"Escherichia coli",1
+4910,"22, 558-228, BU 432, BU 6,9, Oostendorp D 217","DSM 46332, ATCC 9723d, IMET 11268, NCIB 8112",0,"Escherichia coli",1
+4911,"Roepke 532-171, 532-171, BU 428","DSM 46333, ATCC 9663, IMET 11269, NCIB 8877",0,"Escherichia coli",1
+4912,"3072 WS","DSM 46345, IMET 11385",0,"Escherichia coli",1
+4913,,"DSM 46346, IMET 11386",0,"Escherichia coli",1
+4914,B,"DSM 50902, ATCC 15144, ICPB 2262",0,"Escherichia coli",1
+4916,824-DH,"DSM 22311, CIP 105836",0,"Escherichia coli",1
+4917,"CF 0034","DSM 22312, CIP 105860",0,"Escherichia coli",1
+4918,GR102,"DSM 22313, CIP 105870",0,"Escherichia coli",1
+4919,"CF 1702","DSM 22314, CIP 105871",0,"Escherichia coli",1
+4920,MG-1,"DSM 22315, CIP 105877",0,"Escherichia coli",1
+4921,,"DSM 22316, CIP 105893",0,"Escherichia coli",1
+4922,"BfR/NRL-AR-E467, NRL-ECRL 102/2005, NRL-Salm05E00174","DSM 22664, CCUG 61908",0,"Escherichia coli",1
+4923,"BfR/NRL-AR-E476, NRL-EcRL284/06, NRL-Salm06E00094","DSM 22665",0,"Escherichia coli",1
+4924,Z205,"DSM 22690, IMT 18834, KeC KEC337, KeC 337",0,"Escherichia coli",1
+4925,RL325/96,"DSM 22691, AS 4019, IMT 18835, KeC KEC333, KeC 333",0,"Escherichia coli",1
+4926,"ID 12-18","DSM 25944",0,"Escherichia coli",1
+23000,,"DSM 10974, CB 1676",0,"Escherichia coli",1
+23001,3B3BAP1,"DSM 26549",0,"Escherichia coli",1
+23925,,"DSM 19683, CIP 106878, NCTC 13167, WDCM 00179, WR 1",0,"Escherichia coli",1
+23926,"JM109 lambda pir","DSM 26091",0,"Escherichia coli",1
+23927,"A 586","DSM 26863, CGSC 4925",0,"Escherichia coli",1
+24845,S17-1(PAS300),"DSM 25162",0,"Escherichia coli",1
+130301,,"DSM 27502, CB 9149",0,"Escherichia coli",1
+130302,,"DSM 27503, CB 10214",0,"Escherichia coli",1
+130954,Mt1B1,"DSM 28618",0,"Escherichia coli",1
+131713,CFT073,"DSM 103538, ATCC 700928",0,"Escherichia coli",1
+131714,83972,"DSM 103539",0,"Escherichia coli",1
+132730,E2,"DSM 105182, NCTC 13846, CCUG 70662",0,"Escherichia coli",1
+139506,N170,"CIP 110905, NCTC 13216, WDCM 00202, CCM 7395, CCUG 54767, DSM 114409",0,"Escherichia coli",1
+139738,"K-12 CL83 (JM83-recA56) with plasmid pCL1920","DSM 19642, NCCB 3176",0,"Escherichia coli",1
+139739,BW25113,"DSM 27469, CGSC 7636",0,"Escherichia coli",1
+157688,"15095 4596-1","DSM 101113",0,"Escherichia coli",1
+157689,"15095 5505-1","DSM 101114",0,"Escherichia coli",1
+157690,,"DSM 101121",0,"Escherichia coli",1
+157691,,"DSM 101124",0,"Escherichia coli",1
+157692,,"DSM 101126",0,"Escherichia coli",1
+157693,"PTC E007","DSM 103242",0,"Escherichia coli",1
+157694,"PTC E028","DSM 103246",0,"Escherichia coli",1
+157695,"PTC E029","DSM 103247",0,"Escherichia coli",1
+157696,"PTC E037","DSM 103248",0,"Escherichia coli",1
+157697,"PTC E049","DSM 103249",0,"Escherichia coli",1
+157698,"PTC E050","DSM 103250",0,"Escherichia coli",1
+157699,"PTC E053","DSM 103251",0,"Escherichia coli",1
+157700,"APEC 2248","DSM 103255",0,"Escherichia coli",1
+157701,"APEC 2285","DSM 103256",0,"Escherichia coli",1
+157702,"APEC 2293","DSM 103257",0,"Escherichia coli",1
+157703,"APEC 2494","DSM 103259",0,"Escherichia coli",1
+157704,"APEC 2540","DSM 103260",0,"Escherichia coli",1
+157705,"APEC 4498","DSM 103261",0,"Escherichia coli",1
+157706,"APEC 4500","DSM 103262",0,"Escherichia coli",1
+157707,"APEC 4507","DSM 103263",0,"Escherichia coli",1
+157708,"APEC 9062","DSM 103265",0,"Escherichia coli",1
+157709,"292792091, PEG-13-3-8","DSM 105372",0,"Escherichia coli",1
+157710,"A14738, PEG-13-11-48","DSM 105373",0,"Escherichia coli",1
+157711,"J-15270, PEG-13-20-22","DSM 105374",0,"Escherichia coli",1
+157712,"PEG-13-20-13, S-31353","DSM 105375",0,"Escherichia coli",1
+157713,"130, PEG-13-49-74","DSM 105376",0,"Escherichia coli",1
+157714,"PEG-13-34-74, va031895/2","DSM 105377",0,"Escherichia coli",1
+157715,"NVK1 4444-2, PEG-13-26-69","DSM 105378",0,"Escherichia coli",1
+157716,"NVK 11184-2, PEG-13-26-29","DSM 105379",0,"Escherichia coli",1
+157717,"PEG-13-53-6, vk 48022","DSM 105380",0,"Escherichia coli",1
+157718,"PEG-13-53-7, vk 49585","DSM 105381",0,"Escherichia coli",1
+157719,"B13-083514, PEG-13-56-54","DSM 105382",0,"Escherichia coli",1
+157720,"70398460, PEG-13-72-56","DSM 105383",0,"Escherichia coli",1
+157721,"70400222, PEG-13-72-57","DSM 105384",0,"Escherichia coli",1
+157722,"70405816, PEG-13-72-60","DSM 105385",0,"Escherichia coli",1
+157723,"A511515A, PEG-13-78-14","DSM 105386",0,"Escherichia coli",1
+157724,"6-13675, PEG-13-92-32","DSM 105387",0,"Escherichia coli",1
+157725,"1533423-4403-1, PEG-13-103-15","DSM 105388",0,"Escherichia coli",1
+157726,"1853068, PEG-13-105-37","DSM 105389",0,"Escherichia coli",1
+157727,"PEG-13-5-24, AB 3405188","DSM 105390",0,"Escherichia coli",1
+157728,"93214076, PEG-13-20-51","DSM 105391",0,"Escherichia coli",1
+157729,"196-029545, PEG-13-38-44","DSM 105392",0,"Escherichia coli",1
+157730,"34715148, PEG-13-87-17","DSM 105393",0,"Escherichia coli",1
+157731,123794,"DSM 106555",0,"Escherichia coli",1
+157732,123789,"DSM 106556",0,"Escherichia coli",1
+157733,123738,"DSM 106557",0,"Escherichia coli",1
+157734,123745,"DSM 106579",0,"Escherichia coli",1
+157736,"B2032/82 serotype K1","DSM 107164",0,"Escherichia coli",1
+157737,M2,"DSM 107752",0,"Escherichia coli",1
+157738,M25,"DSM 107753",0,"Escherichia coli",1
+157739,AW1.7,"DSM 108612",0,"Escherichia coli",1
+158939,"15095 8246-1","DSM 101112",0,"Escherichia coli",1
+158940,"15085 4431","DSM 101133",0,"Escherichia coli",1
+158941,"15085 5679","DSM 101139",0,"Escherichia coli",1
+158942,"PTC E018","DSM 103245",0,"Escherichia coli",1
+158943,"APEC 2133","DSM 103254",0,"Escherichia coli",1
+158944,"APEC 2469","DSM 103258",0,"Escherichia coli",1
+158945,"APEC 10400","DSM 103266",0,"Escherichia coli",1
+158948,O145:H28/E.coliA3,"DSM 110652",0,"Escherichia coli",1
+160039,"10674229 BWKH 283","DSM 112522",0,"Escherichia coli",1
+160040,"10665326 BWKH 282","DSM 112521",0,"Escherichia coli",1
+160041,"10684729 BWKH 281","DSM 112520",0,"Escherichia coli",1
+160042,"10665312 BWKH 280","DSM 112519",0,"Escherichia coli",1
+160043,"BL21(DE3) pRham hIL-10L-H Klon 2, BL21(DE3) pRham hIL-10L-H #1351","DSM 102052",0,"Escherichia coli",1
+160044,"BL21(DE3) pAZ1LT7 Klon 81, BL21(DE3) pAZ1LT7 #1308","DSM 102053",0,"Escherichia coli",1
+160045,"BWKH 235","DSM 111036",0,"Escherichia coli",1
+160046,"BWKH 288","DSM 111506",0,"Escherichia coli",1
+160047,"BWKH 350","DSM 111509",0,"Escherichia coli",1
+160048,"BWKH 336","DSM 111510",0,"Escherichia coli",1
+160049,"BWKH 368","DSM 111511",0,"Escherichia coli",1
+160050,"10675817 BWKH 265","DSM 112481",0,"Escherichia coli",1
+160051,"10679905 BWKH 278","DSM 112482",0,"Escherichia coli",1
+160052,"10665402 BWKH 279","DSM 112483",0,"Escherichia coli",1
+160053,"10684313, BWKH 266","DSM 112484",0,"Escherichia coli",1
+160054,"10672678, BWHK 267","DSM 112485",0,"Escherichia coli",1
+160055,"10684009 BWKH 284","DSM 112557",0,"Escherichia coli",1
+160056,"10679934 BWKH 285","DSM 112558",0,"Escherichia coli",1
+160057,"10687628 BWKH 286","DSM 112559",0,"Escherichia coli",1
+160058,"10684921 BWKH 287","DSM 112560",0,"Escherichia coli",1
+160059,"10685049 BWKH 289","DSM 112565",0,"Escherichia coli",1
+160060,"10685079 BWKH 290","DSM 112566",0,"Escherichia coli",1
+160061,"19003629 BWKH 268","DSM 112594",0,"Escherichia coli",1
+160062,"10684137 BWKH 269","DSM 112595",0,"Escherichia coli",1
+160063,"10665303 BWKH 270","DSM 112614",0,"Escherichia coli",1
+160064,"10665131 BWKH 271","DSM 112615",0,"Escherichia coli",1
+160065,"19003501 BWKH 272","DSM 112616",0,"Escherichia coli",1
+169224,"APEC 5211","DSM 103264",0,"Escherichia coli",1
+169225,"BWKH 314","DSM 111507",0,"Escherichia coli",1
+169226,CLA-AP-6,"DSM 112109",0,"Escherichia coli",1
+169227,CLA-AP-7,"DSM 112110",0,"Escherichia coli",1
+169228,CLA-AP-8,"DSM 112111",0,"Escherichia coli",1
+169229,CLA-AP-9,"DSM 112112",0,"Escherichia coli",1
+169230,"CLA-AP-10, Cla-AP10, Cla_AP_10","DSM 112113",0,"Escherichia coli",1
+169231,CLA-AP-11,"DSM 112114",0,"Escherichia coli",1
+169232,CLA-AP-14,"DSM 112116",0,"Escherichia coli",1
+169233,Ec2842,"DSM 112117",0,"Escherichia coli",1
+169234,Ec3550,"DSM 112118",0,"Escherichia coli",1
+169235,Ec3920,"DSM 112119",0,"Escherichia coli",1
+169236,Ec4221,"DSM 112120",0,"Escherichia coli",1
+169237,Ec7384,"DSM 112121",0,"Escherichia coli",1
+169238,Ec8178,"DSM 112122",0,"Escherichia coli",1
+169239,Ec8850,"DSM 112123",0,"Escherichia coli",1
+169240,EcTv10,"DSM 112124",0,"Escherichia coli",1
+169241,EcSiggi,"DSM 112125",0,"Escherichia coli",1
+169242,"Janvier 1a","DSM 112126",0,"Escherichia coli",1
+169243,"Charles River B11","DSM 112127",0,"Escherichia coli",1
+169244,ß2155,"DSM 113367",0,"Escherichia coli",1
+4930,,"DSM 13698, ATCC 35469, CDC 0568-73, CCUG 18766, JCM 21226, CIP 103357, CIP 104947, IAM 14443, LMG 7866, NBRC 102419, NCTC 12128",1,"Escherichia fergusonii",1
+4931,Ef137,"DSM 25831",0,"Escherichia fergusonii",1
+5447,,"DSM 3987, ATCC 25548, VPI 1084B",1,"Eubacterium tortuosum",1
+5758,A210/81,"DSM 20699, NCTC 11464",0,"Fusobacterium naviforme",1
+5776,Fn524,"DSM 19678, ATCC 51357, CCUG 42162, CIP 104859, JCM 3724, VPI 6161",1,"Fusobacterium necrophorum subsp. funduliforme",1
+5760,"Fievez 2358, Moore VPI 2891","CCUG 4948, DSM 21784, ATCC 25286, CCUG 9994, CIP 104559, DSM 19788, JCM 3718, VPI 2891, BCRC 10679, NCTC 13726",1,"Fusobacterium necrophorum subsp. necrophorum",1
+5759,2352,"DSM 20698, NCTC 10575, CCUG 17326",0,"Fusobacterium necrophorum subsp. necrophorum",1
+5774,,"DSM 19868, ATCC 8501, CCUG 4858, NCTC 10560, JCM 6320, BCRC 17682",1,"Fusobacterium varium",1
+231,1152-78,"DSM 7447, ATCC 51173, NCFB 2835, CCUG 32999, CIP 107044, CCM 4548",1,"Globicatella sanguinis",1
+232,1434-83,"DSM 7448, NCFB 2824",0,"Globicatella sanguinis",1
+233,1713-79,"DSM 7449, NCFB 2827",0,"Globicatella sanguinis",1
+4938,,"DSM 30163, ATCC 13337, CIP 57.31, NCDC 434-68, NCTC 8105, WDCM 00095, JCM 1666, CCUG 15720, CCUG 41547, CECT 158, CGMCC 1.2026, HAMBI 1876, LMG 10392, NBRC 105685, NCIMB 11999, NCIMB 13060, NRRL B-4260, VTT E-022142, VTT E-991294",1,"Hafnia alvei",1
+4934,5-5,"DSM 15533",0,"Hafnia alvei",1
+4935,"type 32011","DSM 30097, ATCC 11604",0,"Hafnia alvei",1
+4936,"WS 10209","DSM 30098",0,"Hafnia alvei",1
+4937,21183,"DSM 30101",0,"Hafnia alvei",1
+23928,"WS 20745","DSM 30099",0,"Hafnia alvei",1
+130955,1004,"DSM 24119",0,"Hafnia alvei",1
+131728,FB1,"DSM 102038",0,"Hafnia alvei",1
+4939,U-5,"DSM 23255, CCUG 429",0,"Hafnia paralvei",1
+6098,"Fennel 165","DSM 5359, ATCC 35683, CCUG 18818, LMG 7543, NCTC 12423, CIP 103752",1,"Helicobacter cinaedi",1
+6111,ASB1,"DSM 24751, LMG 26292",1,"Helicobacter heilmannii",1
+6110,ASB3,"DSM 23983",0,"Helicobacter heilmannii",1
+135474,H152,"CIP 104787, ATCC 51801, CCUG 33837, NCTC 12824, DSM 23160",1,"Helicobacter pullorum",1
+4358,,"NCDC 819-56, IFO 13534, DSM 30053, ATCC 13048, CCUG 1429, CECT 684, CIP 60.86, DSM 26516, JCM 1235, KCTC 2190, LMG 2094, NBRC 13534, NCTC 10006, WDCM 00175, CDC 819-56, ACM 4982, BCRC 10370, CGMCC 1.2021, HAMBI 101, HAMBI 1898, HUT 8111, IAM 12348, LMG 2968, NCIMB 10102, PCM 532, VTT E-88325",1,"Klebsiella aerogenes",1
+23910,,"DSM 12058, ICB 5240",0,"Klebsiella aerogenes",1
+4941,479-2,"DSM 5175, ATCC 13182, IAM 14201, JCM 1665, CCUG 15717, CECT 860, CIP 103434, KACC 11934, LMG 3055, NBRC 102593, NBRC 105695, NCIMB 12259, VTT E-97766",1,"Klebsiella oxytoca",1
+4942,,"CCUG 29298, DSM 6673, ATCC 43863",0,"Klebsiella oxytoca",1
+4943,M5a1,"DSM 7342, DSM 3539, NCIB 12204",0,"Klebsiella oxytoca",1
+4944,TauN1,"DSM 16963",0,"Klebsiella oxytoca",1
+4945,Colworth2703,"DSM 25736, CIP 110043, NCIMB 12819, WDCM 00096",0,"Klebsiella oxytoca",1
+130303,BAS-10,"DSM 29614",0,"Klebsiella oxytoca",1
+130956,1028,"DSM 24121",0,"Klebsiella oxytoca",1
+4946,A,"DSM 1620",0,"Klebsiella pneumoniae",1
+4947,,"DSM 1643, BMTU 5",0,"Klebsiella pneumoniae",1
+4948,240,"DSM 2026, ATCC 15380, NCIB 418, NCTC 418",0,"Klebsiella pneumoniae",1
+4949,"H 273","DSM 4270",0,"Klebsiella pneumoniae",1
+4950,PZH,"DSM 4799, ATCC 25955, PZH 572",0,"Klebsiella pneumoniae",1
+4951,62-1,"DSM 5758, ATCC 25306, DSM 1470",0,"Klebsiella pneumoniae",1
+4952,"WS 1758","DSM 6135",0,"Klebsiella pneumoniae",1
+4956,GT1,"DSM 12082",0,"Klebsiella pneumoniae",1
+4957,"10-04-09, B02624","DSM 16609",0,"Klebsiella pneumoniae",1
+4961,,"DSM 25721, NCCP 13840",0,"Klebsiella pneumoniae",1
+4962,"K6, MCV37","DSM 26371, ATCC 700603, CCUG 45421, LMG 20218",0,"Klebsiella pneumoniae",1
+23932,"K. pneumoniae 63","DSM 12059, ICB 6370",0,"Klebsiella pneumoniae",1
+132748,pC4,"DSM 15565",0,"Klebsiella pneumoniae",1
+157926,"Kp-Goe-33208, Kp_Goe_33208","DSM 103696",0,"Klebsiella pneumoniae",1
+157927,"Kp-Goe-39795, Kp_Goe_39795","DSM 103697",0,"Klebsiella pneumoniae",1
+157928,"Kp-Goe-62629, Kp_Goe_62629","DSM 103698",0,"Klebsiella pneumoniae",1
+157929,"Kp-Goe-71070, Kp_Goe_71070","DSM 103699",0,"Klebsiella pneumoniae",1
+157930,"Kp-Goe-821588, Kp_Goe_821588","DSM 103700",0,"Klebsiella pneumoniae",1
+157931,"Kp-Goe-822579, Kp_Goe_822579","DSM 103701",0,"Klebsiella pneumoniae",1
+157932,"Kp-Goe-822917, Kp_Goe_822917","DSM 103702",0,"Klebsiella pneumoniae",1
+157933,"Kp-Goe-825795, Kp_Goe_825795","DSM 103703",0,"Klebsiella pneumoniae",1
+157934,"Kp-Goe-827024, Kp_Goe_827024","DSM 103704",0,"Klebsiella pneumoniae",1
+157935,"Kp-Goe-827026, Kp_Goe_827026","DSM 103705",0,"Klebsiella pneumoniae",1
+157936,"Kp-Goe-828304, Kp_Goe_828304","DSM 103706",0,"Klebsiella pneumoniae",1
+157937,"Kp-Goe-121641, Kp_Goe_121641","DSM 103707",0,"Klebsiella pneumoniae",1
+157938,"Kp-Goe-149473, Kp_Goe_149473","DSM 103708",0,"Klebsiella pneumoniae",1
+157939,"Kp-Goe-149832, Kp_Goe_149832","DSM 103709",0,"Klebsiella pneumoniae",1
+157940,"Kp-Goe-152021, Kp_Goe_152021","DSM 103710",0,"Klebsiella pneumoniae",1
+157941,"Kp-Goe-154414, Kp_Goe_154414","DSM 103711",0,"Klebsiella pneumoniae",1
+159215,"BWKH 500","DSM 109288",0,"Klebsiella pneumoniae",1
+159216,"BWKH 501","DSM 109289",0,"Klebsiella pneumoniae",1
+159217,"BWKH 502","DSM 109290",0,"Klebsiella pneumoniae",1
+159218,"BWKH 504","DSM 109291",0,"Klebsiella pneumoniae",1
+159219,"BWKH 506","DSM 109292",0,"Klebsiella pneumoniae",1
+159220,"BWKH 507","DSM 109293",0,"Klebsiella pneumoniae",1
+159221,"BWKH 510","DSM 109294",0,"Klebsiella pneumoniae",1
+159222,"BWKH 511","DSM 109295",0,"Klebsiella pneumoniae",1
+159223,"BWKH 514","DSM 109296",0,"Klebsiella pneumoniae",1
+159224,"BWKH 516","DSM 109297",0,"Klebsiella pneumoniae",1
+159225,"BWKH 517","DSM 109298",0,"Klebsiella pneumoniae",1
+159226,"BWKH 518","DSM 109299",0,"Klebsiella pneumoniae",1
+159227,"BWKH 520","DSM 109300",0,"Klebsiella pneumoniae",1
+159228,"BWKH 522","DSM 109301",0,"Klebsiella pneumoniae",1
+159229,"BWKH 523","DSM 109302",0,"Klebsiella pneumoniae",1
+159230,"BWKH 525","DSM 109303",0,"Klebsiella pneumoniae",1
+159231,"BWKH 387","DSM 109306",0,"Klebsiella pneumoniae",1
+159232,"BWKH 388","DSM 109307",0,"Klebsiella pneumoniae",1
+159233,"BWKH 390","DSM 109308",0,"Klebsiella pneumoniae",1
+159234,"BWKH 391","DSM 109309",0,"Klebsiella pneumoniae",1
+159235,"BWKH 393","DSM 109310",0,"Klebsiella pneumoniae",1
+159236,"BWKH 395","DSM 109311",0,"Klebsiella pneumoniae",1
+159237,"BWKH 396","DSM 109312",0,"Klebsiella pneumoniae",1
+159238,"BWKH 397","DSM 109313",0,"Klebsiella pneumoniae",1
+159239,"BWKH 398","DSM 109314",0,"Klebsiella pneumoniae",1
+159240,"BWKH 399","DSM 109315",0,"Klebsiella pneumoniae",1
+159241,"BWKH 401","DSM 109316",0,"Klebsiella pneumoniae",1
+159242,"BWKH 402","DSM 109317",0,"Klebsiella pneumoniae",1
+159243,"BWKH 403","DSM 109318",0,"Klebsiella pneumoniae",1
+159244,"BWKH 404","DSM 109319",0,"Klebsiella pneumoniae",1
+159245,"BWKH 406","DSM 109320",0,"Klebsiella pneumoniae",1
+159246,"BWKH 407","DSM 109321",0,"Klebsiella pneumoniae",1
+159247,"BWKH 410","DSM 109322",0,"Klebsiella pneumoniae",1
+159248,"BWKH 411","DSM 109323",0,"Klebsiella pneumoniae",1
+159249,"BWKH 412","DSM 109324",0,"Klebsiella pneumoniae",1
+159250,"BWKH 413","DSM 109325",0,"Klebsiella pneumoniae",1
+159251,"BWKH 415","DSM 109326",0,"Klebsiella pneumoniae",1
+159252,"BWKH 416","DSM 109327",0,"Klebsiella pneumoniae",1
+159253,"BWKH 421","DSM 109328",0,"Klebsiella pneumoniae",1
+159254,"BWKH 424","DSM 109329",0,"Klebsiella pneumoniae",1
+159255,"BWKH 425","DSM 109330",0,"Klebsiella pneumoniae",1
+159256,"BWKH 428","DSM 109331",0,"Klebsiella pneumoniae",1
+159257,"BWKH 429","DSM 109332",0,"Klebsiella pneumoniae",1
+159258,"BWKH 430","DSM 109333",0,"Klebsiella pneumoniae",1
+159259,"BWKH 485","DSM 109434",0,"Klebsiella pneumoniae",1
+159260,"BWKH 432","DSM 109334",0,"Klebsiella pneumoniae",1
+159261,"BWKH 433","DSM 109335",0,"Klebsiella pneumoniae",1
+159262,"BWKH 434","DSM 109336",0,"Klebsiella pneumoniae",1
+159263,"BWKH 435","DSM 109337",0,"Klebsiella pneumoniae",1
+159264,"BWKH 439","DSM 109338",0,"Klebsiella pneumoniae",1
+159265,"BWKH 440","DSM 109339",0,"Klebsiella pneumoniae",1
+159266,"BWKH 441","DSM 109340",0,"Klebsiella pneumoniae",1
+159267,"BWKH 442","DSM 109341",0,"Klebsiella pneumoniae",1
+159268,"BWKH 443","DSM 109363",0,"Klebsiella pneumoniae",1
+159269,"BWKH 444","DSM 109364",0,"Klebsiella pneumoniae",1
+159270,"BWKH 445","DSM 109365",0,"Klebsiella pneumoniae",1
+159271,"BWKH 446","DSM 109366",0,"Klebsiella pneumoniae",1
+159272,"BWKH 448","DSM 109367",0,"Klebsiella pneumoniae",1
+159273,"BWKH 449","DSM 109368",0,"Klebsiella pneumoniae",1
+159274,"BWKH 450","DSM 109369",0,"Klebsiella pneumoniae",1
+159275,"BWKH 451","DSM 109370",0,"Klebsiella pneumoniae",1
+159276,"BWKH 452","DSM 109371",0,"Klebsiella pneumoniae",1
+159277,"BWKH 453","DSM 109372",0,"Klebsiella pneumoniae",1
+159278,"BWKH 454","DSM 109373",0,"Klebsiella pneumoniae",1
+159279,"BWKH 457","DSM 109383",0,"Klebsiella pneumoniae",1
+159280,"BWKH 458","DSM 109384",0,"Klebsiella pneumoniae",1
+159281,"BWKH 459","DSM 109385",0,"Klebsiella pneumoniae",1
+159282,"BWKH 460","DSM 109386",0,"Klebsiella pneumoniae",1
+159283,"BWKH 461","DSM 109387",0,"Klebsiella pneumoniae",1
+159284,"BWKH 462","DSM 109388",0,"Klebsiella pneumoniae",1
+159285,"BWKH 463","DSM 109389",0,"Klebsiella pneumoniae",1
+159286,"BWKH 466","DSM 109390",0,"Klebsiella pneumoniae",1
+159287,"BWKH 467","DSM 109391",0,"Klebsiella pneumoniae",1
+159288,"BWKH 468","DSM 109392",0,"Klebsiella pneumoniae",1
+159289,"BWKH 469","DSM 109393",0,"Klebsiella pneumoniae",1
+159290,"BWKH 470","DSM 109394",0,"Klebsiella pneumoniae",1
+159291,"BWKH 471","DSM 109395",0,"Klebsiella pneumoniae",1
+159292,"BWKH 473","DSM 109396",0,"Klebsiella pneumoniae",1
+159293,"BWKH 456","DSM 109374",0,"Klebsiella pneumoniae",1
+159294,"BWKH 475","DSM 109397",0,"Klebsiella pneumoniae",1
+159295,"BWKH 476","DSM 109398",0,"Klebsiella pneumoniae",1
+159296,"BWKH 477","DSM 109426",0,"Klebsiella pneumoniae",1
+159297,"BWKH 478","DSM 109427",0,"Klebsiella pneumoniae",1
+159298,"BWKH 479","DSM 109428",0,"Klebsiella pneumoniae",1
+159299,"BWKH 480","DSM 109429",0,"Klebsiella pneumoniae",1
+159300,"BWKH 481","DSM 109430",0,"Klebsiella pneumoniae",1
+159301,"BWKH 482","DSM 109431",0,"Klebsiella pneumoniae",1
+159302,"BWKH 483","DSM 109432",0,"Klebsiella pneumoniae",1
+159303,"BWKH 484","DSM 109433",0,"Klebsiella pneumoniae",1
+159304,"BWKH 490","DSM 109435",0,"Klebsiella pneumoniae",1
+159305,"BWKH 492","DSM 109436",0,"Klebsiella pneumoniae",1
+159306,"BWKH 494","DSM 109437",0,"Klebsiella pneumoniae",1
+159307,"BWKH 496","DSM 109438",0,"Klebsiella pneumoniae",1
+159308,"BWKH 497","DSM 109439",0,"Klebsiella pneumoniae",1
+159309,"BWKH 498","DSM 109440",0,"Klebsiella pneumoniae",1
+169368,108453,"DSM 108453",0,"Klebsiella pneumoniae",1
+4959,298-53,"CCUG 225, NCDC 410-68, DSM 30104, ATCC 13883, IAM 14200, JCM 1662, NCTC 9633, WDCM 00097, BCRC 10692, CECT 143, CIP 82.91, IFO 14940, LMG 2095, NBRC 14940, NCDC 298-53, NCIMB 13883",1,"Klebsiella pneumoniae subsp. pneumoniae",1
+4953,A3,"DSM 9376, ATCC 12657, CDC 383-68, NCIB 8805",0,"Klebsiella pneumoniae subsp. pneumoniae",1
+4954,,"DSM 9377, ATCC 13887, CDC 421-68, NCTC 9496, CCUG 31615, CDC 4610-53",0,"Klebsiella pneumoniae subsp. pneumoniae",1
+4955,C122,"DSM 11678, ATCC 33495",0,"Klebsiella pneumoniae subsp. pneumoniae",1
+4958,C37,"DSM 30102, ATCC 13882, IFO 13541, NBRC 13541, NCIB 8267, NCTC 8172, CCUG 28450, NCDC 388-68, JCM 20507, IAM 12351",0,"Klebsiella pneumoniae subsp. pneumoniae",1
+4960,,"DSM 30105, ATCC 9997",0,"Klebsiella pneumoniae subsp. pneumoniae",1
+130306,"07A044, CRBIP28.112, SB30","CCUG 70916, DSM 28212, CIP 110770",1,"Klebsiella quasipneumoniae subsp. similipneumoniae",1
+158169,IF3SW-P1,"DSM 104457",0,"Klebsiella quasipneumoniae subsp. similipneumoniae",1
+4940,,"DSM 4798, ATCC 8724, BUCSAV 143, CCM 1901, NCDC 380-68, NCIB 8017, NCIB 8521, NRC 474, NRRL B-199, JCM 20051, CIP 110762, IAM 1102, IFO 3318, NBRC 3318, NCIMB 8017, NCIMB 8521, NCIMB 9901",0,"Klebsiella sp.",1
+4966,F2R9,"DSM 15968, ATCC BAA 830, CFNE 2004, CCUG 53906, CIP 108585",1,"Klebsiella variicola subsp. variicola",1
+6547,,"DSM 5457, NCIMB 12688, PLY pLY101, YIT 9032",0,"Lacticaseibacillus paracasei subsp. paracasei",1
+14684,1c,"DSM 20064",0,"Lactococcus garvieae",1
+14685,43113,"DSM 20385",0,"Lactococcus garvieae",1
+14687,0332,"DSM 20685, NCDO 2156",0,"Lactococcus garvieae",1
+130969,M14,"DSM 29394, CSUR P1376",0,"Lactococcus garvieae",1
+132638,BSN307,"DSM 100577, KCTC 21083, MCC 2824",1,"Lactococcus formosensis subsp. bovis",1
+14686,0159,"DSM 20684, ATCC 43921, JCM 10343, NCDO 2155, CCUG 32208, NCIMB 702155, ATCC 49156, BCRC 17074, CECT 4531, CIP 102507, HAMBI 1592, JCM 12256, KCTC 3772, LMG 8893, NBRC 100934, NCFB 2155",1,"Lactococcus garvieae subsp. garvieae",1
+14683,YT-3,"DSM 6783, ATCC 49156, CIP 104369, JCM 8735, CECT 4828, CECT 5274, LMG 12889, NCIMB 13208",0,"Lactococcus garvieae subsp. garvieae",1
+14695,"3078, Lactose plasmid","DSM 4641",0,"Lactococcus lactis subsp. lactis",1
+14696,"Lactose plasmid, W53","DSM 4642",0,"Lactococcus lactis subsp. lactis",1
+14697,"FA318, Lactose plasmid","DSM 4643",0,"Lactococcus lactis subsp. lactis",1
+14698,"Lactose/Citrate plasmid, W932","DSM 4644",0,"Lactococcus lactis subsp. lactis",1
+17860,C-1013-b,"DSM 1135, ATCC 14201, JCM 12969, NCTC 10249, CCUG 34316, CIP 105792",1,"Leptotrichia buccalis",1
+11721,1266/56A&B,"DSM 10531, ATCC 33396, NCTC 9380",1,"Mannheimia haemolytica",1
+11720,"SVA 105","DSM 5283, CCUG 24141",0,"Mannheimia haemolytica",1
+8607,PG21,"DSM 25592, ATCC 23114, CIP 103715, IFO (now NBRC) 14850, NCTC 10111, CCUG 50616",1,"Metamycoplasma hominis",1
+8606,ZK-CU2,"DSM 19104",0,"Metamycoplasma hominis",1
+8153,L-3,"DSM 6328, ATCC 10900, CDC KC745, IMET 11301, JCM 17254, CCUG 2133, NCTC 11013, LMG 986, NCDC KC 745, CIP 70.40, IAM 12313, LMG 5299",1,"Moraxella bovis",1
+8154,MB21,"DSM 6329, ATCC 43760",0,"Moraxella bovis",1
+8155,"Ep 300","DSM 46335, CCM 5619, IMET 11299",0,"Moraxella bovis",1
+8161,"Ne 11, Nell","CCUG 353, NCTC 11020, LMG 11192, DSM 9143, ATCC 25238",1,"Moraxella catarrhalis",1
+8162,1908,"DSM 11994, ATCC 43617",0,"Moraxella catarrhalis",1
+8157,A1920,"DSM 6998, ATCC 19976, NBRC 111460, NCTC 10465, CCUG 350, LMG 5131, JCM 17842, BCRC 10705, CCM 5605, CECT 460, CIP 68.35",1,"Moraxella osloensis",1
+8156,"trp E55, <I>trp</I> E55","DSM 6359, ATCC 29721",0,"Moraxella osloensis",1
+8158,ES1-183-5,"DSM 30536",0,"Moraxella osloensis",1
+8159,K2-13,"DSM 30914",0,"Moraxella osloensis",1
+169341,Turin5-S5,"DSM 113922",0,"Moraxella osloensis",1
+131822,H1r,"DSM 103281",0,"Morganella morganii",1
+4986,"M 11, 33 M","DSM 30164, ATCC 25830, IFO 3848, LMG 7874, NBRC 3848, NCIB 235, NCTC 235, WDCM 00112, CCUG 6328, JCM 1672, ATCC 8076H, BCRC 10706, CECT 173, CGMCC 1.6767, CIP 103763, CIP A231, KACC 13822, NBRC 105691, NCCB 73065, NCIMB 235",1,"Morganella morganii subsp. morganii",1
+4984,"6675, M4","DSM 6675, ATCC 25829, NCTC 417",0,"Morganella morganii subsp. morganii",1
+4985,"21, 23","DSM 30117, ATCC 8019, CCM 680, NCIB 10466",0,"Morganella morganii subsp. morganii",1
+4987,,"DSM 46262, CCM 125, IMET 10826, SG 1080",0,"Morganella morganii subsp. morganii",1
+8414,,"DSM 43493, SN 292",0,"Mycobacterium abscessus",1
+8416,,"DSM 44196, ATCC 19977, CCUG 20993, CIP 104536, JCM 13569, NCTC 13031, TMC 1543, Hauduroy L948, CCUG 27982",1,"Mycobacterium abscessus subsp. abscessus",1
+8415,9404L,"DSM 43507, SN 589",0,"Mycobacterium abscessus subsp. abscessus",1
+8417,B98-10.22.0168,"DSM 44567",0,"Mycobacterium abscessus subsp. abscessus",1
+8547,BD,"DSM 45149, CCUG 50184, CIP 108541, JCM 15297, BCRC 16915",1,"Mycobacterium abscessus subsp. bolletii",1
+8546,,"DSM 45103, CCUG 48898, CIP 108297, KCTC 19086, JCM 15300, Timone LB, BCRC 16916",1,"Mycobacterium abscessus subsp. massiliense",1
+169568,19005109,"DSM 113267",0,"Mycobacterium abscessus subsp. massiliense",1
+169569,20004644,"DSM 113268",0,"Mycobacterium abscessus subsp. massiliense",1
+8431,"3056, N61H","DSM 44297, ATCC 25276, CCUG 29115, TMC 803",1,"Mycobacterium asiaticum",1
+8430,"Runyon 3016, N27A","DSM 44292, ATCC 25274, CCUG 29113",0,"Mycobacterium asiaticum",1
+24234,4355387,"DSM 45439, CCUG 56331, CIP 109827, CSUR P34, JCM 17323",0,"Mycobacterium avium",1
+8419,"SSC 1336","DSM 44156, ATCC 25291, TMC 724, CCUG 20992, NCTC 13034, CIP 104244",1,"Mycobacterium avium subsp. avium",1
+8418,HaIV,"DSM 43216, SN 304",0,"Mycobacterium avium subsp. avium",1
+8420,McKee1,"DSM 44157, ATCC 15769",0,"Mycobacterium avium subsp. avium",1
+8421,"chicken AHT 1","DSM 44158, ATCC 19421, NCTC 8559",0,"Mycobacterium avium subsp. avium",1
+8439,,"DSM 44133, ATCC 19698, TMC 807, CCUG 55483, CIP 103963",1,"Mycobacterium avium subsp. paratuberculosis",1
+8440,1351,"DSM 44135",0,"Mycobacterium avium subsp. paratuberculosis",1
+169420,JIII-386,"DSM 108962",0,"Mycobacterium avium subsp. paratuberculosis",1
+8445,6409,"DSM 44175, ATCC 49884, CCUG 47446, CIP 103317",1,"Mycobacterium avium subsp. silvaticum",1
+8473,,"DSM 44243, ATCC 51131, CCUG 39185, JCM 12373, CDC 90-0899, CIP 106109",1,"Mycobacterium celatum",1
+8570,RAMC,"DSM 43804, ATCC 35752, CCUG 47445, IMET 10609, JCM 6388, NCTC 946, TMC 1544, CIP 104535, KCTC 9505, NCIMB 1474",1,"Mycobacterium chelonae",1
+8560,10546,"DSM 43217, ATCC 19236, SN 281R",0,"Mycobacterium chelonae",1
+8561,"Magnussen 921","DSM 43283, ATCC 14472, JCM 6390",0,"Mycobacterium chelonae",1
+8562,,"DSM 43483, ATCC 19535, SN 282",0,"Mycobacterium chelonae",1
+8563,,"DSM 43484, ATCC 19536, SN 283",0,"Mycobacterium chelonae",1
+8564,,"DSM 43485, ATCC 19537, SN 284",0,"Mycobacterium chelonae",1
+8565,,"DSM 43486, ATCC 19538, SN 285",0,"Mycobacterium chelonae",1
+8567,,"DSM 43488, ATCC 19539, SN 287",0,"Mycobacterium chelonae",1
+8568,,"DSM 43489, ATCC 19540, IMET 10657, SN 288",0,"Mycobacterium chelonae",1
+8569,,"DSM 43490, SN 289",0,"Mycobacterium chelonae",1
+8571,788,"DSM 46627, IMET 10611",0,"Mycobacterium chelonae",1
+8481,484,"DSM 44368, JCM 12406, CIP 106831",1,"Mycobacterium elephantis",1
+24233,MLB-A15,"DSM 45745",0,"Mycobacterium elephantis",1
+8247,"D-25 (TMC 1541)","DSM 43991, ATCC 14474, TMC 1541, CCUG 29041, CCUG 32167",1,"Mycobacterium flavescens",1
+8250,"P.H.S. 383","DSM 43077, IMRU 981",0,"Mycobacterium fortuitum",1
+8251,"Aquis Ko 923","DSM 43220, IMET 10652, SN 201",0,"Mycobacterium fortuitum",1
+8259,"Cruz 1, GB 178, Gdf M93, Lausanne 1021, X42","DSM 46621, ATCC 6841, CCUG 20994, CIP 104534, IFO 13159, IMET 10605, JCM 6387, NBRC 13159, NCTC 10394, TMC 1529, RIMD 1317004, Tsukamura 18112, CCUG 27973, KCTC 9510, PCM 672",1,"Mycobacterium fortuitum subsp. fortuitum",1
+8248,"M 18","DSM 43075, IMRU 681",0,"Mycobacterium fortuitum subsp. fortuitum",1
+8252,"282, Ko 925","DSM 43475, SN 203",0,"Mycobacterium fortuitum subsp. fortuitum",1
+8253,,"DSM 43476, SN 210",0,"Mycobacterium fortuitum subsp. fortuitum",1
+8254,8077,"DSM 43477, SN 216",0,"Mycobacterium fortuitum subsp. fortuitum",1
+8255,"Minetti 82","DSM 43478, SN 230",0,"Mycobacterium fortuitum subsp. fortuitum",1
+8258,"1000 B","DSM 43482, SN 265",0,"Mycobacterium fortuitum subsp. fortuitum",1
+8260,1000,"DSM 46622, IMET 10606",0,"Mycobacterium fortuitum subsp. fortuitum",1
+8261,1000B,"DSM 46623, IMET 10607",0,"Mycobacterium fortuitum subsp. fortuitum",1
+135874,M069,"DSM 44492, ATCC 700504, CCUG 58730, CDC 860673, JCM 12689, CIP 106349",1,"Mycobacterium goodii",1
+8513,"1, 141420001","DSM 44634, ATCC 29548, CCUG 47452, CIP 105049, TMC 804, JCM 15465, NCTC 11185",1,"Mycobacterium haemophilum",1
+8404,N100616,"DSM 44161, ATCC 23068, NCTC 10425",0,"Mycobacterium intracellulare",1
+8405,2123,"DSM 44365",0,"Mycobacterium intracellulare",1
+8406,,"DSM 44655",0,"Mycobacterium intracellulare",1
+8403,3600,"DSM 43223, ATCC 13950, ATCC 15985, JCM 6384, NCTC 10682, CCUG 28005, NCTC 13025, TMC 1406, CIP 104243, SN 424, KCTC 9514",1,"Mycobacterium intracellulare subsp. intracellulare",1
+8393,"G133 Bostrom","DSM 44162, ATCC 12478, JCM 6379, TMC 1204, CCUG 20997, CCUG 27787, CECT 3030, CIP 104589, KCTC 9515, NCTC 13024, RIMD 1320001",1,"Mycobacterium kansasii",1
+8381,9403L,"DSM 43221, SN 588",0,"Mycobacterium kansasii",1
+8382,,"DSM 43224, SN 502",0,"Mycobacterium kansasii",1
+8383,"svizensky 1218","DSM 43494, IMET 10658, SN 501",0,"Mycobacterium kansasii",1
+8384,1526,"DSM 43495, IMET 10659, SN 511",0,"Mycobacterium kansasii",1
+8385,"PKG 24","DSM 43496, SN 529",0,"Mycobacterium kansasii",1
+8386,9100,"DSM 43497, SN 531",0,"Mycobacterium kansasii",1
+8387,"8561 Lille (white variant)","DSM 43498, IMET 10660, SN 537",0,"Mycobacterium kansasii",1
+8388,8563,"DSM 43499, SN 538",0,"Mycobacterium kansasii",1
+8389,1672,"DSM 43501, SN 541",0,"Mycobacterium kansasii",1
+8390,"Kansasii 10456 (white variant)","DSM 43502, SN 542",0,"Mycobacterium kansasii",1
+8391,12508,"DSM 43503, IMET 10661, SN 550",0,"Mycobacterium kansasii",1
+8392,"1250 B II","DSM 43504, SN 551",0,"Mycobacterium kansasii",1
+8486,938,"DSM 44476, ATCC 700351, CIP 104973, CCUG 37984, JCM 12375",1,"Mycobacterium mageritense",1
+8487,1336,"DSM 44477",0,"Mycobacterium mageritense",1
+8428,"Mo 816","DSM 44163, ATCC 29571, TMC 802, CCUG 37761, JCM 13391, CIP 105775, NCTC 11298",1,"Mycobacterium malmoense",1
+8427,6759/71,"DSM 44053",0,"Mycobacterium malmoense",1
+8444,,"DSM 44164, ATCC 19530, ATCC 23067, JCM 6364, NCTC 10424, TMC 1481, CCUG 28009, CIP 106811",1,"Mycobacterium nonchromogenicum",1
+8496,"E170-1, E846","DSM 44572, ATCC BAA 377, CIP 107748",1,"Mycobacterium palustre",1
+8495,"3189/96, 629","DSM 44571",0,"Mycobacterium palustre",1
+8276,"Bojalil 40","DSM 43271, ATCC 14467, ATCC 23023, IMET 10608, NCTC 10264, TMC 1547, JCM 12142, ATCC 23036, CCUG 27976, CCUG 41354, CECT 3023, CIP 105382, KCTC 9615, LMG 19256, PCM 639",1,"Mycobacterium peregrinum",1
+8216,,"DSM 43533, SN 2300",0,"Mycobacterium peregrinum",1
+8278,,"DSM 46638, IMET 10654, SN 259 Typ B",0,"Mycobacterium peregrinum",1
+8471,E10241-1,"DSM 44242, ATCC 33776, JCM 6378, CCUG 37674, CIP 105392, KCTC 9517",1,"Mycobacterium porcinum",1
+8472,"MF-155, W6238","CCUG 47583, CIP 107826, DSM 44678, ATCC BAA 329",0,"Mycobacterium porcinum",1
+8369,"12238, 1356 TMC/1323","DSM 43992, ATCC 19981, JCM 6381, NCTC 10803, TMC 1323, CCUG 29045, CIP 105416, KCTC 9519, RIMD 1331002",1,"Mycobacterium scrofulaceum",1
+8366,,"DSM 43226, SN 802",0,"Mycobacterium scrofulaceum",1
+8367,,"DSM 43512, SN 801",0,"Mycobacterium scrofulaceum",1
+8368,,"DSM 43513, SN 803",0,"Mycobacterium scrofulaceum",1
+8429,,"DSM 44165, ATCC 25275, TMC 1226, JCM 12377, CCUG 29114, CCUG 42427, CIP 104531",1,"Mycobacterium simiae",1
+8324,"GA 735, Cornell 3","DSM 43756, ATCC 19420, JCM 5866, KCTC 9108, NCTC 8159, CCUG 21002, CCUG 21815, CECT 3020, CIP 104444, JCM 6386, NRRL B-14616, VKM Ac-1239",1,"Mycobacterium smegmatis",1
+8256,"Minetti 41","DSM 43479, SN 220",0,"Mycobacterium smegmatis",1
+8309,,"DSM 43059, CCM 1889, IMRU N 525, NCTC 525, BUCSAV 267",0,"Mycobacterium smegmatis",1
+8310,,"DSM 43061, CCM 2228, NCTC 523",0,"Mycobacterium smegmatis",1
+8311,52-L-1,"DSM 43078, IMRU 672",0,"Mycobacterium smegmatis",1
+8312,,"DSM 43079, IMRU 853",0,"Mycobacterium smegmatis",1
+8313,,"DSM 43080, IMRU 580",0,"Mycobacterium smegmatis",1
+8314,52-Q-1,"DSM 43081, IMRU 595",0,"Mycobacterium smegmatis",1
+8315,,"DSM 43277, ATCC 101, ATCC 14468, NCIB 9953, NCTC 10265, TMC 1546",0,"Mycobacterium smegmatis",1
+8316,"74C, Schering 250","DSM 43286, ATCC 356, NCTC 524",0,"Mycobacterium smegmatis",1
+8317,"169, Schering 275","DSM 43299, ATCC 114, CCUG 21817",0,"Mycobacterium smegmatis",1
+8318,,"DSM 43464, ATCC 27204, IMET 10646, SN 2",0,"Mycobacterium smegmatis",1
+8319,607,"DSM 43465, ATCC 607, NRRL B-692, SN 10, JCM 20379, IAM 12065, IFO 3207, NBRC 3207",0,"Mycobacterium smegmatis",1
+8320,,"DSM 43466, IMRU 7992, SN 35",0,"Mycobacterium smegmatis",1
+8322,114,"DSM 43468, ATCC 27205, IMET 10647, IMRU 114, SN 38",0,"Mycobacterium smegmatis",1
+8323,7449,"DSM 43469, IMET 10648, SN 46",0,"Mycobacterium smegmatis",1
+8325,,"DSM 44200, HKI 0056 (SG 987)",0,"Mycobacterium smegmatis",1
+8326,987-M10,"DSM 44201, HKI 0062",0,"Mycobacterium smegmatis",1
+8373,25932,"DSM 44166, ATCC 35799, JCM 6383, NCTC 10831, PCM 1876, TMC 1328, CCUG 37675, CIP 104532, KCTC 9520",1,"Mycobacterium szulgai",1
+23134,"FM2, hsp65 type","DSM 45835, JCM 18264",0,"Mycobacterium szulgai",1
+23135,"FM 6","DSM 45836, JCM 18265",0,"Mycobacterium szulgai",1
+23136,"FM 7","DSM 45837, JCM 18266",0,"Mycobacterium szulgai",1
+23137,"FM 10","DSM 45838, JCM 18267",0,"Mycobacterium szulgai",1
+132766,"Schering 260","DSM 43292, ATCC 15483, NCIB 9937, SN 920, JCM 6389, ATCC 23004, BCRC 17229, CCUG 21003, CECT 3019, CIP 105934, HAMBI 2276, IFO 14118, KCTC 19087, NBRC 14118, NCIMB 9937, NCTC 10916, TMC 1526",1,"Mycobacterium vaccae",1
+8354,"Gerda 21","DSM 43229, SN 903",0,"Mycobacterium vaccae",1
+8356,"Angelika 59a","DSM 43514, IMET 10670, SN 908",0,"Mycobacterium vaccae",1
+8357,"Angelika 67","DSM 43515, IMET 10671, SN 911",0,"Mycobacterium vaccae",1
+8358,"Lore 90","DSM 43516, SN 918",0,"Mycobacterium vaccae",1
+8370,,"DSM 43995, ATCC 19250, NCTC 10042, TMC 1482, JCM 15661, CCUG 28011, CCUG 31306, CIP 104035, CNCTC 7303",1,"Mycobacterium xenopi",1
+8371,,"DSM 44168, ATCC 19970",0,"Mycobacterium xenopi",1
+8372,,"DSM 44169, ATCC 19971",0,"Mycobacterium xenopi",1
+10753,SD769,"CCUG 46122, DSM 44491, ATCC BAA 280, CIP 109047, NBRC 100379, NCTC 13181, JCM 11438",1,"Nocardia africana",1
+10754,"SD 880","DSM 44500",0,"Nocardia africana",1
+10755,"SD 910","DSM 44501",0,"Nocardia africana",1
+10756,"SD 925","DSM 44502",0,"Nocardia africana",1
+10640,"727, GA 875, M 170-6","DSM 43757, ATCC 19247, CCM 2754, DSM 43373, IMET 7547, JCM 3384, NCTC 11293, CCUG 10073, PSA 165, CECT 3051, CGMCC 4.1165, CIP 104503, HUT 6572, IFM 0319, IFO 15531, KCTC 9956, MTCC 274, NBRC 15531, NCAIM B.01954, NCIMB 12082, NRRL B-3828, PCM 2254",1,"Nocardia asteroides",1
+10629,,"DSM 43132, IMRU 3409, LBG A 3051, ETH 27044",0,"Nocardia asteroides",1
+10630,,"DSM 43262",0,"Nocardia asteroides",1
+10631,,"DSM 43264",0,"Nocardia asteroides",1
+10632,,"DSM 43265",0,"Nocardia asteroides",1
+10633,,"DSM 43267",0,"Nocardia asteroides",1
+10634,,"DSM 43268",0,"Nocardia asteroides",1
+10635,"M 4014","DSM 43140",0,"Nocardia asteroides",1
+10636,,"DSM 43255",0,"Nocardia asteroides",1
+10637,,"DSM 43258",0,"Nocardia asteroides",1
+10638,,"DSM 43259",0,"Nocardia asteroides",1
+10639,,"DSM 43573, SN 6300",0,"Nocardia asteroides",1
+10642,,"DSM 44145",0,"Nocardia asteroides",1
+10644,,"DSM 46010, CIP 369, IMET 7158",0,"Nocardia asteroides",1
+10645,,"DSM 46011, CIP 717, IMET 7159",0,"Nocardia asteroides",1
+10650,"381, 631, GA 876","DSM 43758, ATCC 19296, CBS 330.54, IFO 14402, IMRU 845, JCM 3374, NBRC 14402, NCTC 11294, CCT 3439, CCUG 10074, CCUG 10098, CECT 3052, CIP 104502, IFM 0236, IMSNU 21222, IMSNU 21223, NCIMB 12083, VKM Ac-863",1,"Nocardia brasiliensis",1
+10646,"N 64, Ts 23105 (768)","DSM 43009",0,"Nocardia brasiliensis",1
+10647,"No 409","DSM 43064, ATCC 19295, CCM 165, IMRU 744",0,"Nocardia brasiliensis",1
+10648,"Tü 69","DSM 43112, ETH 27413, NRRL 2962",0,"Nocardia brasiliensis",1
+10649,,"DSM 43133, IMRU 536, LBG A 3053, ETH 27048",0,"Nocardia brasiliensis",1
+10651,,"DSM 44924, IFM 0955",0,"Nocardia brasiliensis",1
+10652,,"DSM 46032, IMET 7397, RIA 637",0,"Nocardia brasiliensis",1
+10653,"N 222, N222","DSM 46059, IMET 7460",0,"Nocardia brasiliensis",1
+10669,"GA 919 (N 164), M 258","DSM 43665, ATCC 3318, DSM 43257, DSM 43578, IMRU 3318, NCIB 12058, NCTC 11134, JCM 3088, BCRC 13380, BCRC 13722, CBS 318.60, CCUG 10109, CCUG 27778, CCUG 48656, CECT 3053, CECT 4069, CGMCC 4.1166, CGMCC 4.1829, CIP 104775, IFM 0028, IFM 0284, IFO 15532, IMET 7377, IMSNU 21224, KCTC 9958, NBRC 15532, NCIMB 12058, NRRL B-2089, PCM 2173",1,"Nocardia farcinica",1
+8361,,"DSM 43527, SN 1602",0,"Nocardia farcinica",1
+10641,,"DSM 44144",0,"Nocardia farcinica",1
+10661,"N 1 (strain Berlin)","DSM 43003",0,"Nocardia farcinica",1
+10662,"S641, N22","DSM 43006",0,"Nocardia farcinica",1
+10663,"S643, 51.5","DSM 43063, ATCC 9504, CCM 3254, IMET 7452",0,"Nocardia farcinica",1
+10664,S644,"DSM 43131, LBG A 3052, NCTC 6761, CCUG 222, ETH 27045",0,"Nocardia farcinica",1
+10665,"S390, Noc. 1","DSM 43244, ATCC 6864, DSM 43667, IMET 7019, NCTC 1935",0,"Nocardia farcinica",1
+10666,"S738, Schering 257","DSM 43289, ATCC 3308, IFO 3384, IMET 7020, NBRC 3384, NCTC 4526, JCM 3002, BCRC 13364, BCRC 16268, CIP 104821, IID 1646, LMG 4062",0,"Nocardia farcinica",1
+10667,"S647, 24 Foal Blackwell, Schering 273","DSM 43298, ATCC 6846, IMET 7257, NCTC 630, CBS 272.53",0,"Nocardia farcinica",1
+10668,,"DSM 43577, IMRU 3301",0,"Nocardia farcinica",1
+10670,"844, GA 880 (N 119), N 705","DSM 43668",0,"Nocardia farcinica",1
+10671,,"DSM 43669",0,"Nocardia farcinica",1
+10672,S560,"DSM 44562",0,"Nocardia farcinica",1
+10673,S651,"DSM 46004, ATCC 7372, IMET 7021, JCM 15836, CBS 246.55, IFM 0008",0,"Nocardia farcinica",1
+10674,"A 123","DSM 46005, IMET 7141, RIA 476",0,"Nocardia farcinica",1
+10675,,"DSM 46028, CIP 736, IMET 7378, IP 736",0,"Nocardia farcinica",1
+10742,"23095, 2338, R443(1)","DSM 44481, ATCC 33726, CCRC 13746, CIP 104777, IFM 0290, IFO 15556, JCM 6044, NBRC 15556, CCUG 45939, BCRC 13746, CECT 3056, CGMCC 4.1705, CGMCC 4.1879, IMSNU 21197, IMSNU 21201, KCTC 9959, VKM Ac-1971",1,"Nocardia nova",1
+10734,BL-29,"DSM 40806, ATCC 15074",0,"Nocardia nova",1
+10735,"443 (1)","DSM 43207, DSM 438",0,"Nocardia nova",1
+10736,"443 (2)","DSM 43209, DSM 440",0,"Nocardia nova",1
+10737,,"DSM 43256",0,"Nocardia nova",1
+10738,2-40,"DSM 43843, IAM 0501, JCM 3288, KCC A-0288, NRRL B-16175, BCRC 11086, CIP 104825, IAM 501, IFM 0854, IMSNU 21182, KCTC 3489, NBRC 103080, VKM Ac-1079",0,"Nocardia nova",1
+10739,S548,"DSM 44559",0,"Nocardia nova",1
+10740,S556,"DSM 44560",0,"Nocardia nova",1
+10741,S559,"DSM 44561",0,"Nocardia nova",1
+10679,,"DSM 43242, ATCC 14629, NCTC 1934, CCUG 10075, JCM 3377, CBS 262.39, CCM 2779, CGMCC 4.1168, CIP 104514, IFM 0239, IFO 14405, IID 5214, IMSNU 21221, JCM 3393, KCTC 9960, NBRC 14405, NCIMB 12084, VKM Ac-869",1,"Nocardia otitidiscaviarum",1
+10676,"N65, R 1315, Ts 23115","DSM 43010",0,"Nocardia otitidiscaviarum",1
+10677,A0930-H-5187,"DSM 43398, IMRU 1088",0,"Nocardia otitidiscaviarum",1
+10678,,"DSM 43400, IMRU 1316",0,"Nocardia otitidiscaviarum",1
+10680,S639,"DSM 44565",0,"Nocardia otitidiscaviarum",1
+10681,"TSH 1","DSM 45036",0,"Nocardia otitidiscaviarum",1
+10682,"Gdf N313","DSM 46009, CIP 751, IMET 7154, IMRU 1259",0,"Nocardia otitidiscaviarum",1
+10683,"N206, Schaal 206","DSM 46056, IMET 7457",0,"Nocardia otitidiscaviarum",1
+10684,"N 210, N210, Schaal N210","DSM 46057, IMET 7458",0,"Nocardia otitidiscaviarum",1
+1878,,"DSM 6882, Alc 37, ATCC 49188, CIP 149-70, CIP 82.115, LMG 3331, JCM 21032, CCUG 24695, CIP 149.70, IAM 14119, IFO 15819, NBRC 15819, NCTC 12168",1,"Brucella anthropi",1
+1876,787,"DSM 2577",0,"Brucella anthropi",1
+1877,568,"DSM 6753",0,"Brucella anthropi",1
+1879,(S)1a,"DSM 14396",0,"Brucella anthropi",1
+1880,,"DSM 20150, ATCC 11425, JCM 20703, IAM 12637, NBRC 103056",0,"Brucella anthropi",1
+131032,"Vitek 109243","DSM 22795, ATCC BAA 749",0,"Brucella anthropi",1
+2666,211,"DSM 2141, ATCC 9714, NCIB 10717, CCUG 9284, LMG 15708, CIP 103658, BCRC 10649, JCM 3814, NCIMB 10717",1,"Paeniclostridium sordellii",1
+130928,MJJO609-3-1,"DSM 29974",0,"Paeniclostridium sordellii",1
+2556,,"DSM 630",0,"Paraclostridium bifermentans",1
+2557,"701, Beerens","DSM 631",0,"Paraclostridium bifermentans",1
+2558,TYR6,"DSM 13560",0,"Paraclostridium bifermentans",1
+130915,G7K1R3-PYG-90,"DSM 29423",0,"Paraclostridium bifermentans",1
+132447,F1,"DSM 103419, CN 4781, WDCM 00079, NCTC 506",0,"Paraclostridium bifermentans",1
+2559,76,"DSM 14991, ATCC 638, JCM 1386, CCUG 36626, NCIMB 10716, Hall 76, BCRC 14542, CIP 104309, NCTC 13019, PAGU 2008",1,"Paraclostridium bifermentans subsp. bifermentans",1
+18066,3024A,"DSM 20468, ATCC 33270, CCUG 46357, CIP 105294, JCM 12970, NCTC 11808, VPI 5464, GIFU 7824",1,"Parvimonas micra",1
+169910,,"ATCC 23195",0,"Parvimonas micra",1
+11782,,"DSM 20475, ATCC 27731, VPI 7953, JCM 6506, CCM 6019, CIP 105947, NCTC 11805",1,"Peptococcus niger",1
+11843,4372,"DSM 2949, ATCC 27337, BCRC 10722, CCUG 7835, CIP 104411, KCTC 5182, KCTC 5973, LMG 15865, NCTC 11460, VTT E-022078, VPI 4330",1,"Peptostreptococcus anaerobius",1
+11844,4526,"DSM 20357, JCM 1769",0,"Peptostreptococcus anaerobius",1
+1588,"mprl 1840, MPRL 1840/MH4","DSM 9670",0,"Phocaeicola vulgatus",1
+5055,M51,"DSM 8224, ATCC 14029, NCIB 9242, RH 798, CCUG 410, NCTC 10360, NCIMB 9242, CDC 3085-55",1,"Plesiomonas shigelloides",1
+12505,B440,"CCUG 7834, CCUG 14451, JCM 6326, DSM 20707, ATCC 25260, VPI 4198, BCRC 10618, LMG 13178",1,"Porphyromonas asaccharolytica",1
+12506,2561,"DSM 20709, ATCC 33277, CIP 103683, JCM 12257, CCUG 25893, CCUG 25928, NCTC 11834",1,"Porphyromonas gingivalis",1
+24337,HG66,"DSM 28984",0,"Porphyromonas gingivalis",1
+12508,LEV,"DSM 23370, ATCC 29147, CCUG 34320, JCM 13866, NCTC 11028, ACM 5042, CCUG 21027, HAMBI 467, VPI 10450, VPI 3300",1,"Porphyromonas levii",1
+12504,7728-L6C,"DSM 20710, ATCC 33141, CCUG 47703, NCTC 13100, JCM 13914",1,"Porphyromonas macacae",1
+12525,653C,"DSM 20514, ATCC 29303, NCTC 11156, CCUG 9557, CIP 105105, JCM 6331, LMG 6452, VPI 6822",1,"Prevotella bivia",1
+12526,,"DSM 19025, ATCC 33574, CCUG 15401, CIP 105106, JCM 12245, VPI D3A-6",1,"Prevotella buccae",1
+12527,NP333,"DSM 20615, NCDO 2353, CCUG 15559, ATCC 35309",0,"Prevotella buccae",1
+12529,1210,"DSM 20614, ATCC 35308, NCDO 2352, CCUG 29542, JCM 13449, CIP 104478, NCTC 13067",1,"Prevotella denticola",1
+12552,HEP,"JCM 12247, DSM 23917, ATCC 35895, CCUG 27827, LMG 10142, JCM 16133",1,"Bacteroides heparinolyticus",1
+12531,B422,"DSM 20706, ATCC 25611, KCTC 15693, CCUG 24041, JCM 7365, JCM 12248, VPI 4197, JCM 11150, BCRC 14416, CIP 103682, NCTC 13070, CIP 101222, KCTC 3692",1,"Prevotella intermedia",1
+12534,B282,"DSM 7089, ATCC 25845, JCM 6325, CCUG 4944 B, VPI 4196, BCRC 10622, CIP 105346, KCTC 3689, NCTC 12963, VPI 15087",1,"Prevotella melaninogenica",1
+24340,CD3:34,"DSM 26980, CCUG 60312",0,"Prevotella melaninogenica",1
+12532,,"CCUG 15408, JCM 12251, DSM 20702, ATCC 33269, NCTC 11459, VPI D27B-24",1,"Prevotella oralis",1
+5058,,"DSM 4479, ATCC 29906, CIP 103181, NCTC 11938, WDCM 00023, CDC PR 14, JCM 1669, CCUG 26767, CECT 4168, KCTC 2566, LMG 3257, NBRC 105697",1,"Proteus mirabilis",1
+5057,,"DSM 788, ATCC 14153, IMET 11232, CCUG 32232, PCI 765",0,"Proteus mirabilis",1
+5059,"LRA 080173","DSM 6674, ATCC 35659",0,"Proteus mirabilis",1
+5060,D1,"DSM 18254, ATCC 12453, CCUG 34293",0,"Proteus mirabilis",1
+5061,"D 799","DSM 30115, ATCC 9240",0,"Proteus mirabilis",1
+5062,"WS 10039","DSM 30116",0,"Proteus mirabilis",1
+5063,"BL 47","DSM 46227, IMET 10762, SG 654",0,"Proteus mirabilis",1
+5064,,"DSM 50903, ATCC 15363, ICPB 2575",0,"Proteus mirabilis",1
+130994,CD1-T1542,"DSM 28629",0,"Proteus mirabilis",1
+131878,PGVI,"DSM 102257",0,"Proteus mirabilis",1
+131879,"PG 400","DSM 102258",0,"Proteus mirabilis",1
+5074,,"DSM 30120, ATCC 9886, CCUG 6325, NCTC 10286, JCM 1673, BCRC 13995, CGMCC 1.6768, CIP 82.90, NBRC 105687",1,"Providencia alcalifaciens",1
+12800,,"DSM 50071, ATCC 10145, ICPB 2523, NCIB 8295, NCTC 10332, NRRL B-771, WDCM 00024, JCM 5962, BCRC 10944, CCEB 481, CCM 1960, CCUG 28447, CCUG 551, CECT 110, CGMCC 1.1785, CIP 100720, IAM 1514, IFO 12689, IFO 3756, KCTC 1750, LMG 1242, NBRC 12689, NBRC 3756, NCDO 1369, NCIMB 8295, NCPPB 1965",1,"Pseudomonas aeruginosa",1
+12757,"1536, Sch. 2680","DSM 288",0,"Pseudomonas aeruginosa",1
+12758,PRD-10,"DSM 939, ATCC 15442, NCIB 10421, CCUG 2080, IFO 13736, CIP 103467",0,"Pseudomonas aeruginosa",1
+12759,"Boston 41501","DSM 1117, ATCC 27853, CCM 3955, CCUG 17619, CECT 108, CIP 76.110, JCM 6119, LMG 6395, NCIMB 12469, WDCM 00025, UCCCB116",0,"Pseudomonas aeruginosa",1
+12760,PA7,"DSM 1128, ATCC 9027, CIP 82.118, DSM 1385, WDCM 00026, CCUG 22801, CCM 1961, IAM 10374, IFO 13275, JCM 23217, BUCSAV 278, IAM 13074, JCM 14171, NBRC 13275, NCIMB 8626, NRRL B-800",0,"Pseudomonas aeruginosa",1
+12761,,"CCUG 26804, DSM 1253, NCTC 8060",0,"Pseudomonas aeruginosa",1
+12762,,"DSM 1299, ATCC 23389, NCTC 10701",0,"Pseudomonas aeruginosa",1
+12763,PAO,"DSM 1707",0,"Pseudomonas aeruginosa",1
+12764,,"DSM 3227, ATCC 19429, IFO 3755, NBRC 3755, NCIB 6750, NCTC 6750",0,"Pseudomonas aeruginosa",1
+12765,"PU21, R91","DSM 4698, NCTC 50015",0,"Pseudomonas aeruginosa",1
+12766,"PAO11, pMO821","DSM 5168",0,"Pseudomonas aeruginosa",1
+12767,"PU21, R2","DSM 5218, NCTC 50004, CCUG 21649",0,"Pseudomonas aeruginosa",1
+12768,"E 8/2","DSM 6195",0,"Pseudomonas aeruginosa",1
+12769,2BBZ-A,"DSM 6279",0,"Pseudomonas aeruginosa",1
+12770,,"DSM 7232, ATCC 19712",0,"Pseudomonas aeruginosa",1
+12771,RW41,"DSM 8924",0,"Pseudomonas aeruginosa",1
+12772,"PAO 1670, pMO21","DSM 9631",0,"Pseudomonas aeruginosa",1
+12773,,"DSM 9633",0,"Pseudomonas aeruginosa",1
+12774,,"DSM 9634",0,"Pseudomonas aeruginosa",1
+12775,,"DSM 9635",0,"Pseudomonas aeruginosa",1
+12776,,"DSM 9636",0,"Pseudomonas aeruginosa",1
+12777,,"DSM 9637",0,"Pseudomonas aeruginosa",1
+12778,,"DSM 9638",0,"Pseudomonas aeruginosa",1
+12779,,"DSM 9639",0,"Pseudomonas aeruginosa",1
+12780,,"DSM 9640",0,"Pseudomonas aeruginosa",1
+12781,,"DSM 9641",0,"Pseudomonas aeruginosa",1
+12782,,"DSM 9642",0,"Pseudomonas aeruginosa",1
+12783,,"DSM 9643",0,"Pseudomonas aeruginosa",1
+12784,R68.45,"DSM 9644",0,"Pseudomonas aeruginosa",1
+12785,,"DSM 9645",0,"Pseudomonas aeruginosa",1
+12786,,"DSM 9646",0,"Pseudomonas aeruginosa",1
+12787,,"DSM 9647",0,"Pseudomonas aeruginosa",1
+12788,,"DSM 9648",0,"Pseudomonas aeruginosa",1
+12789,,"DSM 9649",0,"Pseudomonas aeruginosa",1
+12790,,"DSM 9650",0,"Pseudomonas aeruginosa",1
+12791,,"DSM 11148, ATCC 14885, NRRL B-2264",0,"Pseudomonas aeruginosa",1
+12792,,"DSM 13626, IMI 358539",0,"Pseudomonas aeruginosa",1
+12793,,"DSM 15980, IMI 358539R",0,"Pseudomonas aeruginosa",1
+12794,PA7,"DSM 24068",0,"Pseudomonas aeruginosa",1
+12795,PAO1,"DSM 19880",0,"Pseudomonas aeruginosa",1
+12796,PA14,"DSM 19882",0,"Pseudomonas aeruginosa",1
+12797,PMG19,"DSM 46317, IMET 11036",0,"Pseudomonas aeruginosa",1
+12798,9,"DSM 46349, IMET 11393",0,"Pseudomonas aeruginosa",1
+12799,,"DSM 46358, IMET 11431",0,"Pseudomonas aeruginosa",1
+12801,PAO1,"DSM 22644, ATCC 15692, CIP 104116, JCM 14847, LMG 12228, CCUG 56489, KCTC 1637, ATCC 17503, ATCC 25247, ATCC 25375, BCRC 13078, CECT 4122, LMG 27638, NCCB 4163, NCIMB 10545, NCIMB 10548, VTT E-082794, VTT E-84219",0,"Pseudomonas aeruginosa",1
+12802,PA399,"DSM 24599",0,"Pseudomonas aeruginosa",1
+12803,PA500,"DSM 24600",0,"Pseudomonas aeruginosa",1
+12804,,"DSM 25123, CECT 4080, CIP A22, LMG 10639, NCIMB 13056, WDCM 00027",0,"Pseudomonas aeruginosa",1
+12805,,"DSM 25716, NCCP 12290",0,"Pseudomonas aeruginosa",1
+24353,"8909 N","DSM 11634",0,"Pseudomonas aeruginosa",1
+24354,Walter,"DSM 12055, ICB 7030",0,"Pseudomonas aeruginosa",1
+24355,JR14,"DSM 12736",0,"Pseudomonas aeruginosa",1
+24356,9664,"DSM 46316, IMET 11035",0,"Pseudomonas aeruginosa",1
+24357,,"DSM 50063, ICPB 2495",0,"Pseudomonas aeruginosa",1
+24358,,"DSM 50065, ICPB 2495-1 leu",0,"Pseudomonas aeruginosa",1
+24359,,"DSM 50069, ATCC 14216, ICPB 2521, JCM 14185, BCRC 15813, CECT 109, NCIMB 9685",0,"Pseudomonas aeruginosa",1
+24360,"1435, C10","DSM 50073, ATCC 12055, ICPB 2603, JCM 14176, BCRC 16043, CIP 104467",0,"Pseudomonas aeruginosa",1
+24361,,"DSM 50078, ATCC 17423, ICPB 2655-45",0,"Pseudomonas aeruginosa",1
+24864,,"DSM 21382, HER 1001",0,"Pseudomonas aeruginosa",1
+24865,,"DSM 21383, HER 1011",0,"Pseudomonas aeruginosa",1
+24866,,"DSM 21384, HER 1018",0,"Pseudomonas aeruginosa",1
+24867,,"DSM 21385, HER 1146",0,"Pseudomonas aeruginosa",1
+24868,,"DSM 21386, HER 1153",0,"Pseudomonas aeruginosa",1
+130547,PA32,"DSM 25641",0,"Pseudomonas aeruginosa",1
+130548,PA25,"DSM 25642",0,"Pseudomonas aeruginosa",1
+130550,"RN3, clone D421","DSM 29239",0,"Pseudomonas aeruginosa",1
+130551,"60P57PA, clone F469","DSM 29240",0,"Pseudomonas aeruginosa",1
+130552,"15108/-1, clone E429","DSM 29272",0,"Pseudomonas aeruginosa",1
+130553,"13121/-1, clone 239A","DSM 29273",0,"Pseudomonas aeruginosa",1
+130554,"57P31PA, clone 2C22","DSM 29274",0,"Pseudomonas aeruginosa",1
+130555,"A5803, clone F429","DSM 29275",0,"Pseudomonas aeruginosa",1
+130556,"120SD3, clone B420","DSM 29278",0,"Pseudomonas aeruginosa",1
+130557,"39177, clone EA0A","DSM 29279",0,"Pseudomonas aeruginosa",1
+130558,"27103, clone 0812","DSM 29280",0,"Pseudomonas aeruginosa",1
+130559,"18P17PA, clone 2C1A","DSM 29281",0,"Pseudomonas aeruginosa",1
+130560,"KK1, clone 1BAE","DSM 29304",0,"Pseudomonas aeruginosa",1
+130561,"TR1 clone 3C2A, TR1, clone 3C2A","DSM 29305",0,"Pseudomonas aeruginosa",1
+130562,"PT 22, clone EC2A","DSM 29306",0,"Pseudomonas aeruginosa",1
+130563,"100, clone EC21","DSM 29307",0,"Pseudomonas aeruginosa",1
+130564,"BP35, clone 843A","DSM 29308",0,"Pseudomonas aeruginosa",1
+130565,"E501, clone 0822","DSM 29309",0,"Pseudomonas aeruginosa",1
+130566,"120S32 clone 149A, 120SB2, clone 149A","DSM 29310",0,"Pseudomonas aeruginosa",1
+130995,IBRG14,"DSM 16074",0,"Pseudomonas aeruginosa",1
+130996,Z5,"DSM 16528",0,"Pseudomonas aeruginosa",1
+130997,JP-11,"DSM 29569",0,"Pseudomonas aeruginosa",1
+130998,W,"DSM 101013, NCTC 12951, WDCM 00207, CCUG 67716, CECT 8735",0,"Pseudomonas aeruginosa",1
+131881,MW3a,"DSM 100465",0,"Pseudomonas aeruginosa",1
+131882,EGYII,"DSM 101801",0,"Pseudomonas aeruginosa",1
+131883,,"DSM 102273, NCCP 12293",0,"Pseudomonas aeruginosa",1
+131884,,"DSM 102274, NCCP 14571",0,"Pseudomonas aeruginosa",1
+131885,,"DSM 102275, NCCP 14572",0,"Pseudomonas aeruginosa",1
+131886,H1l,"DSM 103301",0,"Pseudomonas aeruginosa",1
+132782,"RP1, clone OC2E","DSM 29241",0,"Pseudomonas aeruginosa",1
+132783,"M41A.1 clone 478A, M41A.1, clone 478A","DSM 29311",0,"Pseudomonas aeruginosa",1
+139768,"NN2, clone C40A","DSM 29238",0,"Pseudomonas aeruginosa",1
+157797,"MH 29","DSM 22043",0,"Pseudomonas aeruginosa",1
+157798,NRZ35032,"DSM 106612",0,"Pseudomonas aeruginosa",1
+157799,NRZ35033,"DSM 106613",0,"Pseudomonas aeruginosa",1
+157800,M144,"DSM 107754",0,"Pseudomonas aeruginosa",1
+159016,OK1,"DSM 110864",0,"Pseudomonas aeruginosa",1
+159017,"BWKH 14","DSM 110891",0,"Pseudomonas aeruginosa",1
+159018,"BWKH 15","DSM 110892",0,"Pseudomonas aeruginosa",1
+159019,"BWKH 36","DSM 110894",0,"Pseudomonas aeruginosa",1
+159020,"BWKH 42","DSM 110895",0,"Pseudomonas aeruginosa",1
+159021,"BWKH 3","DSM 111023",0,"Pseudomonas aeruginosa",1
+159022,"BWKH 8","DSM 111024",0,"Pseudomonas aeruginosa",1
+159023,"BWKH 9","DSM 111025",0,"Pseudomonas aeruginosa",1
+159024,"BWKH 18","DSM 111026",0,"Pseudomonas aeruginosa",1
+159025,"BWKH 28","DSM 111027",0,"Pseudomonas aeruginosa",1
+159026,"BWKH51, BWKH 51","DSM 111029",0,"Pseudomonas aeruginosa",1
+160131,,"DSM 109925, NCCP 12296",0,"Pseudomonas aeruginosa",1
+160132,,"DSM 109926, NCCP 12297",0,"Pseudomonas aeruginosa",1
+160133,,"DSM 109927, NCCP 16076",0,"Pseudomonas aeruginosa",1
+160134,,"DSM 109928, NCCP 16079",0,"Pseudomonas aeruginosa",1
+160135,,"DSM 109929, NCCP 16081",0,"Pseudomonas aeruginosa",1
+160136,,"DSM 109930, NCCP 16084",0,"Pseudomonas aeruginosa",1
+160137,,"DSM 109931, NCCP 16086",0,"Pseudomonas aeruginosa",1
+160138,,"DSM 109982, NCCP 16087",0,"Pseudomonas aeruginosa",1
+160139,,"DSM 109983, NCCP 16090",0,"Pseudomonas aeruginosa",1
+160140,,"DSM 109984, NCCP 16096",0,"Pseudomonas aeruginosa",1
+160141,,"DSM 109985, NCCP 16105",0,"Pseudomonas aeruginosa",1
+160142,,"DSM 110028, NCCP 16331",0,"Pseudomonas aeruginosa",1
+160143,,"DSM 110029, NCCP 16333",0,"Pseudomonas aeruginosa",1
+160144,"10683669 (BWKH 10)","DSM 110889",0,"Pseudomonas aeruginosa",1
+160145,"10683563 (Isolat 2) (BWKH 12)","DSM 110890",0,"Pseudomonas aeruginosa",1
+160146,"10563135 (BWKH 29)","DSM 110893",0,"Pseudomonas aeruginosa",1
+160147,"10647155 (BWKH 55)","DSM 110896",0,"Pseudomonas aeruginosa",1
+160148,"10711982 (BWKH 34)","DSM 111028",0,"Pseudomonas aeruginosa",1
+160149,"19000599 (BWKH 57)","DSM 111030",0,"Pseudomonas aeruginosa",1
+160150,"10659725 BWKH 1","DSM 112473",0,"Pseudomonas aeruginosa",1
+160151,"10671174 BWKH 4","DSM 112475",0,"Pseudomonas aeruginosa",1
+160152,"10676066 BWKH 6","DSM 112476",0,"Pseudomonas aeruginosa",1
+160153,"Q1278 BWKH 7","DSM 112480",0,"Pseudomonas aeruginosa",1
+169273,"PAO1 algC","DSM 19881",0,"Pseudomonas aeruginosa",1
+169274,"10660478 BWKH 2","DSM 112474",0,"Pseudomonas aeruginosa",1
+169275,113322,"DSM 113322",0,"Pseudomonas aeruginosa",1
+169276,,"DSM 113937, BR 257",0,"Pseudomonas aeruginosa",1
+169277,US449,"DSM 113938",0,"Pseudomonas aeruginosa",1
+12836,"pUTK21, 5RL","DSM 6699",0,"Pseudomonas fluorescens",1
+12837,"pUTK21, HK44","DSM 6700",0,"Pseudomonas fluorescens",1
+12871,90,"DSM 291, ATCC 12633, DSM 50202, ICPB 2963, NCTC 10936, WDCM 00117, JCM 13063, ATCC 23467, BCRC 10459, CCM 7156, CCUG 12690, CCUG 2091, CECT 324, CFBP 2066, CIP 52.191, DSM 50906, HAMBI 7, HUT 8100, IAM 1236, ICMP 2758, IFO 14164, JCM 3697, KCTC 1644, KCTC 1751, LMG 2257, NBRC 14164, NCCB 68020, NCCB 72006, NCIMB 13936, NCIMB 9494, NCIMB 9528, VKM B-1301, VKM B-2187, VTT E-92005",1,"Pseudomonas putida",1
+12872,1593,"DSM 295",0,"Pseudomonas putida",1
+12873,C-1,"DSM 437, ATCC 23974, DSM 50253",0,"Pseudomonas putida",1
+12874,77,"DSM 1693, ATCC 8209, CCM 380, IFO 3738, NBRC 3738, NCIB 8296, CCUG 555, JCM 20511, BUCSAV 290, CCEB 380, CCM 1977, CIP 59.17, IAM 12355, LMG 2232, NCIMB 8296, NRRL B-1595",0,"Pseudomonas putida",1
+12875,12/5,"DSM 1868",0,"Pseudomonas putida",1
+12876,"PaW 340","DSM 2112",0,"Pseudomonas putida",1
+12877,,"DSM 3226",0,"Pseudomonas putida",1
+12892,"PaW 130","DSM 5169",0,"Pseudomonas putida",1
+12893,"PaW 95","DSM 5170",0,"Pseudomonas putida",1
+12894,CLB250,"DSM 5232",0,"Pseudomonas putida",1
+12895,,"DSM 84, IMG 1513",0,"Pseudomonas putida",1
+12898,S-832,"DSM 6883",0,"Pseudomonas putida",1
+12899,S-313,"DSM 6884",0,"Pseudomonas putida",1
+12900,BG1,"DSM 6413",0,"Pseudomonas putida",1
+12901,,"DSM 6521, ATCC 11172, NCIB 8251, JCM 13061, BCRC 14349, NCAIM B.01522, NCCB 92006, NCIMB 8251",0,"Pseudomonas putida",1
+12903,US2,"DSM 6755",0,"Pseudomonas putida",1
+12904,"F1, PpF1","DSM 6899, ATCC 700007, JCM 31910, BCRC 17059, LMG 24140, VTT E-022152",0,"Pseudomonas putida",1
+12906,PS,"DSM 7189",0,"Pseudomonas putida",1
+12907,"Strain G","DSM 7286, BKM BN-1123, NCIMB 11287, VKM BN-1123",0,"Pseudomonas putida",1
+12908,"Strain A","DSM 7314, NCIMB 11286, VKM B-1122, JCM 21368, CIP 107361, IAM 14870, IMET 11317, KCTC 9839, LMG 16206",0,"Pseudomonas putida",1
+12909,MM1,"DSM 9278",0,"Pseudomonas putida",1
+12910,RW20-3b,"DSM 11738",0,"Pseudomonas putida",1
+12911,GS1,"DSM 12264",0,"Pseudomonas putida",1
+12912,2-2L,"DSM 12585",0,"Pseudomonas putida",1
+12913,PNP1,"DSM 12448",0,"Pseudomonas putida",1
+12914,U,"DSM 12735, ATCC 17514, NCIMB 10015, CCUG 2869, DSM 548",0,"Pseudomonas putida",1
+12915,,"DSM 13624, IMI 358533",0,"Pseudomonas putida",1
+12918,TM1,"DSM 16845",0,"Pseudomonas putida",1
+12919,"50-3-3, IBPM B-20","DSM 46608, CCEB 520, CIP 63.23, IMET 10411, NCIB 9887, NRRL B-208, VKM 901, CCUG 554 B, LMG 2259",0,"Pseudomonas putida",1
+12920,"Berlin 33/2","DSM 50026",0,"Pseudomonas putida",1
+12921,cl-B,"DSM 50198, ATCC 17453, ICPB 2563-77, JCM 6157, KCTC 1646",0,"Pseudomonas putida",1
+12922,53-2,"DSM 50208, ATCC 17485, ICPB 2789-111, JCM 18452, BCRC 10461, JCM 6158, KCTC 1642, NCIMB 12092",0,"Pseudomonas putida",1
+12924,,"DSM 50257, ATCC 6876, DSM 60118, NCPPB 244, NCTC 393, PDDCC 3880",0,"Pseudomonas putida",1
+12925,MT-I1,"DSM 21680",0,"Pseudomonas putida",1
+12926,WB,"DSM 23849",0,"Pseudomonas putida",1
+24382,160,"DSM 50194, ATCC 17529, ICPB 2440-133",0,"Pseudomonas putida",1
+24383,"MS of E.E. Snell","DSM 50204, ATCC 17457, ICPB 2776-82",0,"Pseudomonas putida",1
+24384,S16,"DSM 28022",0,"Pseudomonas putida",1
+24385,B6-2,"DSM 28064",0,"Pseudomonas putida",1
+130567,SQ1,"DSM 100120",0,"Pseudomonas putida",1
+131888,S13.1.2,"DSM 102034",0,"Pseudomonas putida",1
+12879,To8,"DSM 3601",0,"Pseudomonas sp.",1
+12905,"G786, PpG786","DSM 7162, ATCC 29607",0,"Pseudomonas sp.",1
+12878,25-3,"DSM 3263, IFO 12996, NBRC 12996",0,"Pseudomonas taiwanensis",1
+13575,"C58, pTi","DSM 5172",0,"Agrobacterium radiobacter",1
+13578,"pMP90RK, GV3101(pMP90RK)","DSM 12365",0,"Agrobacterium radiobacter",1
+10849,RW2/1,"DSM 30791",0,"Rhodococcus hoagii",1
+130476,,"DSM 26605, NCIMB 10027",0,"Rhodococcus hoagii",1
+130477,VI1,"DSM 26606",0,"Rhodococcus hoagii",1
+130478,CV1,"DSM 26607",0,"Rhodococcus hoagii",1
+130479,GV1,"DSM 26608",0,"Rhodococcus hoagii",1
+130480,GV2,"DSM 26609",0,"Rhodococcus hoagii",1
+160542,"PTC E017","DSM 103244",0,"Salmonella sp.",1
+155,,"DSM 19120, ATCC 17929, CCUG 20536, DSM 43760, JCM 14871, NCTC 9935, CCM 4740, CIP 101124, LMG 18080",1,"Schaalia odontolytica",1
+156,1A.21,"DSM 43331, ATCC 17982, NCTC 9931, WVU 868",0,"Schaalia odontolytica",1
+5165,"BS 303","DSM 30121, ATCC 13880, CCM 303, DSM 47, NCDC 813-60, NCIB 9155, NCTC 10211, CCUG 1647, JCM 1239, BCRC 10948, CDC 813-60, CECT 846, CGMCC 1.2818, CIP 103235, HAMBI 1286, IAM 12142, KCTC 12457, LMG 2792, NBRC 102204, NCIMB 9155, NRRL B-2544, VKM B-1248, VTT E-97865",1,"Serratia marcescens",1
+5136,,"DSM 1608",0,"Serratia marcescens",1
+5137,,"DSM 1636, ATCC 14756, CCUG 46356, CIP 103716, PCI 1107",0,"Serratia marcescens",1
+5138,62-1,"DSM 48, CCM 846",0,"Serratia marcescens",1
+5139,"HY, W225","DSM 12481",0,"Serratia marcescens",1
+5140,W319,"DSM 12482",0,"Serratia marcescens",1
+5141,"CN, W246","DSM 12483",0,"Serratia marcescens",1
+5142,"EQ, W247","DSM 12484",0,"Serratia marcescens",1
+5143,W1128,"DSM 12485",0,"Serratia marcescens",1
+5144,"Sma, W1659","DSM 12486",0,"Serratia marcescens",1
+5145,"SM-6-F'lac+, W838, SM-6-F'<I>lac</I><SUP>+</SUP>","DSM 12487",0,"Serratia marcescens",1
+5146,HY,"DSM 14187",0,"Serratia marcescens",1
+5147,"WS 10207","DSM 30122",0,"Serratia marcescens",1
+5148,37,"DSM 30124",0,"Serratia marcescens",1
+5149,"296, 5751","DSM 30126",0,"Serratia marcescens",1
+23961,LH165,"DSM 28921",0,"Serratia marcescens",1
+23968,,"DSM 46342, ATCC 27117, IMET 11379",0,"Serratia marcescens",1
+23969,,"DSM 50904, ATCC 15365, ICPB 2031",0,"Serratia marcescens",1
+131011,Mm3,"DSM 26061",0,"Serratia marcescens",1
+131927,PH1a,"DSM 103302",0,"Serratia marcescens",1
+14054,95,"DSM 6067, ATCC 8071, ICPB 352, NCIB 10471, CCUG 13452 D, JCM 20190, CCUG 13452, CECT 331, CIP 80.40, IAM 12079, IAM 1509, IFO 3908, JCM 9294, LMG 2268, NBRC 3908, NCIMB 10471, NCTC 12960",1,"Shewanella putrefaciens",1
+14053,,"DSM 1818, ATCC 12099, IAM 1510, NCIB 8786, NCTC 10695, JCM 20191, NCIMB 8768",0,"Shewanella putrefaciens",1
+14055,,"DSM 9451, LMG 2266 t1, NCTC CL256/73",0,"Shewanella putrefaciens",1
+14057,,"DSM 9461, ATCC 8073, IFO 3910, LMG 2369, NBRC 3910, NCIB 10473, CCUG 39358",0,"Shewanella putrefaciens",1
+14058,,"DSM 15988, NCIMB 12202",0,"Shewanella putrefaciens",1
+14059,"180, 3353","DSM 50426, ATCC 8072, NCIB 10472",0,"Shewanella putrefaciens",1
+5171,24570,"DSM 4782, ATCC 29903, KCTC 22192, WDCM 00125, CCUG 56439, CIP 82.48, BCRC 13984, KCTC 22529",1,"Shigella flexneri",1
+5172,"I virulent","CCUG 68726, NCTC 12984, CECT 4887, DSM 5570, ATCC 29930, WDCM 00127",1,"Shigella sonnei",1
+5173,,"DSM 25715, NCCP 11768",0,"Shigella sonnei",1
+14487,"533 R4","DSM 20231, ATCC 12600, CCM 885, NCDO 949, NCTC 8532, CCUG 1800, IAM 12544, JCM 20624, ATCC 12600-U, CIP 65.8, HAMBI 66, NBRC 100910, NCAIM B.01065, NCCB 72047, NCIMB 13062, UCCCB115",1,"Staphylococcus aureus",1
+160390,,"DSM 110565, NCCP 14566",1,"Staphylococcus aureus",1
+14445,"209 P","CCUG 1828, CCM 2022, DSM 346, ATCC 6538P, CIP 53.156, NCTC 7447, WDCM 00033, JCM 2151, BCRC 10451, CECT 240, CGMCC 1.2910, FDA 209P, IAM 1011, IAM 12082, IFO 12732, IID 671, KCTC 1927, LMG 8195, NBRC 12732, NCFB 1963, NCIMB 8625, NRIC 1136, NRRL B-313, RIMD 3109007",0,"Staphylococcus aureus",1
+14446,,"DSM 683, ATCC 9144, CCM 2107, NCIB 6571, NRRL B-314, WDCM 00035, CCUG 1431, NCTC 6571",0,"Staphylococcus aureus",1
+14447,209,"CCUG 10778, IFO 13276, CCM 4516, DSM 799, ATCC 6538, CIP 4.83, NCIMB 9518, NCTC 10788, WDCM 00032",0,"Staphylococcus aureus",1
+14448,"Seattle 1945","DSM 1104, ATCC 25923, WDCM 00034, CCUG 17621, JCM 2413, CCM 3953, CCUG 7738, CECT 435, CIP 76.25, IFO 14462, LMG 8224, NBRC 14462, NCIMB 12702, NCTC 12981, VTT E-94530",0,"Staphylococcus aureus",1
+14449,Wichita,"CCUG 15915, DSM 2569, ATCC 29213, WDCM 00131, JCM 2874, CCM 4223, CECT 794, CIP 103429, IFO 15035, LMG 10147, NBIMCC 3999, NBRC 15035, NCTC 12973",0,"Staphylococcus aureus",1
+14450,,"DSM 3463, ATCC 29737, CCUG 19207",0,"Staphylococcus aureus",1
+14451,SA113,"CCUG 41582, DSM 4910, ATCC 35556, NCTC 8325",0,"Staphylococcus aureus",1
+14454,"WS 1759","DSM 6148",0,"Staphylococcus aureus",1
+14455,pS194,"DSM 6236, ATCC 37082",0,"Staphylococcus aureus",1
+14456,,"DSM 6247, CCM 2524, IMET 10760, CCUG 52423, CNCTC Mau 43/60, SG 511",0,"Staphylococcus aureus",1
+14457,,"DSM 6732, ATCC 25178",0,"Staphylococcus aureus",1
+14459,,"DSM 11110, ATCC 6341",0,"Staphylococcus aureus",1
+14460,"MRSA, 1063, MRSA BBL","DSM 11729, ATCC 33592",0,"Staphylococcus aureus",1
+14461,,"DSM 11822, ICB 25701",0,"Staphylococcus aureus",1
+14462,,"DSM 11823, ICB 25004",0,"Staphylococcus aureus",1
+14463,,"DSM 12463, CIP 57.10",0,"Staphylococcus aureus",1
+14464,F-182,"DSM 13661, ATCC 43300, CCUG 41586, LMG 15975, WDCM 00211",0,"Staphylococcus aureus",1
+14465,,"DSM 15676, NCTC 1803",0,"Staphylococcus aureus",1
+14466,6125,"DSM 17091",0,"Staphylococcus aureus",1
+14467,,"DSM 18586, ATCC 14458, CCUG 25924, NCTC 10654, FDA 243",0,"Staphylococcus aureus",1
+14468,"Dack 137","DSM 18587, ATCC 19095, CCUG 25925, NCTC 10655",0,"Staphylococcus aureus",1
+14469,#494,"DSM 18588, ATCC 23235, CCUG 25926, NCTC 10656",0,"Staphylococcus aureus",1
+14470,FRI-326,"DSM 18589, ATCC 27664, CCUG 26215",0,"Staphylococcus aureus",1
+14471,FRI-572,"DSM 18590, CCUG 39423",0,"Staphylococcus aureus",1
+14472,,"DSM 18597, ATCC 13565, CCUG 9128, NCTC 10625, CECT 976, NCTC 10652, FDA 196E",0,"Staphylococcus aureus",1
+14473,,"DSM 18827, cat 108512",0,"Staphylococcus aureus",1
+14474,NRL06/922,"DSM 19050",0,"Staphylococcus aureus",1
+14475,NRL06/923,"DSM 19051",0,"Staphylococcus aureus",1
+14476,NRL77/787,"DSM 19040",0,"Staphylococcus aureus",1
+14477,NRL05/507,"DSM 19041",0,"Staphylococcus aureus",1
+14478,NRL05/757,"DSM 19042",0,"Staphylococcus aureus",1
+14479,NRL06/100,"DSM 19043",0,"Staphylococcus aureus",1
+14480,NRL06/361,"DSM 19044",0,"Staphylococcus aureus",1
+14481,NRL06/412,"DSM 19045",0,"Staphylococcus aureus",1
+14482,NRL06/542,"DSM 19046",0,"Staphylococcus aureus",1
+14483,NRL06/919,"DSM 19047",0,"Staphylococcus aureus",1
+14484,NRL06/920,"DSM 19048",0,"Staphylococcus aureus",1
+14485,NRL06/921,"DSM 19049",0,"Staphylococcus aureus",1
+14486,S11,"DSM 20372, ATCC 12598, CCM 2352, NCTC 8530",0,"Staphylococcus aureus",1
+14488,Copenhagen,"DSM 20232, CCM 2504",0,"Staphylococcus aureus",1
+14489,H,"DSM 20233, CCM 2571",0,"Staphylococcus aureus",1
+14490,"Wood 46","DSM 20491, ATCC 10832, CCM 2351, NCTC 7121",0,"Staphylococcus aureus",1
+14491,,"DSM 20652, NCTC 10972",0,"Staphylococcus aureus",1
+14492,1309,"DSM 46320, IMET 11039",0,"Staphylococcus aureus",1
+14493,"EDCC 5248","DSM 21705",0,"Staphylococcus aureus",1
+14494,"EDCC 5247","DSM 21979",0,"Staphylococcus aureus",1
+14495,,"DSM 23622, UTMC 1401",0,"Staphylococcus aureus",1
+14496,K2-3,"DSM 30904",0,"Staphylococcus aureus",1
+14497,,"DSM 25628, NCCP 11487",0,"Staphylococcus aureus",1
+14498,,"DSM 25629, NCCP 11478",0,"Staphylococcus aureus",1
+14499,,"DSM 25630, NCCP 11486",0,"Staphylococcus aureus",1
+14500,,"DSM 25691, NCCP 14399",0,"Staphylococcus aureus",1
+14501,,"DSM 25692, NCCP 14402",0,"Staphylococcus aureus",1
+14502,,"DSM 25693, NCCP 14407",0,"Staphylococcus aureus",1
+14608,ES1-117-1,"DSM 30501",0,"Staphylococcus aureus",1
+14609,MD55,"DSM 24167, NCTC 9393, CCUG 2355",0,"Staphylococcus aureus",1
+14610,E8,"DSM 30862",0,"Staphylococcus aureus",1
+14611,E20,"DSM 30875",0,"Staphylococcus aureus",1
+23294,RN4220,"DSM 26309",0,"Staphylococcus aureus",1
+23295,"MQCL 113","DSM 27146, NCTC 12493, WDCM 00212, CCUG 67181",0,"Staphylococcus aureus",1
+24581,CH-91,"DSM 26258",0,"Staphylococcus aureus",1
+24592,"EDCC-5443, EDCC 5443","DSM 29134",0,"Staphylococcus aureus",1
+130699,"T2_T7B 2)","DSM 30980",0,"Staphylococcus aureus",1
+131980,,"DSM 102272, NCCP 13863",0,"Staphylococcus aureus",1
+131981,,"DSM 102262, NCCP 11476",0,"Staphylococcus aureus",1
+131982,,"DSM 102263, NCCP 11477",0,"Staphylococcus aureus",1
+131983,,"DSM 102264, NCCP 13846",0,"Staphylococcus aureus",1
+131984,,"DSM 102265, NCCP 13853",0,"Staphylococcus aureus",1
+139821,,"DSM 105272, DPC 5246",0,"Staphylococcus aureus",1
+157956,,"DSM 104437, MHH 639507",0,"Staphylococcus aureus",1
+157957,T2b-T1,"DSM 105503",0,"Staphylococcus aureus",1
+157958,T3a-T2,"DSM 105504",0,"Staphylococcus aureus",1
+157959,T8a-T25,"DSM 105512",0,"Staphylococcus aureus",1
+159338,Fh040319_T3,"DSM 109736",0,"Staphylococcus aureus",1
+159339,T_C6,"DSM 110321",0,"Staphylococcus aureus",1
+159340,SAU060112,"DSM 110939",0,"Staphylococcus aureus",1
+159341,"BWKH 215","DSM 111033",0,"Staphylococcus aureus",1
+159342,"BWKH 135","DSM 111031",0,"Staphylococcus aureus",1
+159343,"BWKH 195","DSM 111032",0,"Staphylococcus aureus",1
+159344,"BWKH 225","DSM 111034",0,"Staphylococcus aureus",1
+160391,,"DSM 110566, NCCP 14568",0,"Staphylococcus aureus",1
+160392,,"DSM 110682, NCCP 14750",0,"Staphylococcus aureus",1
+160393,,"DSM 110691, NCCP 14755",0,"Staphylococcus aureus",1
+160394,,"DSM 110692, NCCP 11769",0,"Staphylococcus aureus",1
+160395,"CC22-MRSA-IV, Barnim""(IsolateA257)","DSM 111210",0,"Staphylococcus aureus",1
+160396,"CC22-MRSA-IV, Barnim"" (Isolate B311)","DSM 111211",0,"Staphylococcus aureus",1
+160397,"CC22-MSSA-IV (Isolate A161)","DSM 111212",0,"Staphylococcus aureus",1
+169386,"BWKH 162","DSM 113508",0,"Staphylococcus aureus",1
+169387,"BWKH 155","DSM 110897",0,"Staphylococcus aureus",1
+169388,"10664989 (BWKH 246)","DSM 110898",0,"Staphylococcus aureus",1
+169389,"BWKH 147","DSM 113333",0,"Staphylococcus aureus",1
+169390,"BWKH 169","DSM 113485",0,"Staphylococcus aureus",1
+169391,"BWKH 170","DSM 113486",0,"Staphylococcus aureus",1
+169392,"BWKH 173","DSM 113506",0,"Staphylococcus aureus",1
+169393,"BWKH 176","DSM 113507",0,"Staphylococcus aureus",1
+169394,"BWKH 163","DSM 113509",0,"Staphylococcus aureus",1
+169395,"BWKH 164","DSM 113510",0,"Staphylococcus aureus",1
+169396,"BWKH 165","DSM 113511",0,"Staphylococcus aureus",1
+169397,"BWKH 166","DSM 113512",0,"Staphylococcus aureus",1
+169398,"BWKH 167","DSM 113513",0,"Staphylococcus aureus",1
+169399,"BWKH 168","DSM 113514",0,"Staphylococcus aureus",1
+169400,"BWKH 171","DSM 113515",0,"Staphylococcus aureus",1
+169401,"BWKH 157","DSM 113528",0,"Staphylococcus aureus",1
+169402,"BWKH 158","DSM 113529",0,"Staphylococcus aureus",1
+169403,"BWKH 159","DSM 113530",0,"Staphylococcus aureus",1
+169404,"BWKH 161","DSM 113531",0,"Staphylococcus aureus",1
+169405,"BWKH 152","DSM 113533",0,"Staphylococcus aureus",1
+169406,"BWKH 153","DSM 113534",0,"Staphylococcus aureus",1
+169407,"BWKH 154","DSM 113535",0,"Staphylococcus aureus",1
+169408,"BWKH 156","DSM 113536",0,"Staphylococcus aureus",1
+169409,Turin8-W06,"DSM 113940",0,"Staphylococcus aureus",1
+14444,,"DSM 20714, ATCC 35844, CIP 103780, CCUG 37246, CCM 3823, MVF 7",1,"Staphylococcus aureus",1
+14452,"pT181cop-608, pT 181 cop-608, SA1494","DSM 4911",0,"Staphylococcus aureus subsp. aureus",1
+14453,SA2044,"DSM 4912, PSA pSA7650",0,"Staphylococcus aureus subsp. aureus",1
+14458,"pSK1, SK 2355 pSKI in SK982","DSM 9385",0,"Staphylococcus aureus subsp. aureus",1
+14509,143.22,"DSM 20608, ATCC 35538, CCM 3573, CCUG 15604",1,"Staphylococcus caprae",1
+14601,GA211,"DSM 6628, ATCC 49545, CIP 104370, JCM 7470, CCUG 37248, CCM 4313, DSMZ 6628, GTC 510, LMG 22205",1,"Staphylococcus coagulans",1
+14529,Fussel,"DSM 20044, ATCC 14990, CCM 2124, WDCM 00132, JCM 2414, CCUG 18000, CCUG 39508, CECT 232, CIP 81.55, IAM 12013, LMG 10474, NBRC 100865, NBRC 100911, NCIMB 12721, NCTC 11047",1,"Staphylococcus epidermidis",1
+14522,,"DSM 1798, ATCC 12228, WDCM 00036, CCUG 21989, PCI 1200, JCM 20345, IAM 12012, IFO 12993, NBRC 12993, NCIMB 8853",0,"Staphylococcus epidermidis",1
+14523,"KH 11","DSM 3269, PCM 2479",0,"Staphylococcus epidermidis",1
+14524,"V 2","DSM 3270, PCM 2480",0,"Staphylococcus epidermidis",1
+14525,"NT 286","DSM 4851",0,"Staphylococcus epidermidis",1
+14526,"GH 561","DSM 8913",0,"Staphylococcus epidermidis",1
+14527,9142,"DSM 18857",0,"Staphylococcus epidermidis",1
+14528,,"DSM 20042, CCM 50, NCTC 9865",0,"Staphylococcus epidermidis",1
+14530,ES1-248,"DSM 30556",0,"Staphylococcus epidermidis",1
+14531,ES1-305-8,"DSM 30568",0,"Staphylococcus epidermidis",1
+14532,ES2-5a1,"DSM 30591",0,"Staphylococcus epidermidis",1
+14533,ES2-W6c1,"DSM 30637",0,"Staphylococcus epidermidis",1
+14534,ES2-W8c2,"DSM 30647",0,"Staphylococcus epidermidis",1
+14535,W7/6,"DSM 30780",0,"Staphylococcus epidermidis",1
+14536,MW14/1,"DSM 30804",0,"Staphylococcus epidermidis",1
+14537,E28,"DSM 30883",0,"Staphylococcus epidermidis",1
+14538,K2-4,"DSM 30905",0,"Staphylococcus epidermidis",1
+14539,K2-5,"DSM 30906",0,"Staphylococcus epidermidis",1
+14540,K2-15,"DSM 30916",0,"Staphylococcus epidermidis",1
+14541,K2-17,"DSM 30918",0,"Staphylococcus epidermidis",1
+23292,"an-1PO b)","DSM 30934",0,"Staphylococcus epidermidis",1
+23293,"an-2PO b)","DSM 30936",0,"Staphylococcus epidermidis",1
+24584,RP62a,"DSM 28319, ATCC 35984, CECT 4184, CCUG 31568, CIP 105777, BCRC 17069",0,"Staphylococcus epidermidis",1
+24585,"EDCC 5130","DSM 28764",0,"Staphylococcus epidermidis",1
+24586,"EDCC 5245","DSM 28765",0,"Staphylococcus epidermidis",1
+24587,A6.1,"DSM 30971",0,"Staphylococcus epidermidis",1
+130692,A10_1,"DSM 31011",0,"Staphylococcus epidermidis",1
+139775,C3_5,"DSM 103867",0,"Staphylococcus epidermidis",1
+157873,6aTB_T2,"DSM 103953",0,"Staphylococcus epidermidis",1
+157874,6bT_T3,"DSM 103954",0,"Staphylococcus epidermidis",1
+157875,8aTB_T5,"DSM 103968",0,"Staphylococcus epidermidis",1
+157876,8bTC_T9,"DSM 103984",0,"Staphylococcus epidermidis",1
+157877,BV212,"DSM 108968",0,"Staphylococcus epidermidis",1
+159056,Fh040319_T1,"DSM 109734",0,"Staphylococcus epidermidis",1
+159057,Fh040319_T2,"DSM 109735",0,"Staphylococcus epidermidis",1
+159058,T_T3,"DSM 110314",0,"Staphylococcus epidermidis",1
+159059,TO-T2,"DSM 110961",0,"Staphylococcus epidermidis",1
+159060,TO-T3b,"DSM 110990",0,"Staphylococcus epidermidis",1
+14544,"SM 131","DSM 20263, ATCC 29970, CCM 2737, CCUG 7323, NCTC 11042, JCM 2416, BCRC 12923, CECT 4900, CIP 81.56, KCTC 3341, LMG 13349, NBRC 109768, NCIMB 14489, NRRL B-14755, VTT E-97770",1,"Staphylococcus haemolyticus",1
+14543,,"DSM 20228, ATCC 15796, CCM 1798",0,"Staphylococcus haemolyticus",1
+14545,,"DSM 20264, ATCC 29969, RM 422",0,"Staphylococcus haemolyticus",1
+14546,"MK 130","DSM 20265, ATCC 29968",0,"Staphylococcus haemolyticus",1
+14547,ES2-13a2,"DSM 30609",0,"Staphylococcus haemolyticus",1
+14548,ES1-230-1b,"DSM 30553",0,"Staphylococcus haemolyticus",1
+14549,ES1-263-1,"DSM 30559",0,"Staphylococcus haemolyticus",1
+14550,ES1-263-2,"DSM 30560",0,"Staphylococcus haemolyticus",1
+14551,ES2-AirT1-1,"DSM 30656",0,"Staphylococcus haemolyticus",1
+14552,K2-9,"DSM 30910",0,"Staphylococcus haemolyticus",1
+24588,1017,"DSM 24111",0,"Staphylococcus haemolyticus",1
+139776,T1_13,"DSM 103903",0,"Staphylococcus haemolyticus",1
+157878,T8b-T30,"DSM 105514",0,"Staphylococcus haemolyticus",1
+159061,T_T1,"DSM 110312",0,"Staphylococcus haemolyticus",1
+159064,St_T1,"DSM 110303",0,"Staphylococcus lugdunensis",1
+159065,T_T4,"DSM 110315",0,"Staphylococcus lugdunensis",1
+14670,"ON 86","DSM 21284, CCUG 49543, CIP 108864, LMG 22219, JCM 17571",1,"Staphylococcus pseudintermedius",1
+23296,"S32, Sp32","DSM 25713",0,"Staphylococcus pseudintermedius",1
+23297,"S33, Sp33","DSM 25714",0,"Staphylococcus pseudintermedius",1
+14568,N850274,"DSM 4807, ATCC 43808, CCUG 25351, NCTC 12218, CCM 4070",1,"Staphylococcus schleiferi subsp. schleiferi",1
+14569,N860215,"DSM 4808",0,"Staphylococcus schleiferi subsp. schleiferi",1
+14570,N860375,"DSM 4809",0,"Staphylococcus schleiferi subsp. schleiferi",1
+17532,"67, 810-2","DSM 50170, ATCC 13637, ICPB 2648-67, NCIB 9203, NCTC 10257, CCUG 5866, LMG 958, NCPPB 1974, JCM 1975, BCRC 10737, CCM 1640, CECT 115, CGMCC 1.1788, CIP 60.77, GIFU 418, IAM 12423, IFO 14161, IMET 10402, NBRC 14161, NCIMB 9203, NRC 729, NRRL B-2756, VKM B-591",1,"Stenotrophomonas maltophilia",1
+13142,,"DSM 21257, ATCC 19861, CCUG 58727, CFBP 4337, ICMP 2820, LMG 978, NCPPB 323, JCM 13372",0,"Stenotrophomonas maltophilia",1
+17531,Ac,"DSM 14322",0,"Stenotrophomonas maltophilia",1
+17533,"68, R-72","DSM 50173, ATCC 17444, ICPB 3107-68",0,"Stenotrophomonas maltophilia",1
+17534,,"DSM 21874, ATCC 19374, CCEB 338, CCUG 559 B, CIP 106700, LMG 2195, NCIMB 9428, JCM 13324",0,"Stenotrophomonas maltophilia",1
+17535,ES1-413-1a,"DSM 30583",0,"Stenotrophomonas maltophilia",1
+17536,FR2-W6Ba,"DSM 30705",0,"Stenotrophomonas maltophilia",1
+17537,FR2-W6Cb,"DSM 30707",0,"Stenotrophomonas maltophilia",1
+17538,FR2-W3Aa,"DSM 30683",0,"Stenotrophomonas maltophilia",1
+17539,FR2-W3Ba,"DSM 30686",0,"Stenotrophomonas maltophilia",1
+17540,FR2-W3Bb,"DSM 30687",0,"Stenotrophomonas maltophilia",1
+17541,FR2-W3Cb,"DSM 30689",0,"Stenotrophomonas maltophilia",1
+17542,FR2-W4Aa,"DSM 30690",0,"Stenotrophomonas maltophilia",1
+17543,FR2-W4Ab,"DSM 30691",0,"Stenotrophomonas maltophilia",1
+17544,FR2-W4Ac,"DSM 30692",0,"Stenotrophomonas maltophilia",1
+17545,FR2-W4Ba,"DSM 30693",0,"Stenotrophomonas maltophilia",1
+17546,FR2-W4Bb,"DSM 30694",0,"Stenotrophomonas maltophilia",1
+17547,FR2-W4Cb,"DSM 30695",0,"Stenotrophomonas maltophilia",1
+17548,FR2-W5Aa,"DSM 30696",0,"Stenotrophomonas maltophilia",1
+17549,FR2-W5Ab,"DSM 30697",0,"Stenotrophomonas maltophilia",1
+17550,FR2-W5Ba,"DSM 30699",0,"Stenotrophomonas maltophilia",1
+17551,FR2-W5Ca,"DSM 30700",0,"Stenotrophomonas maltophilia",1
+17552,FR2-W6Aa,"DSM 30702",0,"Stenotrophomonas maltophilia",1
+17553,FR2-1,"DSM 30740",0,"Stenotrophomonas maltophilia",1
+17554,560,"DSM 24970, ATCC 13636, CCM 1639, CCTM La1858, CDC 3903, LMG 961, NCTC 10258, CCUG 72272",0,"Stenotrophomonas maltophilia",1
+131029,"97976, IBRG 6","DSM 16103",0,"Stenotrophomonas maltophilia",1
+131985,PT03,"DSM 29579",0,"Stenotrophomonas maltophilia",1
+157904,TURIN130318_T1,"DSM 107242",0,"Stenotrophomonas maltophilia",1
+159165,"Arbex 2037, R5_A9_IIIA","DSM 110294",0,"Stenotrophomonas maltophilia",1
+131030,"pTZ-440Y, pT2-440Y","DSM 28631",0,"Stenotrophomonas muris",1
+14711,,"DSM 20622, ATCC 51725, CCUG 27296, LMG 17755, NCDO 2025, LMG 17296, CIP 82.4",1,"Streptococcus acidominimus",1
+169307,"S128, BM1-BWCA-si-MA-A, CLA-TS-S128","DSM 108490",0,"Streptococcus acidominimus",1
+14712,"G 19","CCUG 4208, CIP 103227, JCM 5671, DSM 2134, ATCC 13813, NCTC 8181, BCRC 10787, BIOTECH 10527, CECT 183, LMG 14694, NCAIM B.01882, NCFB 1348, NCIMB 701348, VTT E-97858",1,"Streptococcus agalactiae",1
+14713,,"DSM 6784, ATCC 27956, CCUG 34230, NADC 44",0,"Streptococcus agalactiae",1
+14714,"ND 2-22","DSM 16828, ATCC 51487, CIP 103768, LMG 15977, JCM 32209",0,"Streptococcus agalactiae",1
+14717,"Havill III. (R. Lancefield F68A)","DSM 20563, ATCC 12395, ATCC 33397, NCTC 10713, CCUG 27298, LMG 14502, JCM 12993, CCUG 35776, CIP 102921, HAMBI 1525, NCFB 2496",1,"Streptococcus anginosus subsp. anginosus",1
+14800,"LRA 06 11 76","CCUG 4211, LMG 15819, CIP 103684, DSM 6176, ATCC 35666, NCTC 8543",0,"Streptococcus dysgalactiae subsp. equisimilis",1
+14724,"C 15","DSM 20561, ATCC 33398, NCDO 2493, NCTC 9682, CCUG 23255, LMG 15886, CIP 102910",1,"Streptococcus equi subsp. equi",1
+14824,,"DSM 17037, CCUG 47520, CECT 5772, CIP 108587",1,"Streptococcus equi subsp. ruminatorum",1
+14725,"S 34","CCUG 23256, NCTC 4676, CIP 103228, DSM 20727, ATCC 43079, NCDO 1358, NCTC 7023",1,"Streptococcus equi subsp. zooepidemicus",1
+14727,Hl2B,"DSM 20558, ATCC 9812, NCDO 1037, CCUG 27302, IFO 12553, JCM 7879, BCRC 12578, CECT 973, CGMCC 1.2506, CIP 102504, HAMBI 1572, LMG 14897, NBRC 12553, NCIMB 701037, NCTC 12969",1,"Streptococcus equinus",1
+14719,"Pearl 11","DSM 20480, ATCC 33317, NCDO 597, NCTC 8177, WDCM 00133, JCM 5802, ACM 3539, CCUG 17828, CCUG 34832, CECT 213, CECT 974, CGMCC 1.2502, CIP 102302, JCM 7877, LMG 8518, NCIMB 700597",0,"Streptococcus equinus",1
+14726,1,"DSM 20062",0,"Streptococcus equinus",1
+14821,,"DSM 16831, ACM 3611, CCUG 35224, CIP 105428, JCM 10005, LMG 16802, CIP 105425, NCTC 13773",1,"Streptococcus gallolyticus subsp. gallolyticus",1
+14813,,"DSM 15351, CIP 107122, CCUG 46150, NEM 1202, JCM 12261, KCTC 3878, LMG 22270",1,"Streptococcus gallolyticus subsp. pasteurianus",1
+14732,1877,"DSM 20573, ATCC 27335, CIP 103248, CCUG 32759, NCTC 11324, CCUG 17827, JCM 12996, VPI 3372A, CECT 803, LMG 14510, LMG 17840, NCFB 2227, VPI 3372-A",1,"Streptococcus intermedius",1
+14749,"SV 1","DSM 20566, ATCC 33400, NCTC 7465, CCUG 28588, LMG 14545",1,"Streptococcus pneumoniae",1
+14742,665,"DSM 11865",0,"Streptococcus pneumoniae",1
+14743,456,"DSM 11866",0,"Streptococcus pneumoniae",1
+14744,670,"DSM 11867",0,"Streptococcus pneumoniae",1
+14745,D219,"DSM 11868",0,"Streptococcus pneumoniae",1
+14747,,"DSM 14377, ATCC 6303, CCUG 33062, CIP 104225",0,"Streptococcus pneumoniae",1
+14748,,"CCUG 33774, CCM 4502, DSM 14378, ATCC 6305",0,"Streptococcus pneumoniae",1
+14750,"Jorgensen 262","DSM 24048, ATCC 49619, CCM 4501, CCUG 33638, DSM 11967, LMG 15155",0,"Streptococcus pneumoniae",1
+14751,,"DSM 25971, NCCP 13766",0,"Streptococcus pneumoniae",1
+131987,,"DSM 102802, NCCP 13779",0,"Streptococcus pneumoniae",1
+14752,176,"DSM 20725, ATCC 43138, NCTC 10999",1,"Streptococcus porcinus",1
+14787,,"DSM 20569, ATCC 19436, CCUG 17930, JCM 5709, NCDO 2038, NCTC 3858, BCRC 12579, CCUG 27579, CECT 994, CIP 103219, LMG 9465, NCIMB 702038",1,"Streptococcus uberis",1
+16227,587,"DSM 1471",0,"Streptomyces cyaneofuscatus",1
+159315,D121,"DSM 40670",0,"Streptomyces cyaneofuscatus",1
+160362,Sg,"DSM 41922",0,"Streptomyces cyaneofuscatus",1
+16229,"C1, 18-16, D 100, C<SUB>1</SUB>","DSM 40236, ATCC 23345, ATCC 23921, CBS 905.68, ETH 4289, IFO 12875, IMRU 3463, ISP 5236, KCC S-0047, KCC S-0644, NBRC 12875, NCTC 13033, RIA 1176, Waksman 18-16, JCM 4047, BCRC 13478, CBS 160.45, CCT 4836, CCUG 11104, CECT 3330, CFBP 4546, CGMCC 4.1419, CIP 105124, HAMBI 2315, IAM 12311, IFO 15744, JCM 4644, KACC 20084, KCTC 9080, KCTC 9135, LMG 19302, MTCC 4734, NBIMCC 2442, NBRC 15744, NCIMB 13023, NRRL B-2682, PCM 2331, VKM Ac-800, VTT E-072676, VTT E-991424",1,"Streptomyces griseus subsp. griseus",1
+16225,"18 B","DSM 1054",0,"Streptomyces griseus subsp. griseus",1
+16226,,"DSM 773, ATCC 14811, NRRL 2470, JCM 3140, CGMCC 4.1131, IFO 14886, NBRC 14886",0,"Streptomyces griseus subsp. griseus",1
+16228,,"DSM 2010",0,"Streptomyces griseus subsp. griseus",1
+16230,,"DSM 40654, ATCC 3326, IMRU 3326, NRRL B-2926, JCM 4319, BCRC 12487",0,"Streptomyces griseus subsp. griseus",1
+16231,"variant 42.1 of 4","DSM 40656, ATCC 11429, CBS 161.45, DSM 40653, DSM 41068, ETH 28522, IMRU 3475, NCTC 6962, JCM 4320, CECT 3117, DSM 41076, NCIMB 8237, NRRL B-1965",0,"Streptomyces griseus subsp. griseus",1
+16232,04506,"DSM 40657, IMRU 3511",0,"Streptomyces griseus subsp. griseus",1
+16233,7R2557,"DSM 40658, IMRU 3523",0,"Streptomyces griseus subsp. griseus",1
+16234,S-3,"DSM 40659, IMRU 3538",0,"Streptomyces griseus subsp. griseus",1
+16235,S-4,"DSM 40660, IMRU 3539",0,"Streptomyces griseus subsp. griseus",1
+16236,,"DSM 40661, IMRU 1945",0,"Streptomyces griseus subsp. griseus",1
+16237,"FD 1076","DSM 40627",0,"Streptomyces griseus subsp. griseus",1
+16238,"Tü 6","DSM 40693, ETH 7419",0,"Streptomyces griseus subsp. griseus",1
+16239,"Tü 10","DSM 40695, ETH 7796",0,"Streptomyces griseus subsp. griseus",1
+16240,"Tü 33","DSM 40707, NRRL 2764, ETH 17474",0,"Streptomyces griseus subsp. griseus",1
+16241,"M 4052","DSM 40759, ATCC 15395, IMRU 3754",0,"Streptomyces griseus subsp. griseus",1
+16242,AE-432,"DSM 40817, ATCC 10971, INA 10971, NCIB 8591",0,"Streptomyces griseus subsp. griseus",1
+16243,"4, Boots FD 40, Schering 308","DSM 40855, ATCC 10137, CCM 3178, IFO 3430, IMET 40311, IMRU 3496, NCIB 8232, NCTC 6961",0,"Streptomyces griseus subsp. griseus",1
+16244,"2315, Schering 372","DSM 40878, ATCC 21897, IFO 3102, NBRC 3102",0,"Streptomyces griseus subsp. griseus",1
+16245,"A-1, Schering 378","DSM 40881, ATCC 13968",0,"Streptomyces griseus subsp. griseus",1
+16246,H-402,"DSM 40882, ATCC 21483, FERM P-328",0,"Streptomyces griseus subsp. griseus",1
+16248,"MCRL 1068, MA 2837","DSM 40931, IFO 13304, JCM 5012, KCC S-1012, NBRC 13304, NRRL 3851, IFO 14059, NBRC 14059",0,"Streptomyces griseus subsp. griseus",1
+16250,,"DSM 40939, NRRL 2426",0,"Streptomyces griseus subsp. griseus",1
+16251,,"DSM 40941, ATCC 23266, CBS 252.65, JCM 5060, KCTC 9729, NRRL B-3163, CGMCC 4.1626, IFO 15403, NBRC 15403",0,"Streptomyces griseus subsp. griseus",1
+16252,"N 30","DSM 40984",0,"Streptomyces griseus subsp. griseus",1
+16253,,"DSM 41034, IMRU 3378",0,"Streptomyces griseus subsp. griseus",1
+16254,LP-16,"DSM 41217, IMRU 3903",0,"Streptomyces griseus subsp. griseus",1
+16255,,"DSM 41071, ATCC 11984, IFO 13189, IMRU 3480, NBRC 13189",0,"Streptomyces griseus subsp. griseus",1
+16256,22,"DSM 41072, IMRU 3481",0,"Streptomyces griseus subsp. griseus",1
+16257,1,"DSM 41075, IMRU 3492",0,"Streptomyces griseus subsp. griseus",1
+16258,,"DSM 41076, ATCC 11429, IMRU 3493",0,"Streptomyces griseus subsp. griseus",1
+16259,19,"DSM 41077, IMRU 3494",0,"Streptomyces griseus subsp. griseus",1
+16260,,"DSM 41078, IMRU 3495",0,"Streptomyces griseus subsp. griseus",1
+16261,,"DSM 41079, IMRU 3498",0,"Streptomyces griseus subsp. griseus",1
+16262,,"DSM 41080, IMRU 3499",0,"Streptomyces griseus subsp. griseus",1
+16263,"HF 16","DSM 41082, IMRU 3510",0,"Streptomyces griseus subsp. griseus",1
+16264,"FR 2555 (No.21)","DSM 41085, IMRU 3521",0,"Streptomyces griseus subsp. griseus",1
+16265,"FR 2556 (No.22)","DSM 41086, IMRU 3522",0,"Streptomyces griseus subsp. griseus",1
+16266,,"DSM 41087, IMRU 3524",0,"Streptomyces griseus subsp. griseus",1
+16267,S-1,"DSM 41091, IMRU 3536, JCM 4046, KCC S-0046, NIHJ 1",0,"Streptomyces griseus subsp. griseus",1
+16268,S-2,"DSM 41092, IMRU 3537",0,"Streptomyces griseus subsp. griseus",1
+16269,Z,"DSM 41096, IMRU 3546",0,"Streptomyces griseus subsp. griseus",1
+16270,,"DSM 41098, IMRU 3561",0,"Streptomyces griseus subsp. griseus",1
+16271,,"DSM 41099, IMRU 3563",0,"Streptomyces griseus subsp. griseus",1
+16272,,"DSM 41100, IMRU 3567a",0,"Streptomyces griseus subsp. griseus",1
+16273,,"DSM 41101, IMRU 3567b",0,"Streptomyces griseus subsp. griseus",1
+16274,R33,"DSM 41107, IMRU 3616",0,"Streptomyces griseus subsp. griseus",1
+16275,"A 4903 (PD 04797)","DSM 41145, IMRU 3734, NRRL 2426",0,"Streptomyces griseus subsp. griseus",1
+16276,"1D, ID 3814","DSM 41707",0,"Streptomyces griseus subsp. griseus",1
+16277,"1L, ID 3816","DSM 41709",0,"Streptomyces griseus subsp. griseus",1
+16278,"14B, ID 3819","DSM 41712",0,"Streptomyces griseus subsp. griseus",1
+16279,"14c, ID 3820","DSM 41713",0,"Streptomyces griseus subsp. griseus",1
+16280,"14D, ID 3821","DSM 41714",0,"Streptomyces griseus subsp. griseus",1
+16281,"14F, ID 3822","DSM 41715",0,"Streptomyces griseus subsp. griseus",1
+16282,"14H, ID 3823","DSM 41716",0,"Streptomyces griseus subsp. griseus",1
+16283,"15A, ID 3824","DSM 41717",0,"Streptomyces griseus subsp. griseus",1
+16284,17B,"DSM 41720",0,"Streptomyces griseus subsp. griseus",1
+16285,254,"DSM 41742",0,"Streptomyces griseus subsp. griseus",1
+16286,"1/k, ID 4035, JP-1/ku/97","DSM 41748",0,"Streptomyces griseus subsp. griseus",1
+16287,"2/ppi, ID 4095","DSM 41749",0,"Streptomyces griseus subsp. griseus",1
+16288,"8/ppi, ID 4097, MA-8pp1/96","DSM 41750",0,"Streptomyces griseus subsp. griseus",1
+16289,"10/ppi, ID 4096","DSM 41751",0,"Streptomyces griseus subsp. griseus",1
+16290,10/AL,"DSM 41817",0,"Streptomyces griseus subsp. griseus",1
+16291,6/AL,"DSM 41818",0,"Streptomyces griseus subsp. griseus",1
+16292,"Actino 8","DSM 41823",0,"Streptomyces griseus subsp. griseus",1
+16293,"Actino 9","DSM 41824",0,"Streptomyces griseus subsp. griseus",1
+16294,"FD 196","DSM 46440, IMET 40315, NCIB 9004, IAW 92",0,"Streptomyces griseus subsp. griseus",1
+16295,"Anglie I","DSM 46469, IMET 41563",0,"Streptomyces griseus subsp. griseus",1
+16296,Klinge,"DSM 46470, IMET 41564",0,"Streptomyces griseus subsp. griseus",1
+16297,Pakula,"DSM 46471, IMET 41861",0,"Streptomyces griseus subsp. griseus",1
+160777,K-3,"DSM 40909",0,"Streptomyces griseus subsp. griseus",1
+16768,"F 103","DSM 43786",0,"Thermoactinomyces vulgaris",1
+159074,WCA3-693-APC-4alpha,"DSM 105185, JCM 34367",1,"Tissierella pigra",1
+18019,,"DSM 18095, ATCC 25539, NCIMB 703038, NCTC 11158, VPI 0563, CCUG 27825, Prevot 3722B",1,"Tissierella praeacuta",1
+18018,"BL 4858","CCUG 21837, KCTC 5022, NRRL B-41124, BCRC 14555, DSM 5675, ATCC 33268, VPI 12193",0,"Tissierella praeacuta",1
+14344,,"DSM 14222, ATCC 35405, JCM 8153, CIP 103919, KCTC 15104",1,"Treponema denticola",1
+212,"84, C-100","DSM 20630, ATCC 19411, CCUG 13230, CIP 103129, LMG 16162, NCTC 5224",1,"Trueperella pyogenes",1
+211,3329,"DSM 20594, CCM 5753",0,"Trueperella pyogenes",1
+5262,M-29c,"DSM 5731, ATCC 49515, NCDO 2497, CCUG 32704, CIP 102976, LMG 9464",1,"Vagococcus fluvialis",1
+5263,M-128f,"DSM 5732, NCDO 2499",0,"Vagococcus fluvialis",1
+5264,ENDO-EH,"DSM 21402",0,"Vagococcus fluvialis",1

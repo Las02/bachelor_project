@@ -1,0 +1,6 @@
+"0","knitr::opts_chunk$set(echo = TRUE, results = ""hide"")"
+"0","library(RSQLite)"
+"0","library(tidyverse)"
+"0","library(magrittr)"
+"0","library(cowplot)"
+"0","library(modelr)"
