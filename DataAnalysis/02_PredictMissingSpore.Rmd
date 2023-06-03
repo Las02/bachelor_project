@@ -19,23 +19,29 @@ library(naniar)
 library(patchwork)
 ```
 
+## Purpose
+As sporeforming include a ton of missing values we build a model to predict spore formation to avoid missing values
+
+
 ## Reading in data
+Before the analysis can continue we need to a little data wrangeling to get the correct format
 
 ```{r}
 D <- readRDS("./data/bacdive_growth_ribdif.rds")
-# Pathogen, set nan to 0
+
+# For the pathogen column, set nan to 0
 Dt_tmp1 <- D %>% 
   mutate(pathogen_any = ifelse(is.na(pathogen_any), "P0", pathogen_any))
 
-# Set nan to neutrophile
+# Set nan to neutrophile for PH.range
 Dt_tmp2 <- Dt_tmp1 %>% 
   mutate(PH.range = ifelse(is.na(PH.range), "Pneutrophile", PH.range))
 
-# Get pseudogenes as a percent
+# Convert pseudogene to percent
 Dt_tmp3 <- Dt_tmp2 %>% 
   mutate(pseudogenes_percent = 100*(pseudogenes/total_genes))
 
-# Selecting data and filtering in phylums
+# Selecting only data in Bacillota or actinomycetota
 D_all <- Dt_tmp3 %>%  
   filter(phylum %in% c("Bacillota","Actinomycetota")) %>% 
   select(species,last_col(42):last_col())  %>% 
@@ -45,35 +51,11 @@ D_all <- Dt_tmp3 %>%
 D_filtered_tmp <- D_all %>% 
   filter(!is.na(sporeforming))
 
-
-D %>% filter(class == "Deltaproteobacteria") %>% select(species,sporeforming)
-
-Dall %>% left_join(D, by="species") %>% 
-  filter(class.x =="Deltaproteobacteria") %>% 
-  select(species,sporeforming.y,n16.x,genus.x) %>% filter(is.na(sporeforming.y))
-  
-Dall$n1
 ```
 
-Looking at nans
 
 ```{r}
-D_all %>% 
-   vis_miss(cluster = T, sort_miss = T) +
-    theme(
-        plot.margin = margin(, 1.5, , , "cm")
-  )
-
-```
-
-Even though growth temp and oxygen tolerance has a lot of missing values
-We are still using them in the model, due to 1) they matter as seen
-earlier in the pca 2) We are using them in the final larger model
-anyways, so the datapoints are ging to be removed anyways In summary, we
-are using the genomic data and oxygen.tol, phylum, growth_temp \###
-Selecting the actual data used
-
-```{r}
+# Select the data used for modelling
 D_filtered <- D_filtered_tmp %>% 
   select(phylum, oxygen.tolerance, growth_temp,
          gc_percent, sporeforming, genes_coding, genome_components, pseudogenes_percent, ar_count) %>% 
@@ -83,7 +65,7 @@ D_filtered <- D_filtered_tmp %>%
 
 ### Spliting data
 
-Using strata =, to make sure that sporeforming is equally distributed
+Using strata =, to make sure that spore forming is equally distributed in the test and training data set.
 
 ```{r}
 set.seed(07042023)
@@ -94,8 +76,7 @@ D_test <- testing(D_split)
 
 ### Setting up model
 
-Based on: <https://juliasilge.com/blog/sf-trees-random-tuning/> Based on
-tidymodels package
+Based on: <https://juliasilge.com/blog/sf-trees-random-tuning/> 
 
 ```{r}
 # setting up recipe
@@ -130,7 +111,7 @@ doParallel::registerDoParallel()
 trees_folds <- vfold_cv(D_train)
 
 # Tune hyperparameters
-# grid sets the 
+# grid sets the number of grid points used
 tune_res <- tune_grid(
   tune_wf,
   # Sets the 
@@ -140,7 +121,7 @@ tune_res <- tune_grid(
 
 ```
 
-## Picking the best model :)
+## Picking the best model
 
 ### First run
 
@@ -161,7 +142,7 @@ tune_res %>%
 
 It seems that lower values of both the minimum numbers of data.points
 per split (min_n) work better. And lower values of mtry, the number of
-samples which can be choosen
+samples which can be choosen.
 
 Lets try to run model on more values in this interval
 
@@ -205,10 +186,8 @@ regular_res %>%
   labs(y = "AUC")
 ```
 
-min_n = 4 and mtry = 2 seems the most balanced mtry -\> we need som
-flexiblity in the model
 
-finalize the model
+finalize the model, picking the best model found
 
 ```{r}
 best_auc <- select_best(regular_res, "roc_auc")
@@ -221,6 +200,8 @@ final_rf <- finalize_model(
 final_rf
 ```
 
+
+## look at the most important predictors
 ```{r}
 library(vip)
 
@@ -231,9 +212,7 @@ final_rf %>%
 ```
 
 
-Now lets fit final data on entire training set and evalute on testing
-data
-
+Now lets fit final data on entire training set and evaluate on the test data
 ```{r}
 final_wf <- workflow() %>%
   add_recipe(tree_rec) %>%
@@ -244,24 +223,23 @@ final_res <- final_wf %>%
 
 final_res %>%
   collect_metrics()
+
 ```
 
+# And find the accuarsy
 ```{r}
 final_res %>% 
   collect_predictions() %>% 
   filter(.pred_class != sporeforming)
 
 # Only 6 wrong predictions out of 59 !!  = 0.93 accurcy..
-# Worse than just genus.. but appliciple 
-# In all of them is it not very sure. We could change cutoff %
 
 ```
 
 ## Running model on the rest of the data
 
 ```{r}
-# select entries without sporeforming info
-# and select attributes
+# Pick data for the predictions
 D_to_pred <- D_all %>% 
   filter(is.na(sporeforming)) %>% 
   select(-sporeforming) %>% 
@@ -269,7 +247,7 @@ D_to_pred <- D_all %>%
          gc_percent, genes_coding, genome_components,  pseudogenes_percent, ar_count) %>% 
   filter(if_all(everything(), ~!is.na(.x)))
   
-D_to_pred
+
 ```
 
 Make predictions
@@ -287,11 +265,11 @@ pred_df <- bind_cols(D_to_pred, predictions$predictions)
 
 ```
 
-Plot best prediction confidence. Is how many trees think it. I believe
+Plot the prediction confidence distribturion for all points and the roc curve
 
 ```{r}
-# How is dist
-pred_df %>% 
+# confidence distribution
+p1 <- pred_df %>% 
   rename(sf0 = `0`, sf1 = `1`) %>% 
   mutate(best_pred = case_when(
     sf0 > sf1 ~ sf0,
@@ -299,10 +277,19 @@ pred_df %>%
   )) %>% 
   ggplot(aes(best_pred))+ geom_histogram()
 
+# and roc curve for last predictions
+p2 <- final_res %>% 
+  collect_predictions() %>% 
+  roc_curve(truth=sporeforming, .pred_0) %>% 
+  autoplot() + geom_point(aes(y=sensitivity, x=1-specificity,col=.threshold))
+ 
+
+p1 + p2
 ```
 
-Looks like \~0.7 cutoff would be ok. Set those values to nan Apply
-cutoff
+Based on above plots we picked a cutoff at 0.7. 
+It seems like we get enough datapoints while still getting an ok quality of predictions
+We then applied this threshold
 
 ```{r}
 D_predicted <- pred_df %>% 
@@ -359,9 +346,7 @@ D_final %>%
   facet_wrap(~phylum)
 ```
 
-Inspect some on google.. It seems to be working :)) Both spore and non
-spore :)
-
+Inspect some entries on google.. It seems to be working :)) Both for spore forming and non spore forming
 ```{r}
 D_final %>% 
   filter(sporeforming == "p1")
@@ -370,7 +355,7 @@ D_final %>%
   filter(sporeforming == "p0")
 ```
 
-Looking at missing data now
+Looking at missing data nbefore and after
 
 ```{r}
 
@@ -393,40 +378,12 @@ p2 <- D %>%
 p2 + p1
 ```
 
-## Lastly we can set the gram negative phylums to non sporeforming
-
-We only bother with those with over 10 seq
-Lastly only bacillota and actinomycetota have sporeforming entries.. it seems in general
-But just to make i checked the other entries
-
-| phylum | has some sporeforming | source |
-|--------|-----------------------|--------|
-
-|"Bacillota" (firmicutes) | yes | <https://journals.asm.org/doi/full/10.1128/jb.00079-22>|
-|"Bacteroidota"| no|<https://ami-journals.onlinelibrary.wiley.com/doi/full/10.1111/1462-2920.16094>|
-|"Pseudomonadota" | no|<https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm01157.pub2>|
-|"Mycoplasmatota"|no|<https://www.sciencedirect.com/science/article/pii/B978008047378950018X>|
-|"Actinomycetota" | yes | <https://www.mdpi.com/2076-2607/10/7/1471>|
-|"Acidobacteriota"| gram-|<https://www.mdpi.com/2073-4441/14/24/4043>| 
-|"Planctomycetota"| no mention(seems not) | - | 
-|"Thermotogota" | no |<https://www.sciencedirect.com/science/article/pii/S0723202018304934?casa_token=8LPSXIb2dcsAAAAA:9RK8gm8BXAmh4cr925wGqqzO0_hRYKyS5XBjaTQVcAF7HT7z2EQWJ1eG6O5DryJbSNSh_qWqww>|
-|"Spirochaetota" |gram -|<https://www.microbiologyresearch.org/content/journal/ijsem/10.1099/ijsem.0.005690>| 
-|"Fusobacteriota" | gram - |
-<https://www.sciencedirect.com/science/article/pii/S2352513421003719>|
-|"Chlamydiota" |no mention | -| 
-|"Chlorobiota" | no meniton | -|
-|"Deinococcota" |no|<https://journals.asm.org/doi/full/10.1128/mSystems.00786-20>|
+## Lastly we set the gram negative entries to non-sporeforming. The argument for this can be found in the report.
 
 ```{r}
-# seing which have more than 10 entries
-D %>% 
-  summarise(n=n(), .by=phylum) %>% 
-  filter(n > 50) %>% 
-  pull(phylum) %>% unique
 
-# Defining the sporeforming correctly
+# Defining the phyla
 has_sporeforming <- c("Bacillota","Actinomycetota")
-
 
 # setting the others to not sporeforming
 # They are all set to different values to differentiate where they came from eg, 1, 0, na0, p1 and p0 for statistics
@@ -442,10 +399,10 @@ D_final_many %>%
   ggplot(aes(phylum, fill = sporeforming)) + 
   geom_bar() 
 ```
-The missing are either due to the model having a low chance of being correct, or due to entries having missing values.
+
 
 ```{r}
-# Now cluster down the predicted to just 0 and 
+# Now cluster down the predicted to just 0 and 1
 D_to_print <- D_final_many %>% 
   mutate(sporeforming = case_when(
     sporeforming == "p0" ~ "0",
@@ -460,7 +417,7 @@ D_to_print <- D_final_many %>%
 #
 
 Write it to file
-and vizualise. Now it looks a TON better!
+and vizualise the missing values. Now it looks  better!
 ```{r}
 D_to_print %>% 
   select(oxygen.tolerance, growth_temp, sporeforming) %>% 

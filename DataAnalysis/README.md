@@ -21,5 +21,9 @@ The following is a describtion of the files
 
 ## Data
 The data can be found in ./data/
-While the raw data used (and the data for modelling the effect of antibiotic resistance mechanisms on entropy), is not avalible in this Git, due to size constraints, the final data set used for analysis of both the 16S gene copy number and the intragenomic gene diversity can be found in "pred_bacdive_growth_ribdif.rds". 
+While the raw data used (and the data for modelling the effect of antibiotic resistance mechanisms on entropy), is not avalible in this Git, due to size constraints, the final data set used for analysis of both the 16S gene copy number, prediction of spore formation, and the intragenomic gene diversity (but not the antibiotic resistance mechanism) can be found in the following two files:
+
+"pred_bacdive_growth_ribdif.rds" contains the data used for modelling the 16S gene copy number and the intragenomic gene diversity. Therby some of the values for spore formation are predicted
+
+"bacdive_growth_ribdif.rds" contains the data before predicting spore formation. This is the dataset used for predicting spore formation
 

@@ -4,7 +4,6 @@ library(stringr)
 library(RSQLite)
 
 
-# efter -> card til data og den den anden til den anden.. måske man kan arg at den gamle er ok?
 
 setwd("/mnt/raid2/s203512/bachelor/DataPreparation/FindARinDNA/scripts")
 ar_d_read <- read_table("./megares_sum_after_del.tab")
@@ -16,10 +15,10 @@ ar_d <- ar_d %>%
     rename(gcf = `#FILE`) %>%
     mutate(gcf = paste(str_split_i(gcf,"_",1),str_split_i(gcf,"_",2), sep="_"))
 
-#ar_d <- head(ar_d, 100)
+
 # Apply 1 hot enoding
 t <- 90
-# Function to check if "12;23" has any above threshold
+# Function to check if, given the input consist of several values, any values are above the threshold
 any_above_threshold <- function(seq, t){
     split <- str_split(seq, ";")
     # If there is ; in the data check if any value is above the threshold
@@ -77,11 +76,3 @@ sum <- final %>%
 write.csv(final,"../sum_final2.csv")
 write.csv(sum,"../wide_final2.csv")
 
-# Get the SNPS
-#drug_ann_tmp <- read.csv("megares_annotations_v3.00.csv", sep=c("|",","), skip=1, header=FALSE)
-#isSNP = drug_ann_tmp %>%
-#    mutate(extra = str_split_i(V6, ",",1)) %>%
-#    select(V1, extra) %>%
-#    filter(extra == "RequiresSNPConfirmation") %>%
-#    select(V1)
-#write.csv(isSNP,"./isSNP.csv")

@@ -6,53 +6,6 @@ output:
 date: "2023-03-29"
 ---
 
-
-
-library(ggfortify)
-library(plotly)
-Dt %>% 
-  mutate(oxygen.tolerance = case_when(
-    oxygen.tolerance == "obligate anaerobe" ~ "anaerobe",
-    oxygen.tolerance == "obligate aerobe" ~ "aerobe",
-    oxygen.tolerance == "facultative anaerobe" ~ "aerobe",
-    oxygen.tolerance == "facultative aerobe" ~ "aerobe",
-    oxygen.tolerance == "microaerophile" ~ "microaerophile",
-    .default = oxygen.tolerance
-  )) %>% 
-  ggplot(aes(x=oxygen.tolerance,y=2^n16)) + geom_boxplot() + geom_jitter(height = 0.3,alpha=0.1)
-
-Dt %>% 
-  ggplot(aes(x=oxygen.tolerance,y=2^n16)) + geom_boxplot() + geom_jitter(height = 0.3,alpha=0.1)
-
-
-for_plot <- c("oxygen.tolerance","motility","sporeforming","phylum","ar_count")
-
-D_subset <- Dt %>% 
-  select(where(is.double),all_of(for_plot),-n16) %>% 
-  filter(if_all(where(is.double), ~!is.na(.x))) 
-
-pca_res <- D_subset %>% 
-  select(-any_of(for_plot)) %>% 
-  prcomp(scale=T, center = T)
-
-autoplot(pca_res, loadings = TRUE, loadings.label = TRUE, 
-         loadings.label.size  = 3, data = D_subset, col="oxygen.tolerance") +
-  facet_wrap(~phylum)
-autoplot(pca_res, loadings = TRUE, loadings.label = TRUE, 
-         loadings.label.size  = 3, data = D_subset, col="ar_count") +
-  facet_wrap(~phylum)
-pca_df_tmp <- pca_res$x %>% 
-  as.data.frame() 
-pca_df <- bind_cols(pca_df_tmp, D_subset)
-
-plot_ly(data=pca_df , x= ~PC1, y=~PC2, z=~PC3, type="scatter3d", mode="markers", color=~oxygen.tolerance, size=2)
-plot_ly(data=pca_df , x= ~PC1, y=~PC2, z=~PC3, type="scatter3d", mode="markers", color=~sporeforming, size=2)
-
-Dt %>% 
-  ggplot(aes(x=phylum, y=gc_percent)) + 
-  geom_boxplot()
-
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(car)
@@ -68,10 +21,9 @@ library(jtools)
 ```
 ## Purpose
 
-The goal of this section is the run the different statistical tests
+The goal of this section is to build a model of the number of 16S gene copies
 
 ## Reading in the data
-The data is read from the R data file create from 01_ReadInData.Rmd
 
 ```{r}
 D <- readRDS("./data/pred_bacdive_growth_ribdif.rds")
@@ -82,11 +34,11 @@ D %>% select(last_col(41):last_col())
 ### Data transformations
 
 ```{r}
-# Pathogen, set nan to 0
+# for Pathogen column, set nan to 0
 Dt_tmp1 <- D %>% 
   mutate(pathogen_any = ifelse(is.na(pathogen_any), "0", pathogen_any))
 
-# Set nan to neutrophile
+# Set nan to neutrophile for PH.range
 Dt_tmp2 <- Dt_tmp1 %>% 
   mutate(PH.range = ifelse(is.na(PH.range), "neutrophile", PH.range))
 
@@ -94,16 +46,16 @@ Dt_tmp2 <- Dt_tmp1 %>%
 Dt_tmp3 <- Dt_tmp2 %>% 
   mutate(pseudogenes_percent = 100*(pseudogenes/total_genes))
 
-# surface/area + # Motility
+# calculate surface/area + set motility which is NAN to notknown
 Dt_tmp3.1 <- Dt_tmp3 %>% 
   mutate(motility = ifelse(is.na(motility), "Not Known", motility)) %>% 
   mutate(surface = 2*(cell.width^2) + 4*(cell.width*cell.length),
          area = cell.width*cell.width*cell.length,
          surf_area = surface/area) %>% 
           select(-surface, -area)
-Dt
 
-# Sample as factor
+
+# Set Sample type as the sample from which is is sampled the most often from
 Dt_tmp3.2 <- Dt_tmp3.1 %>% 
   rowwise() %>% 
   mutate(
@@ -116,10 +68,8 @@ Dt_tmp3.2 <- Dt_tmp3.1 %>%
       plant.counts == max ~ "plant.counts",
       animal.counts == max ~ "animal.counts")) %>% 
   select(-max)
-# although this will bias the element towards what is sampled more often eg. animals :D
 
-
-# Add surface/area for missing values based on median per family
+# Add surface/volume for missing values based on median per family
 Dt_tmp3.3 <- Dt_tmp3.2 %>% 
   # Calculate the median
   group_by(family) %>% 
@@ -128,7 +78,7 @@ Dt_tmp3.3 <- Dt_tmp3.2 %>%
   # Add the median for the missng values
   mutate(surf_area = ifelse(is.na(surf_area), median_surf_area, surf_area))
 
-# Oxigen
+# Format oxygen tolerance
 Dt_tmp3.4 <- Dt_tmp3.3 %>% 
   mutate(oxygen.tolerance = case_when(
     oxygen.tolerance == "obligate anaerobe" ~ "anaerobe",
@@ -152,18 +102,7 @@ Dt_tmp4 <- Dt_tmp3.4 %>%
 ```
 
 ```{r}
-library(GGally)
 
-#Dt_tmp4 %>%
-#  select(!phylum) %>% 
-#  ggpairs()
-
-# Plotting missing data
-Dt_tmp4 %>% 
-  vis_miss(cluster = T, sort_miss = T) +
-    theme(
-        plot.margin = margin(, 1.5, , , "cm")
-  )
 
 # Removing the missing data for modelling
 Dt_tmp5 <- Dt_tmp4 %>% 
@@ -178,35 +117,15 @@ Dt_tmp6 <- Dt_tmp5 %>%
 ```
 
 
-# Interactions?
-Trying with line plots
-```{r}
-
-```
-Trying with tree
-
-
 # Transformations
 
 ```{r}
-# Looking for unqeual distributions
-#Dt_tmp5  %>% 
-#  select(where(is.double)) %>% 
-#  ggpairs()
-
-# Some look exp-ish. Trying with log2 transformation
-#Dt_tmp5  %>% 
-#  mutate(across(c(n16, `Genome components`, pseudogenes_percent, #genes_coding), log2), 
-#         ar_count = log2(ar_count+1)) %>% 
-#  select(where(is.double)) %>%
-#  ggpairs()
-# The look beter not
 
 # Apply the transformations
 Dt_tmp7 <- Dt_tmp6  %>% 
   mutate(across(c(n16, genome_components, pseudogenes_percent, genes_coding), log2))
 
-
+# And filter out phylums with less than 10 entries
 Dt <- Dt_tmp7 %>% 
   mutate(n=n(), .by=phylum) %>% 
   filter(n>10) %>% 
@@ -214,7 +133,7 @@ Dt <- Dt_tmp7 %>%
 
 ```
 
-Make convinience function to backtransform
+Make  function to backtransform data
 
 ```{r}
 # Function to back transform data
@@ -251,20 +170,12 @@ plot(fit_fn)
 
 On the top left plot, each line represents a number of 16s gene copies. It seems to always predict wrong on n16=1 and often on n16=2
 Finding the one with the high leverage
-```{r}
-#leverage <- as.data.frame(hatvalues(fit_fn))
-#leverage %>% arrange(desc(`hatvalues(fit_fn)`))
-
-#rstandard(fit_fn) %>% as.data.frame() %>% filter(. > 3)
-
-```
-
-In the above plots we see 634, 641, 778 have sqrt res over 3. Lets inspect them
+In the above plots we see 681,305,865 have sqrt res over 3. Lets inspect them
 ```{r}
 Dt[c(681,305,865),] %>% back_transform()
 # Could have sf pred wrong?
 ```
-They seem to vary a lot. There is no clear pattern. But many of them are Bacillota.
+They seem to vary a lot. There is no clear pattern.
 Although the values seem ok, they have to much to say compared to other points
 
 
@@ -277,7 +188,7 @@ Dt_no_outliers <- Dt %>% filter(!row_number() %in% c(681,305,865)) %>%
 
 # fit model again
 fit <- lm(n16 ~ ., data=Dt_no_outliers)
-fit
+
 ```
 
 Step transform it 
@@ -289,521 +200,19 @@ fit_fn <- after_step
 
 ```
 
-
+ANCOVA of model
 ```{r}
 Anova(fit_fn) 
 ```
-Conclussion
---
-:INTERACTIONS:
-phylum is part of the model -> put since it is not alone this supports that we are not just measureing phylogenic information
-* The fact that noncoding ~ n16 also supports this argument
-`GC %`:genes_coding  -> large genomes(often soil organisms) tend to have large `GC %`
-* This effect has an effect on 16s genes.
-`GC %`:`Genome components` -> see point above
-`GC %`:sporeforming  -> Large gemomes -> high gc + tend to be sporeforming
-ar_count:pseudogenes_percent -> I need to investigate this more
-
-:INDEPENDANT:
 
 --
-Looking at diastognistic plot
+Looking at diagnostic plot
 ```{r}
 par(mfrow=c(2,2))
 plot(fit_fn)
 ```
-Seems a lot better. There is some skew. As i though it was due to genomic_components I tried with and without it. But it did not seem to make a differencet
-But residuals seems somewhat nomrally distributed. 
-I also tried with n16 as log and others not as. to model exp relationship, but to the same effect
-This is the final model :)
+Seems a lot better. This is the final model
 
-
-
-
-```{r}
-summary(fit_fn)
-```
-Visualizing it
-```{r}
-
-add_predictions(Dt, fit_fn) %>% 
-  ggplot(aes(x=2^genes_coding, y=2^pred, col="red")) +
-  geom_point() +
-  geom_point(aes(y=2^n16), col="grey") +
-  facet_wrap(~phylum)
-
-```
-THEY LOOK FUCKING AMAZING.. AND all variables makes so much godamn sense
-
-
-Below we see the only factor in the model = sporeforming or not
----
-for the sporeforming the two phylums are modeled with a swinging curve
-
-```{r}
-add_predictions(Dt, fit_fn) %>% 
-  ggplot(aes(x=2^genes_coding, y=2^pred,col="red") ) +
-  geom_smooth() +
-  geom_point() +
-  geom_point(aes(y=2^n16), col="grey") +
-  facet_wrap(~sporeforming)
-```
-
-
-Below we see the interaction with Gcpercent and sporeforming/genes_coding/`Genome components`
-we see
----
-1)
-Genes coding tend to be larger with higher gc percent. These have lower numbers of 16s genes.
-But when coding genes gets larger this effect is minimized to make the curve flatten out.
-This can mostly be seen in sporeforming = 1
-
-```{r}
-D$`Genome components`
-add_predictions(Dt, fit_fn) %>% 
-  ggplot(aes(x=gc_percent, y=2^pred) ) +
-  geom_point(aes(y=2^n16,col=genes_coding, size=genome_components)) +
-  geom_smooth() +
-  facet_wrap(~sporeforming)
-```
-
-```{r}
-add_predictions(Dt, fit_fn) %>% 
-  ggplot(aes(x=gc_percent, y=2^pred) ) +
-  geom_point(aes(y=2^n16,col=genes_coding, size=genome_components)) +
-  geom_smooth() +
-  facet_wrap(~phylum)
-```
-Noninteractions
-
-```{r}
-Anova(fit_fn)
-summary(fit_fn)
-
-```
-### Analysis of the model
-The model summary can be seen below
-```{r}
-summ(fit_fn, scaled=T)
-summary(fit_fn)
-```
-
-
-### "main effect of Continuous variables
-They are scaled, to make up for feautres with large/small units, and mean centers them
-```{r}
-plot_summs(fit_fn,scale=T,center=T,coefs = c("growth_temp","gc_percent","ar_count","surf_area","genes_coding","genome_components"))
-Anova(fit_fn)
-```
-We can see in general: But these are very little usefull as interactions change the terms drastically
-The larger the surface/area relationship, the small the number of 16S gene copies.
-The larger the number of AR genes the lower the number of 16s genes. 
-large number of genes_coding -> large number of 16S genes
-growth temp has a minimal effect
-Hihg Gc percent -> high n16
-
-
-
-###Effects
-Here i will present some of the most interesting effects. As with all modelling just because there is statistically significance. Does not mean that there is an direct effect or an effect at all. Therefore i will focus on the most important factors, and the most interesting relationships.
-All the interactions are visualised using transformed values. This is too be able to look at the linear relationships modelled.
-Many of the factor_cont are the most important.
-Lets start by looking at them and the factors influence
-
-
-## Effects
-library(ggeffects)
-Defining the found model in a different way for easier use of ggeffects package. But everything is the same.
-```{r}
-
-
-Dt
-
-# backtransform the transformed data
-Dt_bt <- Dt_no_outliers %>% back_transform() %>% 
-  mutate(sporeforming = as.factor(sporeforming),
-         phylum = as.factor(phylum),
-         motility = as.factor(motility),
-         ar_count = as.factor(ar_count),
-         pathogen_any = factor(pathogen_any)
-         ) %>% 
-  rename(`GC %` = gc_percent, `Genome components` = genome_components)
-# reformat names for better plotting
-Dt_bt <- Dt_bt %>% 
-  mutate(environment = case_when(
-    environment == "aquatic.counts" ~ "aquatic", 
-    environment == "animal.counts" ~ "animal",
-    environment == "plant.counts" ~ "plant",
-    environment == "soil.counts" ~ "soil"), environment = factor(environment))
-
-Dt_bt <- Dt_bt %>% 
-  mutate(sporeforming = case_when(
-    sporeforming == "0" ~ factor("no"), 
-    sporeforming == "1" ~ factor("yes")))
-
-summary(fit_fn)
-#fit <- lm(log2(n16) ~ pathogen_any + `GC %` + sporeforming + 
-#    surf_area + motility + environment + phylum + log2(`Genome components`) + 
-#    log2(genes_coding) + sporeforming:environment + `GC %`:log2(genes_coding) + 
-#    phylum:log2(genes_coding) + `GC %`:phylum + pathogen_any:environment + 
-#    log2(`Genome components`):log2(genes_coding) + surf_area:log2(genes_coding), data = Dt_bt)
-
-fit <- lm(formula = log2(n16) ~ growth_temp + `GC %` + sporeforming + 
-    ar_count + surf_area + motility + environment + phylum + 
-    log2(`Genome components`) + log2(genes_coding) + ar_count:phylum + `GC %`:log2(genes_coding) + 
-    `GC %`:sporeforming + log2(`Genome components`):log2(genes_coding) + 
-    surf_area:log2(genes_coding) + motility:environment, data = Dt_bt)
-
-
-#Anova(fit)
-#hypothesis_test(pred)
-termplot(fit,partial.resid = T)
-summary(fit)
-Anova(fit)
-
-```
-```{r}
-Dfull %>% 
-  ggplot(aes(y=(n16), x=growth_temp)) +
-  geom_jitter(col="grey") +
-  geom_jitter(data=Dt_bt, col="red",alpha=4/10, height=0.1)
-
-Dfull %>% arrange(growth_temp)
-```
-
-
-
-### VIP
-```{r}
-library(vip)
-library(earth)
-vip(fit_fn,num_features = length(coef(fit)),mapping = aes_string(color = "Sign"),geom="point", target=n16)
-
-fit_fn$call
-MARS algo. VI is determinded using cross validation statistic.
-# And for specific features
-earth <- earth(n16 ~ growth_temp + gc_percent + sporeforming + 
-    ar_count + surf_area + motility + environment + phylum + 
-    genome_components + genes_coding + ar_count:phylum + gc_percent:genes_coding + 
-    surf_area:genes_coding + genome_components:genes_coding + 
-    gc_percent:sporeforming + motility:environment, data=Dt_no_outliers, degree=2, pmethod ="exhaustive")
-summary(earth)
-
-vip(earth,num_features = length(coef(fit)),geom="point")
-
-vi(fit_fn, method="ice")
-Anova(fit)
-summ(fit)
-
-Dt_bt %>% summarise(mean(n16), .by=environment)
-
-summary(fit)
-install.packages("pdp")
-
-library(pdp)
-
-pp <- ppr(n16 ~ growth_temp + gc_percent + sporeforming + 
-    ar_count + surf_area + motility + environment + phylum + 
-    genome_components + genes_coding + ar_count:phylum + gc_percent:genes_coding + 
-    surf_area:genes_coding + genome_components:genes_coding + 
-    gc_percent:sporeforming + motility:environment, data=Dt_no_outliers, nterms=11)
-
-vi(pp)
-```
-
-### Genes coding V `Genome components` and `GC %`
-```{r}
-library(jtools)
-library(ggside)
-
-
-  
-ylab =  "Partial residuals (#16S)"
-gv <- c(1, 2, 4)
-gcv <- c(35,50,65)
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("genes_coding [n=100]","GC % [gcv]","Genome components [gv]"))
-                       
-p1 <- plot(dfpredict, dot.size = 0.3, residuals = T)+ 
-  ylab(ylab)  +
-  xlab("Genes coding")+
-  ggtitle("")
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("Genome components [n=100]","genes_coding"))
-p2 <- plot(dfpredict, dot.size = 0.9, residuals  = T) + theme(legend.position = "none")+ 
-  ylab(ylab)  +
-  ggtitle("")
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("GC % [n=100]","genes_coding"))
-p2.5 <- plot(dfpredict, dot.size = 0.9, residuals  = T)+ theme(legend.position = "none") +
-  ylab("")  +
-  ggtitle("")
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("surf_area [n=100]","genes_coding"))
-p2.75 <- plot(dfpredict, dot.size = 0.9, residuals  = T)+
-  ylab("")  +
-  ggtitle("")
-
-p3 <- Dt_bt %>% 
-  ggplot(aes(x=`Genome components`, col=phylum)) +
-  geom_density()+ theme(legend.position = "none")
-
-p4 <- Dt_bt %>% 
-  ggplot(aes(x=`GC %`, col=phylum)) +
-  geom_density() +theme(legend.position = "none")
-
-p5 <- Dt_bt %>% 
-  ggplot(aes(x=`genes_coding`, col=phylum)) +
-  geom_density() 
-
-pathwork <- p1/(p2+p2.5+p2.75)/(p3+p4+p5)
-pathwork + plot_annotation(tag_levels = "A")
-#plot(dfpredict, dot.size = 0.3, residuals=T, rawdata = T)
-
-#plot(dfpredict)
-#dfpredict
-
-#dfpredict <- ggpredict(fit, back.transform = T,terms=c("genes_coding","`GC %`"))
-#plot(dfpredict, dot.size = 0.9, rawdata  = T)
-#plot(dfpredict, dot.size = 0.9, add.data   = T)
-
-#ggplot(dfpredict, aes(x = x, y = predicted, colour = group)) +
-#  geom_line() +
-#  facet_wrap(~facet)
-
-#effect_plot(fit, pred = environment, interval = TRUE, plot.points = TRUE,
-#            jitter = .2, partial.residuals = T,line.colors = "red",point.alpha = 0.4,point.size = 0.1)
-)
-dfpredict
-```
-## 
-```{r}
-
-```
-
-
-
-
-## GCpercent and sporeforming + environment
-```{r}
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("GC % [n=100]","phylum"))
-                       
-plot(dfpredict, dot.size = 0.3, residuals =   T, ci=T)  + ylab(ylab)  +
-  ggtitle("") +
-  coord_cartesian(ylim=c(0, 25)) 
-```
-```{r}
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("environment","sporeforming"))
-                       
-p1 <- plot(dfpredict, dot.size = 0.3, residuals =   T, ci=T)  + ylab(ylab)  +
-  ggtitle("") +
-  coord_cartesian(ylim=c(0, 25)) 
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("environment","pathogen_any"))
-                       
-p2 <- plot(dfpredict, dot.size = 0.3, residuals =   T, ci=T)  + ylab(ylab)  +
-  ggtitle("") +
-  coord_cartesian(ylim=c(0, 25)) 
-
-p1/p2
-```
-
-## surf_area and growth temperature + Genome components (small effect)
-As we saw before surf-area has an negative effect
-```{r}
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("surf_area [n=100]","genes_coding"))
-p1 <- plot(dfpredict, dot.size = 0.3, ci=T, residuals = T)
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("growth_temp [n=100]"))
-p2 <- plot(dfpredict, dot.size = 0.3, ci=T, residuals = T, jitter=0.3)
-
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("Genome components [n=100]","genes_coding"))
-p3 <- plot(dfpredict, dot.size = 0.9, residuals  = T)
-
-pathwork <- (p2 + p1) / p3
-pathwork + plot_annotation(tag_levels = "A")
-
-```
-It seems that, the effect is larges for small genomes. But the large the genomes get, the effect diminishes.
-It seems to be because, in the data, small genomes are associated with small cell size and a small surface/area relationship.
-But there is also small genomes with a large surf/area relationship. Therefore we for these get a downwards facing trend.
-While we for larger genomes which mostly have large surface/area relationship have a more linear realtionship.
-Lastly most points are in the middel of the scale. Therefore the points with a high (and low number) of surf_area have too much levrage
-
-## ar_count and it's interactions
-```{r}
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("ar_count [n=50]","environment","Genome components"))
-p1 <- plot(dfpredict, dot.size = 0.3, ci=F, residuals = T, jitter=0.3)
-
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("ar_count [n=100]","phylum"))
-p2 <- plot(dfpredict, dot.size = 0.3, ci=T, residuals = T, jitter=0.3)
-
-p1/p2
-```
-
-```{r}
-v <- seq(1,100,1)
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("ar_count [v]","phylum"))
-plot(dfpredict, dot.size = 0.3, ci=F, residuals = T, jitter=0.3)
-```
-
-
-### Factors
-```{r}
-line_size <- 1
-dot_size <- 2
-
-v <- c(1,10,100)
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("environment","ar_count [v]"))
-p1 <- plot(dfpredict, residuals = T, dot.size = 1,jitter = 0.4,line.size = line_size ) +
-  ylab(ylab) +
-  ggtitle("") +
-  xlab("Environment") +
-  ylim(1,9)
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("environment","motility"))
-p2 <- plot(dfpredict, residuals = T, dot.size = 0.4,jitter = 0.4,line.size = line_size ) +
-  geom_point(aes(y=predicted),col="red",size=dot_size, show.title=F)+labs(title = "") + 
-  ylab("") +
-  xlab("Motility") +
-  ylim(1,8)
-
-p2
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("sporeforming"))
-p3 <- plot(dfpredict, residuals = T, dot.size = 0.4,jitter = 0.4,line.size = line_size ) +
-  geom_point(aes(y=predicted),col="red",size=dot_size, show.title=F)+labs(title = "") + 
-  ylab(ylab) +
-  xlab("Sporeforming") +
-  ylim(1,8)
-
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("phylum"))
-p4 <- plot(dfpredict, residuals = T, dot.size = 0.4,jitter = 0.4,line.size = line_size ) +
-  geom_point(aes(y=predicted),col="red",size=dot_size, show.title=F)+labs(title = "") + 
-  ylab("") +
-  xlab("Phylum") +
-  ylim(1,8)
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("GC % [n=100]","sporeforming","environment"))
-                       
-p5 <- plot(dfpredict, dot.size = 0.3, residuals =   T, ci=T)  + ylab(ylab)  +
-  ggtitle("") +
-  coord_cartesian(ylim=c(0, 15)) 
-
-hypothesis_test(dfpredict)
-
-pathwork <- (p1 + p2) / (p3 + p4) 
-pathwork + plot_annotation(tag_levels = "A") 
-
-
-
-#pathwork <- (p1 + p2 +p3 +p4) / (p5) 
-#pathwork + plot_annotation(tag_levels = "A") 
-#dfpredict
-
-
-```
-
-# NO interactions
-```{r}
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("motility"))
-p1 <- plot(dfpredict, residuals = T, dot.size = 0.4,jitter = 0.4,line.size = line_size ) +
-  geom_point(aes(y=predicted),col="red",size=dot_size, show.title=F)+labs(title = "") + 
-  ylab(ylab) +
-  xlab("Motility") +
-  ylim(1,8)
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("growth_temp [n=100]"))
-p2 <- plot(dfpredict, dot.size = 0.3, ci=T, residuals = T, jitter=0.3)  +
-  ylab(ylab) + ggtitle("")
-
-p1 / p2
-```
-
-
-### Factorsnew
-```{r}
-line_size <- 1
-dot_size <- 1
-
-v <- c(1,10,100)
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("environment","ar_count [v]"))
-env_ar <- plot(dfpredict, residuals = T, dot.size = dot_size,jitter = 0.4,line.size = line_size ) +
-  ylab(ylab) +
-  xlab("Environment") +
-  ggtitle("") +
-  coord_cartesian(ylim=c(0, 10)) 
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("environment","GC %"))
-env_gc <- plot(dfpredict, residuals = T, dot.size = dot_size,jitter = 0.4,line.size = line_size ) +
-  ylab(ylab) +
-  xlab("Environment") +
-  ggtitle("") +
-  coord_cartesian(ylim=c(0, 10)) 
-
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("phylum","ar_count [v]"))
-phyl_ar <- plot(dfpredict, residuals = T, dot.size = dot_size,jitter = 0.4,line.size = line_size ) +
-  ylab(ylab) +
-  xlab("Phylum") +
-  ggtitle("") +
-  coord_cartesian(ylim=c(0, 10)) 
-
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("phylum","GC %"))
-phyl_gc <- plot(dfpredict, residuals = T, dot.size = dot_size,jitter = 0.4,line.size = line_size ) +
-  ylab("") +
-  xlab("Phylum") +
-  ggtitle("") +
-  coord_cartesian(ylim=c(0, 10)) 
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("motility"))
-mot <- plot(dfpredict, residuals = T, dot.size = dot_size,jitter = 0.4,line.size = line_size ) +
-  ylab(ylab) +
-  xlab("Motility") +
-  ggtitle("") +
-  coord_cartesian(ylim=c(0, 10)) 
-
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("sporeforming", "GC %"))
-spore_gc <- plot(dfpredict, residuals = T, dot.size = dot_size,jitter = 0.4,line.size = line_size ) +
-  ylab("") +
-  ggtitle("") +
-  xlab("Sporeforming")+
-  coord_cartesian(ylim=c(0, 10)) 
-
-(env_ar + env_gc) / (phyl_ar + phyl_gc) / (mot + spore_gc)
-
-```
-
-```{r}
-termplot(fit, partial.resid=TRUE, col.res = "purple")
-```
-
-
-```{r}
-dfpredict <- ggemmeans(fit, back.transform = T,terms=c("environment"))
-plot(dfpredict, rawdata  = T) 
-
-dfpredict
-library(emmeans)
-emmeans(fit,specs = c("environment"))
-a <- ref_grid(fit_fn, at = list(ar_count = c(1, 5,10,50)))
-emmip(a, gc_percent+ar_count~environment, style="factor")
-Dt$gc_percent
-ggplot(Dt_bt, aes(x=`GC %`,col=environment, y=n16)) +
-  geom_point() +
-  facet_wrap(~environment)
-
-ggplot(Dt_bt, aes(x=environment, y=n16)) +
-  geom_boxplot()
-```
-
-
-### Plots of predictions
 
 
 Visualizing it
@@ -816,117 +225,4 @@ add_predictions(Dt, fit_fn) %>%
   facet_wrap(~phylum)
 
 ```
-THEY LOOK FUCKING AMAZING
-
-
-Below we see the only factor in the model = sporeforming or not
----
-for the sporeforming the two phylums are modeled with a swinging curve
-
-```{r}
-add_predictions(Dt, fit_fn) %>% 
-  ggplot(aes(x=2^genes_coding, y=2^pred,col="red") ) +
-  geom_smooth() +
-  geom_point() +
-  geom_point(aes(y=2^n16), col="grey") +
-  facet_wrap(~sporeforming)
-```
-
-
-Below we see the interaction with Gcpercent and sporeforming/genes_coding/`Genome components`
-we see
----
-1)
-Genes coding tend to be larger with higher gc percent. These have lower numbers of 16s genes.
-But when coding genes gets larger this effect is minimized to make the curve flatten out.
-This can mostly be seen in sporeforming = 1
-
-```{r}
-add_predictions(Dt_bt, fit) %>% 
-  ggplot(aes(x=`GC %`, y=2^pred) ) +
-  geom_point(aes(y=2^n16,col=genes_coding, size=`Genome components`)) +
-  geom_smooth() +
-  facet_wrap(~sporeforming)
-
-add_predictions(Dt_bt, fit) %>% 
-  ggplot(aes(x=2^genes_coding, y=2^pred) ) +
-  geom_line() +
-  geom_smooth() +
-  facet_wrap(~sporeforming)
-
-add_predictions(Dt, fit_fn) %>% 
-  ggplot(aes(x=`GC %`, y=2^pred) ) +
-  geom_point(aes(y=2^n16,col=genes_coding, size=`Genome components`)) +
-  geom_smooth() +
-  facet_wrap(~phylum)
-
-add_predictions(Dt, fit_fn) %>% 
-  ggplot(aes(x=2^ar_count-1, y=2^pred) ) +
-  geom_point(aes(y=2^n16)) +
-  geom_smooth() +
-  facet_wrap(~phylum)
-
-Dt_bt %>% 
-  ggplot(aes(x=`Genome components`)) +
-  geom_histogram()
-```
-
-
-
-
-
-```{r}
-log2_1p <- function(x){
-  log2(x+1)
-}
-nrow(Dt_bt)
-
-# backtransform the transformed data
-Dt_bt <- Dt_no_outliers %>% back_transform() %>% 
-  mutate(sporeforming = as.factor(sporeforming),
-         phylum = as.factor(phylum),
-         motility = as.factor(motility),
-         ar_count = ar_count
-         ) %>% 
-  rename(`GC %` = gc_percent, `Genome components` = genome_components)
-# reformat names for better plotting
-Dt_bt <- Dt_bt %>% 
-  mutate(environment = case_when(
-    environment == "aquatic.counts" ~ "aquatic", 
-    environment == "animal.counts" ~ "animal",
-    environment == "plant.counts" ~ "plant",
-    environment == "soil.counts" ~ "soil"), environment = factor(environment))
-
-Dt_bt <- Dt_bt %>% 
-  mutate(sporeforming = case_when(
-    sporeforming == "0" ~ factor("no"), 
-    sporeforming == "1" ~ factor("yes")))
-
-fit <- lm(log2(n16) ~ growth_temp + `GC %` + sporeforming + 
-    log1p(ar_count) + surf_area + motility + environment + phylum + 
-    log2(`Genome components`) + log2(genes_coding) + log1p(ar_count):environment + 
-    log1p(ar_count):phylum + `GC %`:environment + surf_area:log2(genes_coding) + 
-    log2(`Genome components`):log2(genes_coding) + log1p(ar_count):log2(`Genome components`) + 
-    `GC %`:log2(genes_coding) + `GC %`:sporeforming, data = Dt_bt)
-
-v <- c(1,10,50)
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("environment","ar_count [v]"))
-plot(dfpredict, residuals = T, dot.size = 1,jitter = 0.4,line.size = line_size ) +
-  geom_point(aes(y=predicted),col="red",size=dot_size, show.title=F)+labs(title = "") + 
-  ylab(ylab) +
-  xlab("Environment") +
-  ylim(1,8)
-
-dfpredict
-
-Dt_bt %>% summarise(n(),.by=environment)
-
-Dt_bt %>% 
-  ggplot(aes(x=log(ar_count))) +
-  geom_density()
-Anova(fit)
-
-dfpredict
-summ(fit)
-```
-
+predictions look good

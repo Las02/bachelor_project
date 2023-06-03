@@ -1,5 +1,5 @@
 ---
-title: "Reading in data of number of 16s genes versus Bacdive data/ growthrate"
+title: "Reading in data"
 output:
   pdf_document: default
   html_document: default
@@ -17,47 +17,43 @@ library(modelr)
 
 ## Purpose
 The purpose of this part is only to read in the data for ribdif/bacdive/growth rate dataset. The data exploration/visualization/analysis will be done in a separate document.
-The final data is formatted and saved as a Rdata file for easy use in the further analysis.
+The final data is formatted and saved as a Rdata file for easy use in the further analysis. 
 
 
-## Read in the data
-
-Read in all the relevant data originally from bacdive, ribdif and about growth conditions
-
-### Read data from ribdif and bacdive from the db
-
+### Read data from ribdif and bacdive from the db 
 
 ```{r}
 # Connect to the DB
 conn <- dbConnect(SQLite(),"../s16.sqlite")
 
-dbGetQuery(conn, "SELECT * FROM ribdif_info")
+
 # Read in the data from the database
-# This data has allready been joined at a species level
 D_tmp <- dbGetQuery(conn, "SELECT * FROM ribdif_bacdive_joined")
 D_tmp <- tibble(D_tmp, .name_repair ="universal")
 
-# set the AR data types to the correct types
+# set the Antibiotic resistance data types to the correct types
 D_tmp <- mutate(D_tmp, across(antibiotics:PH.range, as.character))
 ## Drop index number originally from the pandas dataframe and drop the NCBI.tax.ID
 D_tmp <- select(D_tmp, !c(NCBI.tax.ID,strain.designation))
-D_tmp$n16
-nrow(D_tmp)
-D_tmp %>% 
-  summarise(n16=mean(n16),.by=order) %>% 
-  summarise(n16=median(n16))
 
+
+# Get a few statistics from the raw data before it is joined
+# Firstly get number of entries where all 16S genes are the same for comparison with ribogroove
 dbGetQuery(conn, "SELECT * FROM species_gcf2species_ribdif_info") %>% 
   filter(number_16s > 1) %>% 
   filter(total_div == 0) %>% 
   nrow
 
+# Then get the median and quantile number of div and 16S gene copy number 
+# As the mirror database we used this data to compare to joined at a species level. we did aswell
 dbGetQuery(conn, "SELECT * FROM species_gcf2species_ribdif_info") %>% 
   summarise(n16 = mean(number_16s), .by=species..7) %>%
   summarise(median(n16),quantile(n16, 0.75),quantile(n16,0.25))
 
-10071/28632
-dbListTables(conn)
+dbGetQuery(conn, "SELECT * FROM species_gcf2species_ribdif_info") %>% 
+  summarise(div = mean(total_div), .by=species..7) %>%
+  summarise(median(div),quantile(div, 0.75),quantile(div,0.25))
+
 ```
 ### Read data about growth rates and select the maximum for each
 
@@ -69,10 +65,9 @@ Mode <- function(x) {
 }
 
 growthD_tmp <- read_csv("./data/biokinetic.csv")
-# Rename it to match the other dataframes
+# Rename the df to match the other dataframes
 growthD_tmp <- rename(growthD_tmp, species = binomial.name)
-growthD_tmp
-# Pick out max value for each species (The data does also contain Eukarya and Archaea)
+# Pick out max value for each species 
 growthD <- growthD_tmp %>% 
   group_by(species) %>% 
   summarise(max_growth_min = max(rate.per.minute), 
@@ -85,34 +80,40 @@ growthD <- growthD_tmp %>%
 ### Read AR data from running abricate
 
 ```{r}
-
+# Read in teh data
 D_ar <- read_csv("./data/sum_final2.csv")
-D_ar
 drug_ann_tmp <- read.csv("./data/megares_annotations_v3.00.csv", sep="|", skip=1, header=FALSE)
+
+# Rename the columns
 drug_ann <- drug_ann_tmp %>% 
     select(V3, V2) %>%
     rename(res_type = V3, res_ann = V2)
+
+# Get a list of all of the resistance types which are actuall antibiotic resistances
 drug_v <- drug_ann %>% filter(res_ann == "Drugs") %>% pull(res_type) %>% unique()
+# Then based on this list select the antibiotic resistance drugs
 Ddrug <- D_ar %>% select(gcf,any_of(drug_v))
 Dsum <- Ddrug %>% 
   rowwise() %>% 
   mutate(ar_count = sum(pick(2:last_col()))) %>% 
   select(gcf, ar_count)
 
+# set the columns to 0 or 1 as chars
 D_is_res <- Dsum %>% mutate(ar_count = ifelse(ar_count == 0, "0", "1"))
-D_is_res
+
 
 # Read data from db
 Dar50_tmp <- dbGetQuery(conn, "SELECT * FROM ar_info_full_50")
 
-# Join columns
+# Join the read in data with the database db
 Dar50_tmp2 <- left_join(Dar50_tmp, D_is_res, by="gcf") 
 
-# Replace nans which are 0, with 0
+# If for a genera no antibiotic resistance were found it will be nan in the data, therefore replace NAN with 0
 Dar50_tmp3 <- Dar50_tmp2 %>% 
   select(species=species..7, ar_count.y) %>%
   mutate(ar_count.y = replace_na(ar_count.y, "0"))
 
+# And lastly summarise at a species level
 Dar50 <- Dar50_tmp3  %>% 
   summarise(ar_count = Mode(ar_count.y), .by = species)
 
@@ -124,18 +125,15 @@ Dar50 <- Dar50_tmp3  %>%
 
 ```{r}
 
+# Read in the data
 sporeD_tmp <- read.csv2("./data/spore.csv", sep=",", header = T,skip = 2)
 pathoD_tmp <- read.csv2("./data/pathogenicity.csv", sep=",", header = T,skip = 2)
 animal_pathoD_tmp <- read.csv2("./data/path_animals.csv", sep=",", header = T,skip = 2)
 multicelD_tmp <- read.csv2("./data/multicellular.csv", sep=",", header = T,skip = 2)
-
 shapeD_tmp <- read.csv2("./data/cell_shape.csv", sep=",", header = T,skip = 2)
 
 
 ## Group them at species level
-
-
-# group them
 sporeD <-  sporeD_tmp %>% 
   group_by(species) %>% 
   summarise(sporeforming = Mode(Ability.of.spore.formation)) %>% 
@@ -163,11 +161,12 @@ shapeD <-  shapeD_tmp %>%
 
 ```
 
-Cell width and length needs special consideration,
-as they include intervals
-```{r}
-widthD_tmp <- read.csv2("./data/cell_width.csv", sep=",", header = T,skip = 2)
 
+# Now do the samefor cell length and cell
+They include intervals, so speciel care needs to be take when parsing
+```{r}
+# Read in the files
+widthD_tmp <- read.csv2("./data/cell_width.csv", sep=",", header = T,skip = 2)
 lengthD_tmp <- read.csv2("./data/cell_length.csv", sep=",", header = T,skip = 2)
 
 # Function to take the mean of an interval
@@ -237,7 +236,6 @@ D <- D %>%
     pathogen_animal = as.character(pathogen_animal),
     multicellular_ability = as.character(multicellular_ability)
   )
-
 D <- D %>% 
   mutate(pathogen_any = ifelse(pathogen_human == 1 | pathogen_animal == 1, factor(1), factor(0))) %>% 
   mutate(pathogen_any = factor(pathogen_any))

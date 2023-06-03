@@ -24,7 +24,7 @@ library(emmeans)
 ```
 ## Purpose
 
-The goal of this section is to plot the effects of the model of the number of 16S gene copies. In additon to the PCA plots for sporeformation
+The goal of this section is to plot the effects of the model of the number of 16S gene copies. In additon to the PCA plots colored by sporeformation
 
 ## Reading in the data
 The data is read from the R data file create from 01_ReadInData.Rmd
@@ -38,11 +38,11 @@ D %>% select(last_col(41):last_col())
 ### Data transformations
 
 ```{r}
-# Pathogen, set nan to 0
+# for the column pathogen, set nan to 0
 Dt_tmp1 <- D %>% 
   mutate(pathogen_any = ifelse(is.na(pathogen_any), "0", pathogen_any))
 
-# Set nan to neutrophile
+# Set nan to neutrophile for PH.range
 Dt_tmp2 <- Dt_tmp1 %>% 
   mutate(PH.range = ifelse(is.na(PH.range), "neutrophile", PH.range))
 
@@ -50,7 +50,7 @@ Dt_tmp2 <- Dt_tmp1 %>%
 Dt_tmp3 <- Dt_tmp2 %>% 
   mutate(pseudogenes_percent = 100*(pseudogenes/total_genes))
 
-# surface/area + # Motility
+# Calculate surface to colume ratio
 Dt_tmp3.1 <- Dt_tmp3 %>% 
   mutate(motility = ifelse(is.na(motility), "Not Known", motility)) %>% 
   mutate(surface = 2*(cell.width^2) + 4*(cell.width*cell.length),
@@ -59,7 +59,7 @@ Dt_tmp3.1 <- Dt_tmp3 %>%
           select(-surface, -area)
 
 
-# Sample as factor
+# Set sample as the factor seen most often for each entry
 Dt_tmp3.2 <- Dt_tmp3.1 %>% 
   rowwise() %>% 
   mutate(
@@ -72,8 +72,6 @@ Dt_tmp3.2 <- Dt_tmp3.1 %>%
       plant.counts == max ~ "plant.counts",
       animal.counts == max ~ "animal.counts")) %>% 
   select(-max)
-# although this will bias the element towards what is sampled more often eg. animals :D
-
 
 # Add surface/area for missing values based on median per family
 Dt_tmp3.3 <- Dt_tmp3.2 %>% 
@@ -84,7 +82,7 @@ Dt_tmp3.3 <- Dt_tmp3.2 %>%
   # Add the median for the missng values
   mutate(surf_area = ifelse(is.na(surf_area), median_surf_area, surf_area))
 
-# Oxigen
+# Format oxygen tolerance 
 Dt_tmp3.4 <- Dt_tmp3.3 %>% 
   mutate(oxygen.tolerance = case_when(
     oxygen.tolerance == "obligate anaerobe" ~ "anaerobe",
@@ -96,7 +94,6 @@ Dt_tmp3.4 <- Dt_tmp3.3 %>%
   ))
 
 # Select the data relevant for the first analysis
-# It throws error due to NANS
 Dt_tmp4 <- Dt_tmp3.4 %>% 
   select(pathogen_any, PH.range, oxygen.tolerance, 
          growth_temp,  gc_percent, sporeforming,
@@ -105,10 +102,11 @@ Dt_tmp4 <- Dt_tmp3.4 %>%
          pseudogenes_percent, genes_coding, species, phylum, genus,div) %>% 
   mutate(growth_temp = as.double(growth_temp)) 
 
-# Removing the missing data for modelling
+# Removing the missing data which were removed for modelling
 Dt_tmp5 <- Dt_tmp4 %>% 
   filter(if_all(everything(), ~!is.na(.x)))
 
+# Make a dataframe containing the same data points used for modelling but with all attributes
 cols <- Dt_tmp5 %>% colnames()
 Dall <- Dt_tmp3.4%>% 
   filter(if_all(all_of(cols), ~!is.na(.x))) %>% 
@@ -126,11 +124,8 @@ Dt_tmp6 <- Dt_tmp5 %>%
   filter(n > 10) %>% 
   select(-n)
 
-
+# Remove the columns which were removed as outliers and set the spore forming attribute as a factor
 Dt <- Dt_tmp6 %>% 
-  mutate(n=n(), .by=phylum) %>% 
-  filter(n>10) %>% 
-  select(-n) %>% 
   filter(!row_number() %in% c(681,305,865)) %>% 
   mutate(sporeforming = as.factor(sporeforming))
 
@@ -138,11 +133,8 @@ Dt <- Dt_tmp6 %>%
 
 
 ## Effects
-library(ggeffects)
 Defining the found model in a different way for easier use of ggeffects package. But everything is the same.
 ```{r}
-
-
 # backtransform the transformed data
 Dt_bt <- Dt %>% 
   mutate(sporeforming = as.factor(sporeforming),
@@ -153,7 +145,7 @@ Dt_bt <- Dt %>%
          ) %>% 
   rename(`GC %` = gc_percent, `Genome components` = genome_components)
 
-# reformat names for better plotting
+# reformat names for better plotting and with prettier names
 Dt_bt <- Dt_bt %>% 
   mutate(environment = case_when(
     environment == "aquatic.counts" ~ "Aquatic", 
@@ -180,26 +172,21 @@ Dt_bt <- Dt_bt %>%
   )
 
 # Fitting the model
-
 fit <- lm(formula = log2(`16S rDNA copy number`) ~ `Optimal growth temperature` + `GC %` + Sporeforming + 
     `Antibiotic resistant` + `Surface to volume ratio` + Motility + Environment + Phylum + 
     log2(`Genome components`) + log2(`Coding genes`) + `Antibiotic resistant`:Phylum + `GC %`:log2(`Coding genes`) + 
     `GC %`:Sporeforming + log2(`Genome components`):log2(`Coding genes`) + 
     `Surface to volume ratio`:log2(`Coding genes`) + Motility:Environment, data = Dt_bt)
 
-Dt_bt
+# Getting various statistics
 Anova(fit)
 summary(fit)
 AIC(fit)
-fit
-
-Dall %>% filter(class == "Deltaproteobacteria") %>% select(sporeforming)
 ```
 
-## Results
-### Figure X
+## Making various plots
+### Plotting the distributions of the number of 16S gene copies and their entropy
 ```{r}
-library(RColorBrewer)
 display.brewer.all()
 p1 <- Dall %>% 
   filter(n16 < 20) %>% 
@@ -232,6 +219,7 @@ plot + plot_annotation(tag_levels = "A")
 
 ```
 
+# Plotting the above mentioned distributions with the summary statistics tables
 ```{r}
 # Format summary table
 tbl <- Dt_bt %>% 
@@ -258,13 +246,7 @@ tbl + (p1/p2)+ plot_annotation(tag_levels = "A")
 
 
 ```
-```{r}
-Dall %>% 
-  group_by(phylum, ar_count, sporeforming) %>% 
-  summarise(n=n())
-Dall %>% filter(sporeforming =="1")
-Dall %>% select(sporeforming, species) %>% filter(sporeforming =="1") %>% select(species)
-```
+
 
 
 ### Information about dataset
@@ -274,11 +256,11 @@ Dall %>%
   group_by(order) %>% 
   summarise(n=n()) %>% 
   arrange(desc(n)) 
+
 # Finding their % of the total entries
-Dall
 (140+126+85+71+66)/1193
 
-# Finding the median 16S number + div joined at orders
+# Finding the median 16S number + entropy joined at orders
 Dall %>% 
   summarise(`16S rDNA copynumber`=mean(n16),.by=order) %>% 
   summarise(median(`16S rDNA copynumber`),quantile(`16S rDNA copynumber`, 0.25),quantile(`16S rDNA copynumber`, 0.75))
@@ -287,19 +269,17 @@ Dall %>%
   summarise(div = mean(div),.by=order) %>% 
   summarise(median(div),quantile(div, 0.25),quantile(div, 0.75))
 
-# And for the dataset
+# Finding the median 16S number + entropy for the entire dataset
 Dall %>% 
   rename(`16S rDNA copynumber`=n16) %>% 
   summarise(median(`16S rDNA copynumber`),quantile(`16S rDNA copynumber`, 0.25),quantile(`16S rDNA copynumber`, 0.75))
 Dall %>% 
   summarise(median(div),quantile(div, 0.25),quantile(div, 0.75))
-Dall %>% 
-  filter(g)
+
 
 ```
 ### Variance explained
 ```{r}
-
 # Get R^2
 summ(fit)
 
@@ -314,7 +294,8 @@ summary(fit)
 Anova(fit) 
 summ(fit)
 ```
-## Antibiotic resistance
+
+## Antibiotic resistance plots AND estimated marginal means AND hypothesis test
 ```{r}
 library(emmeans)
 ## Calculating the marginal means
@@ -334,22 +315,22 @@ p2 <- Dt_bt %>%
 p1 + p2 + plot_annotation(tag_levels = "A")
 
 
-## Testing the difference in AR between phylums 
+## Testing the difference in AR between phylums, through the estimated marginal means
 emm <- emmeans(fit, specs = c("Antibiotic resistant","Phylum"))
 pair <- pairs(emm, simple="each", type="response")
 pair$`simple contrasts for Antibiotic resistant` %>% tidy()
 
 
-8.9e-02
 ```
 
 
 
-## Environment and motility 
+## Environment and motility plots + hypothesis testing + marginal means
 ```{r}
 ## Calculating the marginal means
 ggemmeans(fit, back.transform = T,terms=c("Environment"))
 
+# Plot the estimated marginal means
 dfpredict <- ggemmeans(fit, back.transform = T,terms=c("Environment","Motility"))
                        
 p1 <- plot(dfpredict, dot.size = 0.3, residuals =   T, ci=T) +
@@ -360,8 +341,7 @@ p2 <- Dt_bt %>%
   geom_violin(draw_quantiles = c(0.5))
 
 
-
-
+# Marginal means and hypothesis testing
 emm <- emmeans(fit, specs=c("Environment", "Motility"), type="response")
 emm
 pair <- pairs(emm, simple="each", type="response")
@@ -372,8 +352,9 @@ p3 <- pwpp(emm, type="response", by="Environment")
 
 ```
 
-## Surface to volume
+## Surface to volume plots + marginal effects  
 ```{r}
+# Plot the predicted lines
 cg <- c(2500,3500,4500)
 ylab =  "Partial residuals (#16S)"
 dfpredict <- ggpredict(fit, back.transform = T,terms=c("Surface to volume ratio [n=100]","Coding genes [cg]")) 
@@ -381,19 +362,17 @@ dfpredict <- ggpredict(fit, back.transform = T,terms=c("Surface to volume ratio 
 p1 <- plot(dfpredict, dot.size = 0.3, residuals = T)+ 
   ggtitle("") 
 
-
+# Plot the raw data
 p2 <- Dt_bt %>% 
   ggplot(aes(x=`Surface to volume ratio`, y=`16S rDNA copy number`, col=`Coding genes`)) +
   geom_point() +
     scale_color_distiller(palette = "Blues") 
   
+# Plot the distribution
 p3 <- Dt_bt %>% 
   ggplot(aes(x=`Surface to volume ratio`, col=`Coding genes`)) +
   geom_histogram()
 
-
-
-p1 + (p2/p3) + plot_annotation(tag_levels = "A")
 
 # Define the model with the transformations directly in the data
 # To make the emtrends method work correctly
@@ -423,27 +402,25 @@ p4 <- trend %>%
   labs(x="Coding genes", y="Density |  % change per 1 increase in Surface to volume ratio") +
   scale_x_continuous(n.breaks = 10)
 
-p4
 p4 <- p4 + geom_xsidefreqpoly(data=dt, aes(x=2^`Coding genes`),show.legend = F) +
   theme(ggside.panel.scale = .2)  +
   ggside(x.pos="bottom")
-p4
+
+# Plot all plots together
 wrap_plots(p1,p2,p4,p3) + plot_annotation(tag_levels = "A")
 
 # Calculate the specific trends
 trend %>% 
   mutate(`Coding genes` = 2^`Coding genes`)
 
-2^c(-0.0676441455 , -0.0925905681,	-0.0426977230	)*100-100
-
-2^-0.0676441455*100-100
-p1
 ```
 
 
 ## Temperature
 
 ```{r}
+
+#Plot the partial residuals
 ylab =  "Partial residuals (#16S)"
 dfpredict <- ggpredict(fit, back.transform = T,terms=c("Optimal growth temperature [n=100]")) 
                        
@@ -451,11 +428,14 @@ p1 <- plot(dfpredict, dot.size = 1, residuals = T)+
   ggtitle("") + 
   xlab("Optimal growth temperature (°C)")
 
+# Plot the raw data
 p2 <- Dt_bt %>% 
   ggplot(aes(y=`16S rDNA copy number`, x=`Optimal growth temperature`)) +
   geom_hex() +
   xlab("Optimal growth temperature (°C)")
   
+
+# Plot the raw data distributions
 p3 <- Dt_bt %>% 
   ggplot(aes(x=`Optimal growth temperature`, col=`Coding genes`)) +
   geom_histogram() + 
@@ -465,7 +445,6 @@ p1 + (p2/p3) + plot_annotation(tag_levels = "A")
 
 
 # Getting the marginal effect
-
 trend <- emtrends(fit_nt, ~`Optimal growth temperature`,
                   var="Optimal growth temperature",
                   "Motility" = c("no"),
@@ -474,24 +453,12 @@ trend <- emtrends(fit_nt, ~`Optimal growth temperature`,
                   "Phylum"=c("Actinomycetota"))
 trend %>% as.data.frame() %>% tidy()
 
-Dt %>% summarise(sd(growth_temp))
-
-
-2^c(-0.0137, -0.02, -0.00736)*100-100
-
-
+# And plotting temperature for the ones which are sporeforming
 Dt_bt %>% 
   ggplot(aes(y=`16S rDNA copy number`, x=`Optimal growth temperature`, col=Sporeforming)) +
   geom_point() +
   scale_color_discrete()  + 
   xlab("Optimal growth temperature (°C)")
-```
-
-```{r}
-Dall %>% 
-  ggplot(aes(x=div+0.1, y=ar_count)) +
-  geom_boxplot() +
-  scale_x_continuous(trans="log2")
 ```
 
 
@@ -522,7 +489,7 @@ emmean$emmeans %>%
   tidy() %>% 
   mutate(across(c(estimate,conf.low, conf.high), ~2^.x))
 
-5# Marginal effects and contrasts betweene them
+# Marginal effects and contrasts betweene them
 emmipf,effort~hours,at=mylist, CIs=TRUE, plotit=FALSE)
 
 
@@ -539,9 +506,11 @@ em$emtrends %>%
 
 
 
-## Coding genes
+## Coding genes plots and estimated marginal effects
 ```{r}
+# Plot the predicted lines, this time by building the method ourselves.
 
+# Firstly define the data transformed and fit the model again
 library(marginaleffects)
 dt <- Dt_bt %>% mutate(`Coding genes` = log2(`Coding genes`),
                        `Genome components` = log2(`Genome components`),
@@ -553,14 +522,17 @@ fit <- lm(formula = log2(`16S rDNA copy number`) ~ `Optimal growth temperature` 
     `GC %`:Sporeforming + `Genome components`:`Coding genes` + 
     `Surface to volume ratio`:`Coding genes` + Motility:Environment, data = dt)
 
+# Then make a dataframe for predictions
 df <- datagrid("Coding genes" = log2(seq(500, 10000, 100)) ,"GC %" = c(40,50,60),Sporeforming="No","Antibiotic resistant"= "0","Motility"="no","Phylum"="Actinomycetota",model = fit)
 
 
+# Make predictions based on the dataframe
 pred <- predict(fit, newdata=df, interval="confidence") %>% 
   as.data.frame() %>% 
   bind_cols(df) %>% 
   rename(estimate=fit)
 
+# Format the predictions for plotting and calculate the residuals
 pred_all <- add_predictions(dt, fit) %>% 
   bind_cols(`16S rDNA copy number`=dt$`16S rDNA copy number`) %>% 
   rename(`16S rDNA copy number`=`16S rDNA copy number...20`) %>% 
@@ -568,10 +540,7 @@ pred_all <- add_predictions(dt, fit) %>%
   mutate(res = `16S rDNA copy number` - pred) 
 
 
-#pred <- pred %>% 
-#  rename(cd_pred = `Coding genes`)
-pred  
-pred_all
+# Find the residual values closed to the predicted values
 pred <- pred %>% 
   mutate(`Coding genes` = round(2^`Coding genes`,-2)) %>% 
   rename(gc_predict=`GC %`) %>% 
@@ -580,6 +549,7 @@ col <- pred_all %>%
   mutate(`Coding genes` = round(2^`Coding genes`,-2)) %>% 
   left_join(pred, by="Coding genes",multiple="all") 
 
+# Plot everything together backtransformed
 p1 <- col %>% 
   select(`GC %`,gc_predict, upr,lwr,`Coding genes`,estimate,res,`16S rDNA copy number`) %>% 
   filter(round(gc_predict,1) == round(`GC %`,-1)) %>% 
@@ -592,7 +562,8 @@ p1 <- col %>%
   labs(color="GC %")
 
 
-
+## Plot everything with x and y scaled
+# Firstly make the labels with the estimate marginal effects
 label <- col %>% 
   mutate(gc_predict = factor(gc_predict)) %>% 
   group_by(gc_predict) %>% 
@@ -601,7 +572,7 @@ label <- col %>%
             label="TEST")
 label$label <- c("EME=0.753","EME=0.539","EME=0.325",NA)
 
-
+#  then plot them
 p2 <- col %>% 
   select(`GC %`,gc_predict, upr,lwr,`Coding genes`,estimate,res,`16S rDNA copy number`) %>% 
   filter(round(gc_predict,1) == round(`GC %`,-1)) %>% 
@@ -616,7 +587,7 @@ p2 <- col %>%
   ylab("16S rDNA copy number")+
   labs(color="GC %")
 
-
+# Plot the raw data
 p3 <- Dt_bt %>% 
   ggplot(aes(y=`16S rDNA copy number`, x=`Coding genes`, col=`GC %`)) +
   geom_point() +
@@ -626,24 +597,18 @@ p3 <- Dt_bt %>%
 p3 +((p1/p2)) +plot_annotation(tag_levels = "A")
 
 
-# Find the trend (Marginal effect)
+# Find the Marginal effects again wit CI
 emtrends(fit,  ~ `GC %`, var="Coding genes", at=list(`GC %` = c(40,50,60), "Motility" = c("no")),"Antibiotic resistant" = c("0"),"Sporeforming"="No","Phylum"=c("Actinomycetota"))
 
-# 40 %
-2^c(0.754,0.632,0.877)*100-100
-
-# 60%
-2^c(0.325,0.224,0.424)*100-100
-pred
-col
 ```
 
 
-## Genome components
+## Genome components plots
 
 ```{r}
 library(gghighlight)
  
+## Like for coding genes, make prediction lines based on the model
 # Calculate the datagrid used for predictions
 df <- datagrid("Coding genes" = log2(c(2500,3500,4500)) ,"GC %" = c(50),Sporeforming="No","Antibiotic resistant"= "0","Motility"="no","Phylum"="Actinomycetota","Genome components" =log2(seq(1,16,1)),model = fit)
 # Make the predictions based on the selected datagrid
@@ -665,12 +630,12 @@ pred <- pred %>%
   select(-`16S rDNA copy number`)
 
 # Combine the predictions from the raw data and from the grid
-# Based on where genome components are the same
+# Based on where genome components are the same in the datagrid and the rawdata
 col <- pred_all %>% 
   mutate(`Genome components` = round(2^`Genome components`,0)) %>% 
   left_join(pred, by="Genome components",multiple="all") 
 
-# Plot the partial residuals, and filter out the values which do not have the color by values which is close enough to the ones used for the estimation
+# Plot the partial residuals, and filter out the raw values which do not have values close enough to the values used for prediction.
 p1 <- col %>% 
   select(cg_predict, `Coding genes`,upr,lwr,estimate,res,`16S rDNA copy number`,`Genome components`) %>% 
   filter(round(cg_predict,-2) == round(`Coding genes`,-2)) %>% 
@@ -684,13 +649,14 @@ p1 <- col %>%
     facet_wrap(~cg_predict, dir="v")+
   ylab("16S rDNA copy number") + labs(col="Coding genes")
 
-
+#  plot the raw data
 p2 <- Dt_bt %>% 
   ggplot(aes(y=`16S rDNA copy number`, x=`Genome components`, col=`Coding genes`)) +
   geom_point() +
   scale_color_distiller(palette = "Blues") + 
   scale_x_continuous(trans="log2")
   
+# Plot the distribution of the raw data
 p3 <- Dt_bt %>% 
   ggplot(aes(x=`Genome components`, col=`Coding genes`)) +
   geom_histogram()
@@ -703,16 +669,7 @@ p1 + (p2/p3) + plot_annotation(tag_levels = "A")
 # Find the trend (Marginal effect)
 emtrends(fit,  ~ `Coding genes`, var="Genome components", at=list(`Coding genes` = log2(c(1193,2500, 3500, 4500)), "Motility" = c("no")),"Antibiotic resistant" = c("0"),"Sporeforming"="No","Phylum"=c("Actinomycetota"))
 
-2^c(-0.2891, -0.4164, -0.1618)*100-100
-Dt %>% summarise(min(genes_coding))
-Dt %>% summarise(max(genes_coding))
-# 2500 
-2^c(-0.333,-0.941,0.0275)*100-100
-
-# 3500
-2^c(0.1699, 0.1242, 0.2157)*100-100 
-
-
+# Plot the trend for a list of values for coding genes
 trend <- emtrends(fit,  ~ `Coding genes`, var="Genome components", at=list(`Coding genes` = log2(seq(100,11000,100)), "Motility" = c("no")),"Antibiotic resistant" = c("0"),"Sporeforming"="No","Phylum"=c("Actinomycetota")) %>% 
   as.data.frame() %>% 
   tidy()
@@ -725,25 +682,20 @@ p3 <- trend %>%
 p1 + (p2/p3) + plot_annotation(tag_levels = "A")
 
 
-#  geom_vline(xintercept = 1193) +
-#  annotate("text",label="Min number of coding genes", x=1193+1000, y=-50) +
-#  geom_vline(xintercept = 10599) 
-trend
-
 ```
 
 
 
-## Predicting sporeformation
+## PCA plot
 ```{r}
 library(ggfortify)
 
+# Pick the attributes to plot
 for_plot <- c("Sporeforming","Phylum")
-Dall$total_seq_length
+
+# Formatting the data for plotting
 D <- bind_cols(Dt_bt, select(Dall,total_seq_length)) %>%
   rename(`Sequence length` = total_seq_length)
-
-
 D_subset <- D %>%
   select(`16S rDNA copy number`,`GC %`,Sporeforming, `Genome components`, `Percent pseudogenes`=pseudogenes_percent,`Antibiotic resistant`,`Optimal growth temperature`,`Sequence length`,Phylum) %>% 
   select(-`Optimal growth temperature`) %>% 
@@ -751,14 +703,16 @@ D_subset <- D %>%
   select(where(is.double),all_of(for_plot)) %>% 
   filter(if_all(where(is.double), ~!is.na(.x))) 
 
+# Runnin the PCA
 pca_res <- D_subset %>% 
   select(-any_of(for_plot)) %>% 
   prcomp(scale=T, center = T)
 
-
-
+# Plotting the results
 p1 <- autoplot(pca_res, loadings = TRUE, loadings.label = TRUE, 
          loadings.label.size  = 3, data = D_subset, col="Sporeforming", shape="Phylum", loadings.label.repel=T,size=2)  + scale_color_brewer(palette = "Set3")
+
+# Plotting the raw data
 p2 <- D %>% 
   filter(Phylum %in% c("Bacillota","Actinomycetota")) %>% 
   ggplot(aes(x=`Sequence length`,`16S rDNA copy number`,col=Sporeforming, shape = Phylum)) +
@@ -772,6 +726,7 @@ p2+p1 + plot_annotation(tag_levels = "A")
 
 ## Model assumptions
 ```{r}
+# Plot the qq plot and the residual plot
 fort <- fortify(fit)
 p1 <- fort %>% 
   ggplot(aes(y=.resid, x=.fitted)) +
@@ -785,1227 +740,5 @@ p2 <- fort %>%
 p1+p2 + plot_annotation(tag_levels = "A")
 ```
 
-```{r}
-emm <- emmeans(fit, ~`Antibiotic resistant`, by = "Phylum",type="response") %>% tidy() 
-emm
-emm %>% 
-  ggplot(aes(y=response, x=`Antibiotic resistant`)) +
-  geom_jitter(aes(y=`16S rDNA copy number`),alpha=0.1, data=Dt_bt) +
-  geom_point(col="red") +
-  geom_errorbar(col="red",aes(ymin=response - std.error, ymax=response + std.error)) +
-  facet_wrap(~Phylum)
-```
-
-
-
-## Emmeans
-```{r}
-emm <- emmeans(fit, "Sporeforming")
-emm
-
-emm <- emmeans(fit, "Sporeforming")
-contrasts(emm)
-pairs(emm)
-
-Dt_bt$
-effect_plot(fit, pred = "Optimal growth temperature", partial.residuals = TRUE)
-
-emmip(fit, `Antibiotic resistant`~ Phylum  )
-Anova(fit)
-Dt_bt$`Coding genes`
-emmip(fit, Sporeforming~`GC %`, cov.reduce=range)
-
-em <- emtrends(fit, pairwise ~ Sporeforming, var="GC %")
-em
-emmip(fit, Sporeforming~`GC %`, cov.reduce=range)
-
-
-em <- emtrends(fit, pairwise ~ `GC %`, var="Coding genes", at=list(`GC %` = c(40,50,60)))
-confint(em$emtrends)
-
-confint(em)
-0.000320 - 2.52e-05
-```
-
-
-
-
-## GARBAGE
-
-```{r}
-p1 <- Dall %>% 
-  ggplot(aes(n16)) + geom_histogram() +
-  geom_vline(aes(xintercept = mean(n16)),col='red',size=2)
-  
-p2 <- Dall %>% 
-  summarise(`16S rDNA copynumber`=mean(n16),.by=genus) %>% 
-  ggplot(aes(`16S rDNA copynumber`)) + geom_histogram() +
-  geom_vline(aes(xintercept = mean(`16S rDNA copynumber`)),col='red',size=2)
-p3 <- Dall %>% 
-  summarise(`16S rDNA copynumber`=mean(n16),.by=order) %>% 
-  ggplot(aes(`16S rDNA copynumber`)) + geom_histogram() +
-  geom_vline(aes(xintercept = mean(`16S rDNA copynumber`)),col='red',size=2)
-p1/p2/p3
-
-
-Dall %>% 
-  summarise(`16S rDNA copynumber`=mean(n16),.by=order) %>% 
-  summarise(median(`16S rDNA copynumber`),quantile(`16S rDNA copynumber`, 0.25))
-
-Dall %>% 
-  group_by(order) %>% 
-  summarise(n=n(), n16=median(n16)) %>% 
-  mutate(order = fct_reorder(order, n)) %>% 
-  ggplot(aes(y=order, x=n, fill=n16)) +
-  geom_col()
-  
-
-Dall %>% 
-  group_by(order) %>% 
-  summarise(n=n()) %>% 
-  arrange(desc(n)) 
-
-Dall
-(140+126+85+71+66)/1193
-```
-
-```{r}
-
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## OLD
-
-```{r}
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("Environment","Motility"))
-                       
-plot(dfpredict, dot.size = 0.3, residuals =   T, ci=T) 
-
-
-Dt_bt %>% 
-  ggplot(aes(x=Environment,y=`16S rDNA copy number`, col=Motility)) +
-  geom_boxplot()
-
-
-+ ylab(ylab)  +
-  ggtitle("") +
-  coord_cartesian(ylim=c(0, 25))
-
-hypothesis_test(dfpredict,p_adjust = "bonferroni")
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("phylum","ar_count"))
-hypothesis_test(dfpredict,p_adjust = "bonferroni")
-
-
-plot(dfpredict, dot.size = 0.3, residuals =   T, ci=T)  + ylab(ylab)  +
-  ggtitle("") +
-  coord_cartesian(ylim=c(0, 25))
-
-
-Dt_bt %>% 
-  ggplot(aes(y=n16, x=phylum, fill=ar_count,col=`GC %`)) +
-  geom_boxplot() +
-  geom_jitter()
-
-Dt_bt %>% 
-  filter(phylum =="Bacillota") %>% 
-  ggplot(aes(y=n16, x=`GC %`, col=ar_count)) +
-  geom_point() +
-  facet_wrap(~sporeforming)
-
-summary(fit_fn)
-
-summary(fit)
-Dt_bt %>% 
-  filter(ar_count=="0") %>% 
-  summarise(n=n(),.by=phylum)
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("GC %","sporeforming"))
-
-plot(dfpredict, dot.size = 0.3, residuals =   T, ci=T)  + ylab(ylab)  +
-  ggtitle("") +
-  coord_cartesian(ylim=c(0, 25))
-
-Dt_bt %>% 
-  filter(phylum %in% c("Bacillota","Actinomycetota")) %>% 
-  ggplot(aes(y=n16, x=`GC %`, col=ar_count)) +
-  geom_point() +
-  facet_wrap(~sporeforming)
-
-
-
-```
-
-```{r}
-library(ggpubr)
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("environment"))
-hypo <- hypothesis_test(dfpredict,p_adjust = "bonferroni")
-hypo <- as.data.frame(hypo)
-hypo <- hypo %>% 
-  mutate(env1= str_split_i(environment, "-",1)) %>% 
-  mutate(env2 = str_split_i(environment, "-",1))
-hypo
-
-df <- data.frame(pred = dfpredict$predicted,environment = c("animal","aquatic","soil","plant"))
-
-hypo
-ggplot(df, aes(y=pred, x=environment)) +
-  geom_point() +
-  geom_segment(data=hypo,aes(x=1,y=2,xend=2,yend=2))
-
-
-```
-```{r}
-library(emmeans)
-emm <- emmeans(fit, ~ motility * environment,)
-emm
-pairs(emm, simple="each", type="response")
-
-plot(emm, comparisons = T)
-a <- pwpp(emm, by="motility",type="response")
-b <- pwpp(emm, by="environment",type="response")
-a/b
-
-
-
-
-emm <- emmeans(fit, ~environment)
-pwpp(emm)
-
-
-
-
-emm <- emmeans(fit, ~motility)
-pwpp(emm)
-
-emm <- emmeans(fit, ~ environment,)
-plot(emm, comparisons = T)
-
-emm <- emmeans(fit, ~ motility*environment)
-plot(emm, comparisons = T, sort=T)
-```
-```{r}
-emm <- emmeans(fit, ~phylum*ar_count)
-
-a <- pwpp(emm, by="phylum",type="response")
-a
-b <- pwpp(emm, by="environment",type="response")
-
-
-emm <- emmeans(fit, ~sporeforming)
-pwpp(emm)
-
-Dt_bt %>% 
-  group_by(phylum, sporeforming) %>% 
-  summarise(mean(n16))
-```
-
-```{r}
-library(umap)
-
-data <- Dt_bt %>% select(where(is.double))
-umap(data, labels=Dt_bt$sporeforming,controlscale=TRUE,scale=1,
-legendtitle='var',printres = TRUE,printwidth = 24)
-Dumap <- as.data.frame(umap$layout)
-Dumap %>% 
-  ggplot(aes(x=V1, y=V2, col=Dt_bt$sporeforming)) +
-  geom_point()
-```
-```{r}
-fit2 <- lm(log1p(div) ~ oxygen.tolerance)
-```
-
-
-```{r}
-library(ggrepel)
-Dlab <- Dt_bt %>% 
-  filter(growth_temp >60 | growth_temp < 17)
-
-ggplot(Dt_bt,aes(y=(n16), x=growth_temp)) +
-geom_jitter(data=Dall, col="lightgrey") +
-geom_jitter(data=Dt_bt, aes(col=sporeforming) ,height=0.1)
-
-ggplot(Dt_bt,aes(y=(n16), x=growth_temp, col=sporeforming)) +
-geom_jitter(data=Dt_bt,alpha=4/10, height=0.1) +
-geom_text_repel(data=Dlab, aes(label=species))
-
-Dlab %>% arrange(growth_temp,sporeforming)
-```
-```{r}
-p1 <- Dt_bt %>% 
-  ggplot(aes(x=`Genome components`)) +  geom_histogram() + scale_x_continuous(trans="log2") +
-  ggtitle("after log2")
-p2 <- Dt_bt %>% 
-  ggplot(aes(x=genes_coding)) +  geom_histogram() + scale_x_continuous(trans="log2")
-p3 <- Dt_bt %>% 
-  ggplot(aes(x=n16)) +  geom_histogram() + scale_x_continuous(trans="log2")
-
-
-p1t <- Dt_bt %>% 
-  ggplot(aes(x=`Genome components`)) +  geom_histogram()  +
-  ggtitle("before log2")
-p2t <- Dt_bt %>% 
-  ggplot(aes(x=genes_coding)) +  geom_histogram()
-p3t <- Dt_bt %>% 
-  ggplot(aes(x=n16)) +  geom_histogram() 
-
-(p1t+p2t+p3t)/(p1+p2+p3)
-```
-```{r}
-Dt_bt %>% 
-  filter(genes_coding < 5000) %>% 
-  mutate(f = cut((genes_coding), 6)) %>% 
-  ggplot(aes(x=(surf_area), y=n16,col=genes_coding)) +
-  geom_jitter(width = 0.1, height = 0.1,alpha=1/10) +
-  facet_wrap(~f) 
-
-Dt_bt %>% 
-  filter(surf_area < 10, surf_area > 5) %>% 
-  mutate(f=cut(surf_area, 5)) %>% 
-  ggplot(aes(col=f, x=n16,y=genes_coding)) +
-  geom_jitter(width = 0.8, height = 0.5)
-
-Dt_bt %>% 
-  filter(genes_coding < 7000) %>% 
-  mutate(f = cut((genes_coding), 6)) %>% 
-  ggplot(aes(x=(surf_area), y=n16,col=genes_coding)) +
-  geom_jitter(width = 0.4, height = 0.4) +
-  scale_colour_stepsn(colours = terrain.colors(10)) +
-  facet_wrap(~motility)
-
-
-Dt_bt %>% 
-  filter(genes_coding < 7000) %>% 
-  mutate(f = cut((genes_coding), 6)) %>% 
-  ggplot(aes(x=(surf_area), y=n16,col=genes_coding)) +
-  geom_jitter(width = 0.4, height = 0.4) +
-  scale_colour_stepsn(colours = terrain.colors(10))  +
-  geom_smooth()
-
-Dt_bt %>% 
-  ggplot(aes(surf_area)) +
-  geom_density() 
-
-v <- c(4500, 3000, 2000)
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("surf_area","genes_coding [v]"))
-plot(dfpredict, dot.size = 0.9, residuals  = T) 
-```
-```{r}
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("phylum","ar_count"))
-p1 <- plot(dfpredict, dot.size = 0.9, residuals  = T) 
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("motility","environment"))
-p2 <- plot(dfpredict, dot.size = 0.9, residuals  = T) 
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("sporeforming","GC %"))
-p3 <- plot(dfpredict, dot.size = 0.9, residuals  = T) 
- 
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("GC %","sporeforming"))
-p4 <- plot(dfpredict, dot.size = 0.9, residuals  = T) 
- 
-
-p1 / p2 / (p3 +p4)
-
-
-
-
-
-
-```
-
-```{r}
-p1 <- Dt_bt %>% 
-  ggplot(aes(y=n16, x=ar_count)) + 
-  geom_violin() +
-  geom_jitter(alpha=0.1, width=0.3)
-
-p2 <- Dt_bt %>% 
-  ggplot(aes(y=n16, x=motility)) + 
-  geom_violin() +
-  geom_jitter(alpha=0.1, width=0.3)
-
-p3 <- Dt_bt %>% 
-  ggplot(aes(y=n16, x=environment)) + 
-  geom_violin() +
-  geom_jitter(alpha=0.1, width=0.3)
-
-
-p6 <- Dt_bt %>% 
-  ggplot(aes(y=n16, x=phylum)) + 
-  geom_violin() +
-  geom_jitter(alpha=0.1, width=0.3) +
-  facet_wrap(~ar_count)
-
-(p1+p2)/(p3)/p6
-```
-```{r}
-
-p4 <- Dt_bt %>% 
-  ggplot(aes(y=n16, x=oxygen.tolerance)) + 
-  geom_violin() +
-  geom_jitter(alpha=0.1, width=0.3) 
-
-p5 <- Dt_bt %>% 
-  ggplot(aes(y=n16, x=pathogen_any)) + 
-  geom_violin() +
-  geom_jitter(alpha=0.1, width=0.3) 
-
-p4+p5
-```
-
-
-
-
-```{r}
-Dt_bt %>% 
-  filter(`Genome components` < 5) %>% 
-  ggplot(aes(x=genes_coding, y=n16,col=`Genome components`)) +
-  geom_point(alpha=1) +
-  scale_color_gradient(low = "yellow", high = "darkblue") +
-  facet_wrap(~environment)
-
-Dfull %>% 
-  filter(genome_components < 5) %>% 
-  ggplot(aes(x=genes_coding, y=n16,col=genome_components)) +
-  geom_point(alpha=2/10) +
-  scale_color_gradient(low = "yellow", high = "darkblue") 
-
-```
-
-
-### VIP
-```{r}
-library(vip)
-vi(fit)
-vip(fit,num_features = length(coef(fit)),mapping = aes_string(color = "Sign"),geom="point")
-
-Anova(fit)
-summ(fit)
-```
-
-### Genes coding V `Genome components` and `GC %`
-```{r}
-library(jtools)
-library(ggside)
-
-
-  
-ylab =  "Partial residuals (#16S)"
-gv <- c(1, 2, 4)
-gcv <- c(35,50,65)
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("genes_coding [n=100]","GC % [gcv]","Genome components [gv]"))
-                       
-p1 <- plot(dfpredict, dot.size = 0.3, residuals = T)+ 
-  ylab(ylab)  +
-  xlab("Genes coding")+
-  ggtitle("")
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("Genome components [n=100]","genes_coding"))
-p2 <- plot(dfpredict, dot.size = 0.9, residuals  = T) + theme(legend.position = "none")+ 
-  ylab(ylab)  +
-  ggtitle("")
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("GC % [n=100]","genes_coding"))
-p2.5 <- plot(dfpredict, dot.size = 0.9, residuals  = T)+ theme(legend.position = "none") +
-  ylab("")  +
-  ggtitle("")
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("surf_area [n=100]","genes_coding"))
-p2.75 <- plot(dfpredict, dot.size = 0.9, residuals  = T)+
-  ylab("")  +
-  ggtitle("")
-
-p3 <- Dt_bt %>% 
-  ggplot(aes(x=`Genome components`, col=phylum)) +
-  geom_density()+ theme(legend.position = "none")
-
-p4 <- Dt_bt %>% 
-  ggplot(aes(x=`GC %`, col=phylum)) +
-  geom_density() +theme(legend.position = "none")
-
-p5 <- Dt_bt %>% 
-  ggplot(aes(x=`genes_coding`, col=phylum)) +
-  geom_density() 
-
-pathwork <- p1/(p2+p2.5+p2.75)/(p3+p4+p5)
-pathwork + plot_annotation(tag_levels = "A")
-#plot(dfpredict, dot.size = 0.3, residuals=T, rawdata = T)
-
-#plot(dfpredict)
-#dfpredict
-
-#dfpredict <- ggpredict(fit, back.transform = T,terms=c("genes_coding","`GC %`"))
-#plot(dfpredict, dot.size = 0.9, rawdata  = T)
-#plot(dfpredict, dot.size = 0.9, add.data   = T)
-
-#ggplot(dfpredict, aes(x = x, y = predicted, colour = group)) +
-#  geom_line() +
-#  facet_wrap(~facet)
-
-#effect_plot(fit, pred = environment, interval = TRUE, plot.points = TRUE,
-#            jitter = .2, partial.residuals = T,line.colors = "red",point.alpha = 0.4,point.size = 0.1)
-)
-dfpredict
-```
-## 
-
-
-
-
-```{r}
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("genes_coding [n=100]","Genome components [gv]"))
-                       
-plot(dfpredict, dot.size = 0.3, residuals = T)+ 
-  ylab(ylab)  +
-  xlab("Genes coding")+
-  ggtitle("")
-
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("GC %","sporeforming"))
-                       
-plot(dfpredict, dot.size = 0.3, residuals = T)+ 
-  ylab(ylab)  +
-  xlab("Genes coding")+
-  ggtitle("")
-```
-
-
-
-
-## GCpercent and sporeforming + environment
-```{r}
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("GC % [n=100]","phylum"))
-                       
-plot(dfpredict, dot.size = 0.3, residuals =   T, ci=T)  + ylab(ylab)  +
-  ggtitle("") +
-  coord_cartesian(ylim=c(0, 25)) 
-```
-```{r}
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("environment","sporeforming"))
-                       
-p1 <- plot(dfpredict, dot.size = 0.3, residuals =   T, ci=T)  + ylab(ylab)  +
-  ggtitle("") +
-  coord_cartesian(ylim=c(0, 25)) 
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("environment","pathogen_any"))
-                       
-p2 <- plot(dfpredict, dot.size = 0.3, residuals =   T, ci=T)  + ylab(ylab)  +
-  ggtitle("") +
-  coord_cartesian(ylim=c(0, 25)) 
-
-p1/p2
-```
-
-## surf_area and growth temperature + Genome components (small effect)
-As we saw before surf-area has an negative effect
-```{r}
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("surf_area [n=100]","genes_coding"))
-p1 <- plot(dfpredict, dot.size = 0.3, ci=T, residuals = T)
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("growth_temp [n=100]"))
-p2 <- plot(dfpredict, dot.size = 0.3, ci=T, residuals = T, jitter=0.3)
-
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("Genome components [n=100]","genes_coding"))
-p3 <- plot(dfpredict, dot.size = 0.9, residuals  = T)
-
-pathwork <- (p2 + p1) / p3
-pathwork + plot_annotation(tag_levels = "A")
-
-```
-It seems that, the effect is larges for small genomes. But the large the genomes get, the effect diminishes.
-It seems to be because, in the data, small genomes are associated with small cell size and a small surface/area relationship.
-But there is also small genomes with a large surf/area relationship. Therefore we for these get a downwards facing trend.
-While we for larger genomes which mostly have large surface/area relationship have a more linear realtionship.
-Lastly most points are in the middel of the scale. Therefore the points with a high (and low number) of surf_area have too much levrage
-
-## ar_count and it's interactions
-```{r}
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("ar_count [n=50]","environment","Genome components"))
-p1 <- plot(dfpredict, dot.size = 0.3, ci=F, residuals = T, jitter=0.3)
-
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("ar_count [n=100]","phylum"))
-p2 <- plot(dfpredict, dot.size = 0.3, ci=T, residuals = T, jitter=0.3)
-
-p1/p2
-```
-
-```{r}
-v <- seq(1,100,1)
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("ar_count [v]","phylum"))
-plot(dfpredict, dot.size = 0.3, ci=F, residuals = T, jitter=0.3)
-```
-
-
-### Factors
-```{r}
-line_size <- 1
-dot_size <- 2
-
-v <- c(1,10,100)
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("environment","ar_count [v]"))
-p1 <- plot(dfpredict, residuals = T, dot.size = 1,jitter = 0.4,line.size = line_size ) +
-  ylab(ylab) +
-  ggtitle("") +
-  xlab("Environment") +
-  ylim(1,9)
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("motility"))
-p2 <- plot(dfpredict, residuals = T, dot.size = 0.4,jitter = 0.4,line.size = line_size ) +
-  geom_point(aes(y=predicted),col="red",size=dot_size, show.title=F)+labs(title = "") + 
-  ylab("") +
-  xlab("Motility") +
-  ylim(1,8)
-
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("sporeforming"))
-p3 <- plot(dfpredict, residuals = T, dot.size = 0.4,jitter = 0.4,line.size = line_size ) +
-  geom_point(aes(y=predicted),col="red",size=dot_size, show.title=F)+labs(title = "") + 
-  ylab(ylab) +
-  xlab("Sporeforming") +
-  ylim(1,8)
-
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("phylum"))
-p4 <- plot(dfpredict, residuals = T, dot.size = 0.4,jitter = 0.4,line.size = line_size ) +
-  geom_point(aes(y=predicted),col="red",size=dot_size, show.title=F)+labs(title = "") + 
-  ylab("") +
-  xlab("Phylum") +
-  ylim(1,8)
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("GC % [n=100]","sporeforming","environment"))
-                       
-p5 <- plot(dfpredict, dot.size = 0.3, residuals =   T, ci=T)  + ylab(ylab)  +
-  ggtitle("") +
-  coord_cartesian(ylim=c(0, 15)) 
-
-hypothesis_test(dfpredict)
-
-pathwork <- (p1 + p2) / (p3 + p4) 
-pathwork + plot_annotation(tag_levels = "A") 
-
-
-
-#pathwork <- (p1 + p2 +p3 +p4) / (p5) 
-#pathwork + plot_annotation(tag_levels = "A") 
-#dfpredict
-
-
-```
-
-# NO interactions
-```{r}
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("motility"))
-p1 <- plot(dfpredict, residuals = T, dot.size = 0.4,jitter = 0.4,line.size = line_size ) +
-  geom_point(aes(y=predicted),col="red",size=dot_size, show.title=F)+labs(title = "") + 
-  ylab(ylab) +
-  xlab("Motility") +
-  ylim(1,8)
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("growth_temp [n=100]"))
-p2 <- plot(dfpredict, dot.size = 0.3, ci=T, residuals = T, jitter=0.3)  +
-  ylab(ylab) + ggtitle("")
-
-p1 / p2
-```
-
-
-### Factorsnew
-```{r}
-line_size <- 1
-dot_size <- 1
-
-v <- c(1,10,100)
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("environment","ar_count [v]"))
-env_ar <- plot(dfpredict, residuals = T, dot.size = dot_size,jitter = 0.4,line.size = line_size ) +
-  ylab(ylab) +
-  xlab("Environment") +
-  ggtitle("") +
-  coord_cartesian(ylim=c(0, 10)) 
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("environment","GC %"))
-env_gc <- plot(dfpredict, residuals = T, dot.size = dot_size,jitter = 0.4,line.size = line_size ) +
-  ylab(ylab) +
-  xlab("Environment") +
-  ggtitle("") +
-  coord_cartesian(ylim=c(0, 10)) 
-
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("phylum","ar_count [v]"))
-phyl_ar <- plot(dfpredict, residuals = T, dot.size = dot_size,jitter = 0.4,line.size = line_size ) +
-  ylab(ylab) +
-  xlab("Phylum") +
-  ggtitle("") +
-  coord_cartesian(ylim=c(0, 10)) 
-
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("phylum","GC %"))
-phyl_gc <- plot(dfpredict, residuals = T, dot.size = dot_size,jitter = 0.4,line.size = line_size ) +
-  ylab("") +
-  xlab("Phylum") +
-  ggtitle("") +
-  coord_cartesian(ylim=c(0, 10)) 
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("motility"))
-mot <- plot(dfpredict, residuals = T, dot.size = dot_size,jitter = 0.4,line.size = line_size ) +
-  ylab(ylab) +
-  xlab("Motility") +
-  ggtitle("") +
-  coord_cartesian(ylim=c(0, 10)) 
-
-
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("sporeforming", "GC %"))
-spore_gc <- plot(dfpredict, residuals = T, dot.size = dot_size,jitter = 0.4,line.size = line_size ) +
-  ylab("") +
-  ggtitle("") +
-  xlab("Sporeforming")+
-  coord_cartesian(ylim=c(0, 10)) 
-
-(env_ar + env_gc) / (phyl_ar + phyl_gc) / (mot + spore_gc)
-
-```
-
-```{r}
-termplot(fit, partial.resid=TRUE, col.res = "purple")
-```
-
-
-```{r}
-dfpredict <- ggemmeans(fit, back.transform = T,terms=c("environment"))
-plot(dfpredict, rawdata  = T) 
-
-dfpredict
-library(emmeans)
-emmeans(fit,specs = c("environment"))
-a <- ref_grid(fit_fn, at = list(ar_count = c(1, 5,10,50)))
-emmip(a, gc_percent+ar_count~environment, style="factor")
-Dt$gc_percent
-ggplot(Dt_bt, aes(x=`GC %`,col=environment, y=n16)) +
-  geom_point() +
-  facet_wrap(~environment)
-
-ggplot(Dt_bt, aes(x=environment, y=n16)) +
-  geom_boxplot()
-```
-
-
-### Plots of predictions
-
-
-Visualizing it
-```{r}
-
-add_predictions(Dt, fit_fn) %>% 
-  ggplot(aes(x=2^genes_coding, y=2^pred, col="red")) +
-  geom_point() +
-  geom_point(aes(y=2^n16), col="grey") +
-  facet_wrap(~phylum)
-
-```
-THEY LOOK FUCKING AMAZING
-
-
-Below we see the only factor in the model = sporeforming or not
----
-for the sporeforming the two phylums are modeled with a swinging curve
-
-```{r}
-add_predictions(Dt, fit_fn) %>% 
-  ggplot(aes(x=2^genes_coding, y=2^pred,col="red") ) +
-  geom_smooth() +
-  geom_point() +
-  geom_point(aes(y=2^n16), col="grey") +
-  facet_wrap(~sporeforming)
-```
-
-
-Below we see the interaction with Gcpercent and sporeforming/genes_coding/`Genome components`
-we see
----
-1)
-Genes coding tend to be larger with higher gc percent. These have lower numbers of 16s genes.
-But when coding genes gets larger this effect is minimized to make the curve flatten out.
-This can mostly be seen in sporeforming = 1
-
-```{r}
-add_predictions(Dt_bt, fit) %>% 
-  ggplot(aes(x=`GC %`, y=2^pred) ) +
-  geom_point(aes(y=2^n16,col=genes_coding, size=`Genome components`)) +
-  geom_smooth() +
-  facet_wrap(~sporeforming)
-
-add_predictions(Dt_bt, fit) %>% 
-  ggplot(aes(x=2^genes_coding, y=2^pred) ) +
-  geom_line() +
-  geom_smooth() +
-  facet_wrap(~sporeforming)
-
-add_predictions(Dt, fit_fn) %>% 
-  ggplot(aes(x=`GC %`, y=2^pred) ) +
-  geom_point(aes(y=2^n16,col=genes_coding, size=`Genome components`)) +
-  geom_smooth() +
-  facet_wrap(~phylum)
-
-add_predictions(Dt, fit_fn) %>% 
-  ggplot(aes(x=2^ar_count-1, y=2^pred) ) +
-  geom_point(aes(y=2^n16)) +
-  geom_smooth() +
-  facet_wrap(~phylum)
-
-Dt_bt %>% 
-  ggplot(aes(x=`Genome components`)) +
-  geom_histogram()
-```
-
-
-
-
-
-```{r}
-log2_1p <- function(x){
-  log2(x+1)
-}
-nrow(Dt_bt)
-
-# backtransform the transformed data
-Dt_bt <- Dt_no_outliers %>% back_transform() %>% 
-  mutate(sporeforming = as.factor(sporeforming),
-         phylum = as.factor(phylum),
-         motility = as.factor(motility),
-         ar_count = ar_count
-         ) %>% 
-  rename(`GC %` = gc_percent, `Genome components` = genome_components)
-# reformat names for better plotting
-Dt_bt <- Dt_bt %>% 
-  mutate(environment = case_when(
-    environment == "aquatic.counts" ~ "aquatic", 
-    environment == "animal.counts" ~ "animal",
-    environment == "plant.counts" ~ "plant",
-    environment == "soil.counts" ~ "soil"), environment = factor(environment))
-
-Dt_bt <- Dt_bt %>% 
-  mutate(sporeforming = case_when(
-    sporeforming == "0" ~ factor("no"), 
-    sporeforming == "1" ~ factor("yes")))
-
-fit <- lm(log2(n16) ~ growth_temp + `GC %` + sporeforming + 
-    log1p(ar_count) + surf_area + motility + environment + phylum + 
-    log2(`Genome components`) + log2(genes_coding) + log1p(ar_count):environment + 
-    log1p(ar_count):phylum + `GC %`:environment + surf_area:log2(genes_coding) + 
-    log2(`Genome components`):log2(genes_coding) + log1p(ar_count):log2(`Genome components`) + 
-    `GC %`:log2(genes_coding) + `GC %`:sporeforming, data = Dt_bt)
-
-v <- c(1,10,50)
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("environment","ar_count [v]"))
-plot(dfpredict, residuals = T, dot.size = 1,jitter = 0.4,line.size = line_size ) +
-  geom_point(aes(y=predicted),col="red",size=dot_size, show.title=F)+labs(title = "") + 
-  ylab(ylab) +
-  xlab("Environment") +
-  ylim(1,8)
-
-dfpredict
-
-Dt_bt %>% summarise(n(),.by=environment)
-
-Dt_bt %>% 
-  ggplot(aes(x=log(ar_count))) +
-  geom_density()
-Anova(fit)
-
-dfpredict
-summ(fit)
-```
-
-
-```{r}
-Dall %>%
-  pull(genus) %>% 
-  unique() %>% 
-  length()
-Dall %>%
-  summarise(n=n(), .by=phylum)
-
-
-Dall %>% 
-  summarise(mean(n16),quantile(n16, 0.25))
-
-
-Dall %>% 
-  ggplot(aes(x=n16, fill=phylum)) +
-  geom_histogram() + 
-  facet_wrap(~ar_count)
-
-Dt_bt %>% 
-  summarise(median(n16),quantile(n16, 0.25),quantile(n16, 0.75), .by=phylum)
-
-Dall %>% 
-  summarise(median(div),quantile(div, 0.25),quantile(div, 0.75))
-
-anova(lm(log2(n16)~phylum, data=Dall))
-anova(lm(log1p(div)~phylum, data=Dall))
-```
-
-```{r}
-library(ggfortify)
-library(plotly)
-
-
-for_plot <- c("class","phylum","order", "oxygen.tolerance","motility","sporeforming","n16","ar_count")
-
-D_subset <- Dt_bt %>% 
-  filter(n16 < 10) %>% 
-  select(where(is.double),any_of(for_plot)) %>% 
-  filter(if_all(where(is.double), ~!is.na(.x))) 
-
-D_subset
-pca_res <- D_subset %>% 
-  select(-any_of(for_plot)) %>% 
-  prcomp(scale=T, center = T)
-
-autoplot(pca_res, loadings = TRUE, loadings.label = TRUE, 
-         loadings.label.size  = 3, data = D_subset, col="n16")
-
-pca_df_tmp <- pca_res$x %>% 
-  as.data.frame() 
-
-pca_df <- bind_cols(pca_df_tmp, D_subset)
-
-pca_df %>% 
-  select(1:3) %>% 
-  plot(col=pca_df$class)
-
-plot_ly(data=pca_df , x= ~PC1, y=~PC2, z=~PC3, type="scatter3d", mode="markers", color=~n16, size=2)
-```
-
-
-## OLD
-
-```{r}
-library(marginaleffects)
-f <- slopes(fit, by="GC %",variables="Coding genes")
-f
-plot_slopes(fit, variables = "Coding genes", by = "GC %") 
-
-plot_predictions(fit, condition = list("Coding genes","GC %" = "quartile"))
-
-
-plot_predictions(fit, condition = list("Genome componenets","Coding genes" = "quartile"))
-
-
-slopes(
-  fit,
-  variables = "Coding genes",
-  newdata = datagrid("GC %" = c(40,50,60)), type="response"
-  )
-
-0.00032*2500
-
-
-2^0.000320
-summary(fit)
-
-
-(5*(0.787246  +  (-0.021461*40) + log2(1)*6.567))
-
-
-f <- function(x){
-  (x*(0.787246  +  (-0.021461*40) + log2(1)*6.567 + 0.077972*9))
-  }
-
-p1 <- ggplot() +
-  stat_function(fun=f, xlim=c(1,10))
-
-p2 <- plot(dfpredict, dot.size = 0.3, residuals = T) +scale_x_continuous(trans="log2") +
-  scale_y_continuous(trans="log2") 
-
-
-p1/p2
-```
-
-
-```{r}
-
-df <- datagrid("Coding genes" = c(1000,2000,4000,8000,10000) ,"GC %" = c(40,50,60),Sporeforming="No","Antibiotic resistant"= "0","Motility"="no","Phylum"="Actinomycetota",model = fit)
-pred <- predictions(fit, newdata=df, type="response")
-
-ggplot(pred, aes(y=2^estimate, x=`Coding genes`, col=`GC %`,group=`GC %`)) +
-  geom_point() +
-  geom_line()+scale_x_continuous(trans="log2") +
-  scale_y_continuous(trans="log2")
-
-
-slope <- slopes(fit, newdata=df)
-
-slope$estimate
-
-
-1) find hælding
-2) lav til %
-
-avg_slopes(fit, variables = "Coding genes", condition = "GC %")
-
-
-
-0.004
-
-
-4*10^-4
-
-
-
-emtrends(fit,  ~ `GC %`, var="Coding genes", at=list(`GC %` = c(40,50,60), "Motility" = c("no")),"Antibiotic resistant" = c("0"),"Sporeforming"="No","Phylum"=c("Actinomycetota"))
-
-
-2^0.754
-2^0.325
-
-
-avg_slopes(fit, variables = "Coding genes", condition = "GC %")
-
-
-
-df <- datagrid("Coding genes" = log2(c(1000,2000,4000,8000,10000)) ,"GC %" = c(40,50,60),Sporeforming="No","Antibiotic resistant"= "0","Motility"="no","Phylum"="Actinomycetota",model = fit)
-
-
-
-pred <- predictions(fit, newdata=df, type="response",conf_level = 0.95)
-pred
-pred %>% 
-  mutate(`GC %`= factor(`GC %`)) %>% 
-ggplot(aes(y=estimate, x=`Coding genes`, col=`GC %`,group=`GC %`)) +
-  geom_ribbon(aes(ymin=conf.low, ymax=conf.high , fill=`GC %`),alpha=0.1) +
-  geom_point() +
-  geom_line() 
-
-
-df <- datagrid("Coding genes" = log2(c(1000,2000,4000,8000,10000)) ,"GC %" = c(30,40,50,60,70),Sporeforming="No","Antibiotic resistant"= "0","Motility"="no","Phylum"="Actinomycetota",model = fit)
-pred <- predictions(fit, newdata=df, type="response",conf_level = 0.95)
-pred %>% 
-ggplot(aes(y=estimate, x=`Coding genes`, col=`GC %`,group=`GC %`)) +
-  geom_point() +
-  geom_line() +
-  geom_point(data =dt, aes(y=log2(`16S rDNA copy number`)))
-
-pred %>% 
-ggplot(aes(y=2^estimate, x=2^`Coding genes`, col=`GC %`,group=`GC %`)) +
-  geom_point(data =dt, aes(y=(`16S rDNA copy number`))) +
-  geom_point() +
-  geom_line() +
-  scale_color_binned(type = "viridis")
-
-
-
-+ stat_function(fun= function(x) 2^(0.754*x-6.3) , col="red") 
-
-
-
-100*(2^0.754-1)
-
-pred$conf.high
-2^7
-
-df
-residualize_over_grid(df, fit, pred_name = "Coding genes")
-
-
-pred
-dt$`16S rDNA copy number`
-
-pred_all <- predictions(fit, newdata=dt, type="response",conf_level = 0.95)
-
-
-pred_all <- add_predictions(dt, fit) %>% 
-  bind_cols(`16S rDNA copy number`=dt$`16S rDNA copy number`) %>% 
-  rename(`16S rDNA copy number`=`16S rDNA copy number...20`) %>% 
-  mutate(pred = 2^pred)
-
-
-
-pred %>% 
-  ggplot(aes(y=estimate, x=`Coding genes`, col=`GC %`,group=`GC %`)) +
-    geom_point() +
-    geom_line() +
-    geom_point(data =pred_all, aes(y=log2(pred)-log(`16S rDNA copy number`)))
-
-```
-
-
-## Gene copies
-```{r}
-ylab =  "Partial residuals (#16S)"
-gcv <- c(40,50,60)
-dfpredict <- ggpredict(fit, back.transform = T,terms=c("Coding genes[n=100]","GC % [gcv]"))
-                       
-p1 <- plot(dfpredict, dot.size = 0.3, residuals = T)+ 
-  ylab(ylab)  +
-  ggtitle("")+
-  geom_point(aes(y=predicted, fill=group), position = position_dodge(0.25)) +scale_x_continuous(trans="log2")
-dfpredict
-p2 <- Dt_bt %>% 
-  ggplot(aes(y=`16S rDNA copy number`, x=`Coding genes`, col=`GC %`)) +
-  geom_point() +
-  facet_wrap(~Phylum) +
-  scale_color_distiller(palette = "Blues")
-  
-
-p3 <- Dall %>% 
-  ggplot(aes(y=n16, x=genes_coding, col=class)) +
-  geom_point() +
-  theme(legend.position = "none") +
-  facet_wrap(~phylum)
-
-p1 /(p3+p2) + plot_annotation(tag_levels = "A")
-p1 + p2 + plot_annotation(tag_levels = "A")
-
-# Get the trend
-trend <- emtrends(fit,  ~ `GC %`, var="Coding genes", at=list(`GC %` = c(40,50,60))) %>% 
-  as.tibble() %>% 
-  filter(`GC %` != 50)
-trend
-
-cd <- c(1000,2000,4000,8000,10000)
-pred <- ggemmeans(fit, back.transform = T,terms=c("Coding genes [cd]","GC % [gcv]"))
-pred
-
-pred$predicted
-pred$conf.low
-pred$conf.high
-3.644912/2.064320
-
-# 40
-x <- c(2.09, 1.76, 2.48)
-dx <- c(3.69, 3.22, 4.22)
-dx/x
-
-# 60
-y <- c(2.13, 1.85, 2.45)
-dy <- c(2.80, 2.51,3.11)
-dy/y
-
-3.44/2.26
-```
-
-```{r}
-pred <- predictions(fit, newdata=df, type="response",conf_level = 0.95)
-pred <- avg_predictions(fit, newdata=df, type="response",conf_level = 0.95)
-pred
-pred %>% 
-  ggplot(aes(y=estimate, x=`Coding genes`, col=`GC %`,group=`GC %`)) +
-    geom_point() +
-    geom_line() 
-
-
-fit
-df
-predict(fit, newdata=df, interval="confidence") %>% 
-  as.data.frame() %>% 
-  bind_cols(df) %>% 
-  select(-`16S rDNA copy number`) %>% 
-  mutate(`GC %` = factor(`GC %`)) %>% 
-  ggplot(aes(y=2^fit, x=2^`Coding genes`, group=`GC %`,col=`GC %`)) +
-  geom_ribbon(aes(ymax=2^upr, ymin=2^lwr),alpha=0.3)+
-  geom_line()
-```
-
-
-
-
-
-
-```{r}
-
-col$`GC %.x`
-+
-  geom_point(aes(y=(res+estimate), x=cd_pred`))
-
-
-pred
-
-pred %>% 
-  ggplot(aes(y=estimate, x=`Coding genes`, col=`GC %`,group=`GC %`)) +
-    geom_point() +
-    geom_line() +
-    geom_point(data =pred_all, aes(y=res))
-
-summary(fit)
-```
-
-
-
-## Genome components
-```{r}
-
-cg <- c(2500,3500,4500)
-dfpredict <- ggemmeans(fit, back.transform = T,terms=c("Genome components [n=10]","Coding genes [cg]")) 
-                       
-p1 <- plot(dfpredict, dot.size = 0.3, residuals = T)+ 
-  ggtitle("") +
-  scale_x_continuous(trans="log2")
-p2 <- Dt_bt %>% 
-  ggplot(aes(y=`16S rDNA copy number`, x=`Genome components`, col=`Coding genes`)) +
-  geom_point() +
-  scale_color_distiller(palette = "Blues") + 
-  scale_x_continuous(trans="log2")
-  
-p3 <- Dt_bt %>% 
-  ggplot(aes(x=`Genome components`, col=`Coding genes`)) +
-  geom_histogram()
-
-
-
-p1 + (p2/p3) + plot_annotation(tag_levels = "A")
-
-# Finding the % change 
-gcom <- c(1,2)
-dfpredict <- ggemmeans(fit, back.transform = T,terms=c("Genome components [gcom]","Coding genes [cg]")) 
-
-dfpredict
-
-
-# 2500
-x <- c(3.98, 3.66, 4.32)
-dx <- c(3.89, 3.57, 4.25)
-dx/x
-
-# 4500
-y <- c(4.91, 4.6, 5.24)
-dy <- c(5.52, 5.18,5.89)
-dy/y
-
-fit
-```
 
 
