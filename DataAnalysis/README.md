@@ -3,7 +3,7 @@ This folder contains the files for the dataanalysis of the 16S gene copy number 
 Lastly, it also contains the files for preparing the data for modelling.
 
 ## Files
-The files can be found in ./ /
+The files can be found in ./ 
 The following is a describtion of the files /
 01_ReadInData.Rmd                       -   Read in the data from the database, and other sources. Format it for modelling.
 02_PredictMissingSpore.Rmd              -   Train a Random Forrest model and use it to predict spore formation for NAN's.
