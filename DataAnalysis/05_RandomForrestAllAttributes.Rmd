@@ -144,7 +144,7 @@ Lets try to run model on more values in the interval which have many ok scores.
 ```{r}
 # Making grid again based on above
 rf_grid <- grid_regular(
-  min_n(range = c(25,40)),
+  min_n(range = c(1,6)),
   mtry(range=c(1, 5)),
   levels = 5
 )
@@ -191,6 +191,8 @@ final_rf <- finalize_model(
 )
 
 final_rf
+# mtry = 2
+# min_n = 1
 ```
 
 # Varible importance plot
@@ -216,6 +218,9 @@ final_res <- final_wf %>%
 
 final_res %>%
   collect_metrics()
+
+# Accuracy 0.93
+# Roc_auc 0.98
 
 ```
 

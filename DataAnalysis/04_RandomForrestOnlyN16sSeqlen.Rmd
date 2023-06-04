@@ -55,8 +55,8 @@ D_filtered_tmp <- D_all %>%
 D_filtered <- D_filtered_tmp %>% 
   select(oxygen.tolerance, growth_temp, n16, 
          gc_percent, sporeforming, total_seq_length, genome_components, pseudogenes_percent, ar_count) %>% 
-  filter(if_all(everything(), ~!is.na(.x))) 
-
+  filter(if_all(everything(), ~!is.na(.x))) %>% 
+  select(sporeforming, n16, total_seq_length)
 ```
 
 
@@ -144,9 +144,9 @@ Lets try to run model on more values in the interval which have many ok scores.
 ```{r}
 # Making grid again based on above
 rf_grid <- grid_regular(
-  min_n(range = c(25,40)),
+  min_n(range = c(30, 40)),
   mtry(range=c(1, 5)),
-  levels = 5
+  levels = 10
 )
 
 # And run the model on the grid
@@ -191,6 +191,9 @@ final_rf <- finalize_model(
 )
 
 final_rf
+
+ #mtry = 1
+ #min_n = 38
 ```
 
 # Varible importance plot
@@ -216,6 +219,8 @@ final_res <- final_wf %>%
 
 final_res %>%
   collect_metrics()
+#roc_auc = 0.95
+#accuracy=0.8983
 
 ```
 
