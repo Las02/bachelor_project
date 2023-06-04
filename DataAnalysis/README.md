@@ -1,8 +1,3 @@
-## TODO
--Ændre all paths så de stadig virker
--Find sporeformation med kun seq og n16
--Remove data expect for pred_bacdive_growth_ribdif.rds
-
 ## Purpose
 This folder contains the files for the dataanalysis of the 16S gene copy number and the intragenomic gene diverstiy of the 16S genes. Additionally, it contains the files for training and evaluating the random forrest models build to predict spore formation.
 Lastly, it also contains the files for preparing the data for modelling.
