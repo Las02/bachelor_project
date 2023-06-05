@@ -11,7 +11,7 @@ The following is a describtion of the files
 04_RandomForrestOnlyN16sSeqlen.Rmd      -   Train a Random Forrest model to predict spore formation based on the number of 16S rRNA genes and the sequence length.  
 05_RandomForrestAllAttributes.Rmd       -   Train a Random Forrest model to predict spore formation based on the other attributes in the data  
 06_PlotsOfN16AndPCA.Rmd                 -   Analyse the model of the number of 16S gene copies. Additionally make a PCA plot of the attributes used for the Random Forrest models.  
-07_BuldModelOfEntropyAndPlot.Rmd        -   Model the amount of entropy as a function of the other attributes in the data. And plot the results of the model  
+07_BuildModelOfEntropyAndPlot.Rmd        -   Model the amount of entropy as a function of the other attributes in the data. And plot the results of the model  
 08_BuildModelArMechanismsAndPlot.R      -   Model the entropy as a function of the different types of antibiotic resistance mechanims. Additionally plot the results  
 
 ## Data
