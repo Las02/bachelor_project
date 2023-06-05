@@ -9,9 +9,9 @@ The specific dataflow is described below. Here the headers are the folder from w
 
 ### makeDbFromRibDif
 #### A
-Using "getAllGenusTaxID.py", all TAXID's corresponding to all unique genera from "NCBI taxonomy" were downloaded using their API. As the output was JSON and contained additional information, it was parsed and written to a file. \
+Using "getAllGenusTaxID.py", all TAXID's corresponding to all unique genera from "NCBI taxonomy" were downloaded using their API. As the output was JSON and contained additional information, it was parsed and written to a file.   
 Using "taxID2genusName.py" the TAXID's corresponding to the unique genera, were then "translated" to their names. This was again done using NCBI'S API.
-This output, which was a list of all unique genera, were used in steps marked by B, C and D in the figure: \
+This output, which was a list of all unique genera, were used in steps marked by B, C and D in the figure:  
 
 #### D
 Using "runRIbDifOnAll.py" the tool ribdif were run on all of unique genera found in "A". A database with the corret tables were the created using "createDbStructure.sql". Lastly, the information gathered from Ribdif were read into to database using "readDataToDb.py". The relationships between the 16S gene copies and the bacterial strains were made using many to many relationships in the database. 
