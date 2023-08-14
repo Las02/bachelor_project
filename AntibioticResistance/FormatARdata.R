@@ -3,20 +3,23 @@ library(magrittr)
 library(stringr)
 library(RSQLite)
 
-
-
+# Set the working directory
 setwd("/mnt/raid2/s203512/bachelor/DataPreparation/FindARinDNA/scripts")
+
+# Read in the data from the found antibiotic resistance genes based on the output from the abricate summary function
 ar_d_read <- read_table("./megares_sum_after_del.tab")
-# Filter out the empty files made by "abricate --summary"
+
+# Filter out the strains which did not have any antibiotic resistance genes "abricate --summary"
 ar_d <- ar_d_read %>% filter(!grepl(".arfound", `#FILE`))
 
-# Format gcf
+# Format the coulmn containing the gcf code correctly
 ar_d <- ar_d %>%
     rename(gcf = `#FILE`) %>%
     mutate(gcf = paste(str_split_i(gcf,"_",1),str_split_i(gcf,"_",2), sep="_"))
 
 
-# Apply 1 hot enoding
+# Apply 1 hot enoding for the strain for the antibiotic resistance genes they contain.
+# Only write a strain as containg the gene if the alignment has above 90% coverage
 t <- 90
 # Function to check if, given the input consist of several values, any values are above the threshold
 any_above_threshold <- function(seq, t){
