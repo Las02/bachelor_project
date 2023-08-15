@@ -1,7 +1,7 @@
 import pandas as pd
 import glob
 
-# Read in the data about which antibiotic resistance genes come form a SNP
+# Read in the data about which antibiotic resistance genes come from a SNP
 snp = pd.read_csv("isSNP.csv")
 snp = snp["V1"].values
 snp = [">"+x for x in snp]
