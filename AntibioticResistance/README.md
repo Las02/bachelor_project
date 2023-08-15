@@ -1,6 +1,6 @@
 
 ## Purpose
-The purpose of this folder is to find antibiotic genes in the the genomes downloaded with Ribdif. This is done through using the tool Abricate with the MEGAres database of antibiotic genes.
+The purpose of this folder is to find antibiotic genes in the the genomes downloaded with Ribdif. This is done through using the tool Abricate with the MEGAres database of antibiotic resistance genes.
 
 ## Method and files
 Fasta files of antibiotic genes were downloaded from https://www.meglab.org/megares/. For making the fasta files into a database for Abricate they were formatted with the following:
