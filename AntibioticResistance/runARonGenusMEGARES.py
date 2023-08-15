@@ -5,13 +5,14 @@ import os
 # Set path for output from ribdif
 path = "/mnt/raid2/s203512/bachelor/main/MakingAndProccesingData2Database/make_the_db/all_genus_ribdif-ed/"
 
-# Go through each genus and assemblys and find AR genes 
+
 # Read in the found genera
 infile = open("/mnt/raid2/s203512/bachelor/DataPreparation/makeDbFromRibDif/getListOfAllGenera/out/all_genus_names.dat")
 
 # Make sure gcf annotated under several genera does not get added twice
 gcf_seen = list()
 
+# Go trough each file
 for i, genus in enumerate(infile):
     # Format genus from file
     genus = genus.strip()
