@@ -1,4 +1,15 @@
 # Analysis of rRNA multiplicity and diversity
+### Aim
+The aim of this project was to establish correlations between the sequence diversity and copy 
+number multiplicity of the 16S rRNA genes and bacterial traits and environmental factors. 
+This was be done through data-mining both databases and bacterial genomes for 16S rRNA 
+gene information and information about bacterias’ traits and the environment they live in. 
+This information was then be used to build several statistical models that can explain the 16S 
+rRNA gene’s variation in both copy number and degree of intragenomic sequence diversity.
+
+### Folders
+The files for the project is structured into 3 different main folders. Firstly, the folder "DataPreparation", which contains the files for gathering the data used for the project. Secondly, the folder "DataAnalysis" which contains the files for the dataanalysis in addition to files for preparing the data for modelling. Thirdly, the folder AntibioticResistance which contains the files for gathering information about antibiotic resistance mechanisms. A more in depht overview of the files can be found in the "README"s in the above mentioned folders.
+
 ### Abstract
 Bacteria exhibit variability in the number of 16S rRNA gene copy numbers, and in the degree
 of intragenomic sequence diversity between these copies. This variation affects microbial
@@ -27,6 +38,3 @@ the intragenomic 16S rRNA gene diversity is mostly dependent on the number of 16
 gene copies. This project therefore provides additional information for which to better 
 understand the factors which can lead to bias in microbial community analysis when using 
 16S rRNA sequencing.
-
-### Folders
-The files for the project is structured into 3 different main folders. Firstly, the folder "DataPreparation", which contains the files for gathering the data used for the project. Secondly, the folder "DataAnalysis" which contains the files for the dataanalysis in addition to files for preparing the data for modelling. Thirdly, the folder AntibioticResistance which contains the files for gathering information about antibiotic resistance mechanisms. A more in depht overview of the files can be found in the "README"s in the above mentioned folders.
