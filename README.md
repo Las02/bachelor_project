@@ -2,7 +2,7 @@
 ### Aim
 The aim of this project was to establish correlations between the sequence diversity and copy 
 number multiplicity of the 16S rRNA genes and bacterial traits and environmental factors. 
-This was be done through data-mining both databases and bacterial genomes for 16S rRNA 
+This was done through data-mining both databases and bacterial genomes for 16S rRNA 
 gene information and information about bacterias’ traits and the environment they live in. 
 This information was then be used to build several statistical models that can explain the 16S 
 rRNA gene’s variation in both copy number and degree of intragenomic sequence diversity.
